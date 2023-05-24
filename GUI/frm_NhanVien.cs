@@ -178,13 +178,21 @@ namespace GUI
 
         private void btnXoaNV_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (txtMaNV.Text == "" || txtTenNV.Text == "" || txtDiaChiNV.Text == "" || txtSoDTNV.Text == "")
             {
+                MessageBox.Show("Chọn thong tin cần xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
-                bllnv.Delete(txtMaNV.Text);
-                MessageBox.Show("Xóa thành công");
-                Reset();
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+
+                    bllnv.Delete(txtMaNV.Text);
+                    MessageBox.Show("Xóa thành công");
+                    Reset();
+                }
             }
 
         }

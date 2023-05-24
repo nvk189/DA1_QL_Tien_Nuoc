@@ -113,7 +113,6 @@ namespace DAL
             var dataTable = new DataTable();
             var dataAdapter = new SqlDataAdapter(command);
             dataAdapter.Fill(dataTable);
-
             return dataTable;
         }
 

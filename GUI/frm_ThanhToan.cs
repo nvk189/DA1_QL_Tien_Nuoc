@@ -165,7 +165,7 @@ namespace GUI
             txtSoKhoisds.Text = dgvThanhToan[7, hang].Value.ToString();
             txtGIaTien.Text = dgvThanhToan[8, hang].Value.ToString();
             txtThue.Text = dgvThanhToan[9, hang].Value.ToString();
-            dtNgayThanhToan.Text = dgvThanhToan[3, hang].Value.ToString();
+            //dtNgayThanhToan.Text = dgvThanhToan[3, hang].Value.ToString();
             cboHTThanhToan.Text = dgvThanhToan[4, hang].Value.ToString();
             txtTongTien.Text = dgvThanhToan[10, hang].Value.ToString();
 

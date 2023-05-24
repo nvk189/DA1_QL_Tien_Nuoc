@@ -168,15 +168,22 @@ namespace GUI
 
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (txtMaKH.Text == "" || txtTenKH.Text == "" || txtDiaChi.Text == "" || txtSoDT.Text == "")
             {
+                MessageBox.Show("Chọn thông tin cần xóa ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
-                bllkh.Delete(txtMaKH.Text);
-                MessageBox.Show("Xóa thành công");
-                Reset();
             }
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
 
+                    bllkh.Delete(txtMaKH.Text);
+                    MessageBox.Show("Xóa thành công");
+                    Reset();
+                }
+            }
         }
 
 

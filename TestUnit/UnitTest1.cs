@@ -140,7 +140,7 @@ namespace TestUnit
             NhanVien_BLL nv = new NhanVien_BLL();
             string a = "NV001";
 
-            Assert.IsTrue(nv.MaT(a)); // nhập đúng
+            Assert.IsTrue(nv.MaT(a)); // nhập đúng 
 
 
         }

@@ -50,16 +50,19 @@ namespace GUI
         {
             if (ckMatKhau.Checked)
             {
-                txtMatKhau.UseSystemPasswordChar = false;
+                txtMatKhau.UseSystemPasswordChar = true;
             }
                
             else
             {
-                txtMatKhau.UseSystemPasswordChar = true;
+                txtMatKhau.UseSystemPasswordChar = false;
             }
                 
         }
 
-       
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

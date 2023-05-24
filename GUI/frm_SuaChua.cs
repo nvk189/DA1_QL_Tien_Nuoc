@@ -159,13 +159,21 @@ namespace GUI
 
         private void btnXoaSC_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn Xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (txtMaSC.Text == "" || cboMaKH.Text == "" || cboMaNV.Text == "" || txtTinhTrang.Text == "")
             {
-                
-                bllsc.Delete(txtMaSC.Text);
-                MessageBox.Show("Xóa thành công");
-                Reset();
+                MessageBox.Show("Không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn Xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+
+                    bllsc.Delete(txtMaSC.Text);
+                    MessageBox.Show("Xóa thành công");
+                    Reset();
+                }
             }
         }
 

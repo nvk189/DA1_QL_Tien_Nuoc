@@ -175,6 +175,7 @@
             this.btnThoat.Size = new System.Drawing.Size(167, 55);
             this.btnThoat.TabIndex = 27;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // frm_DangNhap
             // 

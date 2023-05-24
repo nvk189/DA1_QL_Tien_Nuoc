@@ -187,17 +187,25 @@ namespace GUI
 
         private void btnXoaTK_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn Xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (txtTenDN.Text == "" || txtMatKhau.Text == "" || cboQuyen.Text == "" || cbTrangThai.Text == "")
             {
-                //dtotk.MatKhau1 = txtMatKhau.Text;
-                //blltk.Delete(dtotk.MatKhau1);
-                //MessageBox.Show("Xóa thành công");
-                //Reset();
-                 blltk.Delete(txtMatKhau.Text);
-                MessageBox.Show("Xóa thành công");
-                ShowData();
-                Reset();
+                MessageBox.Show("Không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn Xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    //dtotk.MatKhau1 = txtMatKhau.Text;
+                    //blltk.Delete(dtotk.MatKhau1);
+                    //MessageBox.Show("Xóa thành công");
+                    //Reset();
+                    blltk.Delete(txtMatKhau.Text);
+                    MessageBox.Show("Xóa thành công");
+                    ShowData();
+                    Reset();
+                }
             }
         }
 

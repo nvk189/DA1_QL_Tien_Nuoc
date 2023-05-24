@@ -182,15 +182,22 @@ namespace GUI
 
         private void btnXoaGN_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn Xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
+            if (txtMaDK.Text == "" || cboMaKH.Text == "" || cboMaN.Text == "" || txtGiaNuoc.Text == "")
             {
-                //dtogn.MaDK1 = txtMaDK.Text;
-                bllgn.Delete(txtMaDK.Text);
-                MessageBox.Show("Xóa thành công");
-                Reset();
-            }
+                MessageBox.Show("Không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có muốn Xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    //dtogn.MaDK1 = txtMaDK.Text;
+                    bllgn.Delete(txtMaDK.Text);
+                    MessageBox.Show("Xóa thành công");
+                    Reset();
+                }
+            }
         }
 
         private void btnResetGN_Click(object sender, EventArgs e)
