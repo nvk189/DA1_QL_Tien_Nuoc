@@ -52,7 +52,7 @@ namespace BLL
         }
         public int Update(NhanVien_DTO d)
         {
-            if (SoDTT(d.SoDT1) == false &  Tool.CheckWhitespace(d.SoDT1) == true & Tool.CheckStringLengthint(d.SoDT1)==true)
+            if (  Tool.CheckWhitespace(d.SoDT1) == true & Tool.CheckStringLengthint(d.SoDT1)==true)
             {
                 return dalnv.Upadate_NV(d.MaNV1, Tool.Chuan_Hoa_Chuoi(d.TenNV1), Tool.Chuan_Hoa_Chuoi(d.DiaChi1), d.SoDT1, d.NgaySinh1, d.GioiTinh1);
             }

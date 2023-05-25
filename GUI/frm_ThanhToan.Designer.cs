@@ -167,6 +167,7 @@
             this.txtXuatHD.Size = new System.Drawing.Size(152, 55);
             this.txtXuatHD.TabIndex = 45;
             this.txtXuatHD.Text = "Hóa đơn";
+            this.txtXuatHD.Click += new System.EventHandler(this.txtXuatHD_Click);
             // 
             // btnResetTT
             // 

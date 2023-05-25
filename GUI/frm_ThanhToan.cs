@@ -127,8 +127,9 @@ namespace GUI
 
         private void btnSuaTT_Click(object sender, EventArgs e)
         {
+
             int MaHD;
-            int.TryParse(txtThue.Text, out MaHD);
+            int.TryParse(txtMaHD.Text, out MaHD);
             float tongTien;
             float.TryParse(txtTongTien.Text, out tongTien);
             float Sokhoisdt;
@@ -184,6 +185,58 @@ namespace GUI
         private void btnResetTT_Click(object sender, EventArgs e)
         {
             Reset();
+        }
+
+        private void txtXuatHD_Click(object sender, EventArgs e)
+        {
+            //if(txtTenKH.Text=="" || txtDiaChi.Text=="" || txtGIaTien.Text=="" || txtThue.Text=="" || cboHTThanhToan.Text=="" || txtTongTien.Text == "")
+            //{
+            //    MessageBox.Show("Chọn thông tin khách hàng cần xuất hóa đơn ");
+
+            //}
+            //else
+            //{
+            //    DataTable dataTable = new DataTable();
+            //    dataTable.Rows[0][0] = txtMaHD.Text;
+            //    dataTable.Rows[0][1] = cboMaKH.Text;
+            //    dataTable.Rows[0][2] = txtTenKH.Text;
+            //    dataTable.Rows[0][3] = txtDiaChi.Text;
+            //    dataTable.Rows[0][4] = cboMaNV.Text;
+            //    dataTable.Rows[0][5] = txtSoKhoisdt.Text;
+            //    dataTable.Rows[0][6] = txtSoKhoisds.Text;
+            //    dataTable.Rows[0][7] = txtGIaTien.Text;
+            //    dataTable.Rows[0][8] = txtThue.Text;
+            //    dataTable.Rows[0][9] = dtNgayThanhToan.Value.Date;
+            //    dataTable.Rows[0][10] = cboHTThanhToan.Text;
+            //    dataTable.Rows[0][11] = txtTongTien.Text;
+
+
+            //}
+
+           
+
+             
+            int MaHD;
+            int.TryParse(txtMaHD.Text, out MaHD);
+            float tongTien;
+            float.TryParse(txtTongTien.Text, out tongTien);
+            float soCTT;
+            float.TryParse(txtSoKhoisdt.Text, out soCTT);
+            float soCTS;
+            float.TryParse(txtSoKhoisds.Text, out soCTS);
+            float giaTien;
+            float.TryParse(txtGIaTien.Text, out giaTien);
+            int thue;
+            int.TryParse(txtThue.Text, out thue);
+
+            float soSD = soCTS - soCTT;
+
+            thanhToan_bll.ExportInvoiceToNotepad(MaHD,cboMaKH.Text, txtTenKH.Text, txtDiaChi.Text, cboMaNV.Text, soCTT, soCTS, soSD, giaTien, thue, dtNgayThanhToan.Value.Date, cboHTThanhToan.Text, tongTien);
+           
+
+
+
+
         }
     }
 }
