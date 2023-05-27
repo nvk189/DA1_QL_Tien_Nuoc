@@ -27,10 +27,13 @@ namespace GUI
         {
             dtotk.TenDN1 = txtTenDN.Text;
             dtotk.MatKhau1 = txtMatKhau.Text;
-           
+            DataTable data= blldn.Quyen(txtTenDN.Text, txtMatKhau.Text);
+            string a = data.ToString();
+
             if (blldn.DangNhap(dtotk.TenDN1, dtotk.MatKhau1) == true)
             {
-                frm_TrangChu tc = new frm_TrangChu();
+                MessageBox.Show("Đăng nhập thành công");
+                frm_TrangChu tc = new frm_TrangChu(a);
                 tc.ShowDialog();
                 this.Hide();
             }
@@ -45,24 +48,22 @@ namespace GUI
 
 
         }
+       
 
-        private void ckMatKhau_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckMatKhau.Checked)
-            {
-                txtMatKhau.UseSystemPasswordChar = true;
-            }
-               
-            else
-            {
-                txtMatKhau.UseSystemPasswordChar = false;
-            }
-                
-        }
+       
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbMatKhau_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (cbMatKhau.Checked)
+                txtMatKhau.UseSystemPasswordChar = false;
+            else
+                txtMatKhau.UseSystemPasswordChar = true;
         }
     }
 }

@@ -18,5 +18,9 @@ namespace BLL
 
             return blldn.DangNhap(a, b );
         }
+        public DataTable Quyen(string a, string b)
+        {
+            return blldn.Quyen(a, b);
+        }
     }
 }

@@ -22,10 +22,7 @@ namespace BLL
         {
             return thanhToan_DAL.Select_HD();
         }
-        //public DataTable capnhat()
-        //{
-        //     return thanhToan_DAL.capnhat();
-        //}
+      
         public DataTable Search(int b, string a)
         {
             return thanhToan_DAL.Search_TT(b, a);

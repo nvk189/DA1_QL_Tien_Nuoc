@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel_Left = new System.Windows.Forms.Panel();
+            this.lblquyen = new System.Windows.Forms.Label();
+            this.ptExit = new System.Windows.Forms.PictureBox();
             this.ptHome = new System.Windows.Forms.PictureBox();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnGiaNuoc = new System.Windows.Forms.Button();
@@ -42,6 +44,7 @@
             this.panel_Body = new System.Windows.Forms.Panel();
             this.ptSologan = new System.Windows.Forms.PictureBox();
             this.panel_Left.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptHome)).BeginInit();
             this.panel_Top.SuspendLayout();
             this.panel_Body.SuspendLayout();
@@ -51,6 +54,8 @@
             // panel_Left
             // 
             this.panel_Left.BackColor = System.Drawing.Color.Teal;
+            this.panel_Left.Controls.Add(this.lblquyen);
+            this.panel_Left.Controls.Add(this.ptExit);
             this.panel_Left.Controls.Add(this.ptHome);
             this.panel_Left.Controls.Add(this.btnThongKe);
             this.panel_Left.Controls.Add(this.btnGiaNuoc);
@@ -64,6 +69,28 @@
             this.panel_Left.Name = "panel_Left";
             this.panel_Left.Size = new System.Drawing.Size(229, 1055);
             this.panel_Left.TabIndex = 0;
+            // 
+            // lblquyen
+            // 
+            this.lblquyen.AutoSize = true;
+            this.lblquyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblquyen.ForeColor = System.Drawing.Color.White;
+            this.lblquyen.Location = new System.Drawing.Point(73, 184);
+            this.lblquyen.Name = "lblquyen";
+            this.lblquyen.Size = new System.Drawing.Size(88, 29);
+            this.lblquyen.TabIndex = 1;
+            this.lblquyen.Text = "Quyen";
+            // 
+            // ptExit
+            // 
+            this.ptExit.Image = global::GUI.Properties.Resources.logout__1_;
+            this.ptExit.Location = new System.Drawing.Point(64, 972);
+            this.ptExit.Name = "ptExit";
+            this.ptExit.Size = new System.Drawing.Size(108, 59);
+            this.ptExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptExit.TabIndex = 1;
+            this.ptExit.TabStop = false;
+            this.ptExit.Click += new System.EventHandler(this.ptExit_Click);
             // 
             // ptHome
             // 
@@ -194,12 +221,11 @@
             // lblTrangChu
             // 
             this.lblTrangChu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTrangChu.AutoSize = true;
             this.lblTrangChu.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrangChu.ForeColor = System.Drawing.Color.White;
-            this.lblTrangChu.Location = new System.Drawing.Point(428, 46);
+            this.lblTrangChu.Location = new System.Drawing.Point(562, 36);
             this.lblTrangChu.Name = "lblTrangChu";
-            this.lblTrangChu.Size = new System.Drawing.Size(254, 49);
+            this.lblTrangChu.Size = new System.Drawing.Size(421, 49);
             this.lblTrangChu.TabIndex = 0;
             this.lblTrangChu.Text = "TRANG CHỦ";
             // 
@@ -236,9 +262,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel_Left.ResumeLayout(false);
+            this.panel_Left.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptHome)).EndInit();
             this.panel_Top.ResumeLayout(false);
-            this.panel_Top.PerformLayout();
             this.panel_Body.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptSologan)).EndInit();
             this.ResumeLayout(false);
@@ -260,6 +287,8 @@
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.PictureBox ptSologan;
         private System.Windows.Forms.PictureBox ptHome;
+        private System.Windows.Forms.Label lblquyen;
+        private System.Windows.Forms.PictureBox ptExit;
     }
 }
 

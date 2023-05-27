@@ -12,10 +12,38 @@ namespace GUI
 {
     public partial class frm_TrangChu : Form
     {
-       
-        public frm_TrangChu()
+        private string quyen1;
+
+        public frm_TrangChu(string a)
         {
+            quyen1= a;
             InitializeComponent();
+            quyen();
+        }
+
+        public void quyen()
+        {
+            lblquyen.Text = quyen1;
+            if (lblquyen.Text == "admin")
+            {
+
+                btnTaiKhoan.Enabled = true;
+                btnThongKe.Enabled = true;
+                btnNhanVien.Enabled = true;
+                btnGiaNuoc.Enabled = true;
+                btnKhachhang.Enabled = true;
+                btnThanhToan.Enabled = true;
+                btnQLSuaChua.Enabled = true;
+               
+            }
+            else
+            {
+                btnTaiKhoan.Enabled = false;
+                btnThongKe.Enabled = false;
+                btnNhanVien.Enabled = false;
+                btnGiaNuoc.Enabled = false;
+
+            }
         }
 
         private Form currrentFormChild;
@@ -39,7 +67,7 @@ namespace GUI
         {
             OpenChildForm(new frm_KhachHang());
             lblTrangChu.Text = btnKhachhang.Text;
-            // panel_Body.Anchor = "Top,Left";
+           
           
         }
 
@@ -88,6 +116,9 @@ namespace GUI
             lblTrangChu.Text = "TRANG CHỦ";
         }
 
-       
+        private void ptExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

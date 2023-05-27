@@ -353,10 +353,10 @@ BEGIN
 
     SELECT MaNV, TenNV, DiaChi, SoDT, NgaySinh, GioiTinh
     FROM NhanVien
-    WHERE MaNV LIKE '%'+@TuKhoa+'%' or TenNV LIKE '%'+ @TuKhoa+'%'or SoDT LIKE '%'+ @TuKhoa+'%' or GioiTinh LIKE '%'+ @TuKhoa+'%'
+    WHERE MaNV LIKE '%'+@TuKhoa+'%' or DiaChi LIKE '%'+ @TuKhoa+'%'or SoDT LIKE '%'+ @TuKhoa+'%' or GioiTinh LIKE '%'+ @TuKhoa+'%'
 END;
 
-exec Search_NhanVien @TuKhoa='Nam'
+exec Search_NhanVien @TuKhoa=N'Hưng Yên'
 
 --Hàm Giá nước
 -- lấy về thông tin thông qua mã khách hàng
@@ -402,7 +402,7 @@ BEGIN
 END;
 
  Exec Select_GiaNuoc
-
+ 
 alter PROCEDURE Insert_GiaNuoc
     @MaDK varchar(10),
     @MaKH nvarchar(30),
@@ -496,18 +496,38 @@ Exec select_TenNV_TaiKhoan @MaNV='nvsc006'
 
 alter procedure select_DangNhap
 	@TenDN	varchar(20)	,
-	@MatKhau	varchar(20),
-	@ChucVu  nvarchar(20) 
+	@MatKhau	varchar(20)
+	 
 as
 begin
 	Set Nocount on;
 	Select count(*) from TaiKhoan
-	where TenDN=@TenDN and MatKhau=@MatKhau 
+	where TenDN=@TenDN and MatKhau=@MatKhau  and TrangThai=N'True'
 end;
+ 
+exec select_DangNhap @TenDN='admin12' ,@MatKhau='_admin23'
 
+select*from TaiKhoan
 
 Exec select_DangNhap @TenDN=  'long123' ,@MatKhau='12345'
 
+
+--hàm lấy ra quyền
+
+create procedure Quyen
+	@TenDN	varchar(20)	,
+	@MatKhau	varchar(20)
+	 
+as
+begin
+	Set Nocount on;
+	Select ChucVu from TaiKhoan
+	where TenDN=@TenDN and MatKhau=@MatKhau  and TrangThai=N'True'
+end;
+exec Quyen @TenDN='admin12' ,@MatKhau='_admin23'
+
+
+-- kiểm tra mật khẩu trùng
 create procedure MatKhauTrung
 	@MatKhau	varchar(20)
 as
@@ -517,6 +537,8 @@ Set Nocount on;
 	Select count(*) from TaiKhoan
 	where MatKhau=@MatKhau 
 end;
+
+exec MatKhauTrung @MatKhau='_admin2'
 alter PROCEDURE Select_TK
 AS
 BEGIN
@@ -699,12 +721,14 @@ alter PROCEDURE InsertHoaDonAndCT_HoaDon
 (
   @MaKH varchar(30),
   @MaNV varchar(15),
-  @NgayThanhToan date,
-  @HinhThucTT nvarchar(30),
+  --@NgayThanhToan date,
+  --@HinhThucTT nvarchar(30),
   @SoCTT float,
   @SoCTS float,
   @GiaTien float,
   @Thue int,
+   @NgayThanhToan date,
+  @HinhThucTT nvarchar(30),
   @TongTien float
 )
 AS
@@ -740,13 +764,14 @@ BEGIN
     H.MaKH,
     H.MaNV,
 	--H.NgayThanhToan,
-    H.HinhThucTT,
-    C.MaCTHD,
+    --H.HinhThucTT,
+    --C.MaCTHD,
     C.SoCTT,
     C.SoCTS,
     C.GiaTien,
     C.Thue,
 	C.NgayThanhToan,
+	 H.HinhThucTT,
     C.TongTien
   FROM
     HoaDon H
@@ -775,12 +800,14 @@ alter PROCEDURE UpdateHoaDonAndCT_HoaDon
   @MaHD int,
   @MaKH varchar(30),
   @MaNV varchar(15),
-  @NgayThanhToan date,
-  @HinhThucTT nvarchar(30),
+  --@NgayThanhToan date,
+  --@HinhThucTT nvarchar(30),
   @SoCTT float,
   @SoCTS float,
   @GiaTien float,
   @Thue int,
+   @NgayThanhToan date,
+  @HinhThucTT nvarchar(30),
   @TongTien float
 
 )
@@ -845,6 +872,8 @@ BEGIN
 END
 
 exec Delete_HD @MaHD=3
+
+
 alter PROCEDURE SearchHoaDonAndCT_HoaDon
     @MaHD INT ,
 	@MaKH nvarchar(50)
@@ -880,34 +909,6 @@ END
 drop trigger trg_UpdateSoCTT_MaKH
 
 
--- Tạo trigger sau khi cập nhật trường SoCTS trong bảng CT_HoaDon
---CREATE TRIGGER trg_UpdateSoCTT_MaKH
---ON CT_HoaDon
---AFTER UPDATE
---AS
---BEGIN
---    -- Kiểm tra nếu SoCTS đã được cập nhật
---    IF UPDATE(SoCTS)
---    BEGIN
---        -- Lấy MaHD và MaKH của bản ghi đang được cập nhật
---        DECLARE @MaHD INT, @MaKH VARCHAR(30)
---        SELECT @MaHD = MaHD, @MaKH = MaKH FROM inserted
-
---        -- Lấy giá trị mới của SoCTS
---        DECLARE @SoCTS FLOAT
---        SELECT @SoCTS = SoCTS FROM inserted
-
---        -- Cập nhật trường SoCTT của bản ghi tiếp theo có cùng MaKH
---        UPDATE CT_HoaDon
---        SET SoCTT = @SoCTS
---        WHERE MaHD = (SELECT MIN(MaHD) FROM CT_HoaDon WHERE MaHD > @MaHD AND MaKH = @MaKH)
-
---        -- Cập nhật lại trường TongTien theo công thức
---        UPDATE CT_HoaDon
---        SET TongTien = (@SoCTS - SoCTT) * GiaTien + ((@SoCTS - SoCTT) * GiaTien) * (Thue / 100)
---        WHERE MaHD = @MaHD
---    END
---END
 
 
 -- Tạo trigger sau khi cập nhật trường SoCTS trong bảng CT_HoaDon
@@ -953,52 +954,115 @@ BEGIN
     END
 END
 
---create TRIGGER update_new
---ON CT_HoaDon 
---AFTER UPDATE
+
+
+-- thống kê
+
+--tìm kiếm theo ngày
+CREATE PROCEDURE ThongKeHoaDon
+    @NgayThanhToan date
+AS
+BEGIN
+    SELECT
+        COUNT(DISTINCT HoaDon.MaKH) AS SoKhachHang,
+        SUM(CT_HoaDon.SoCTS - CT_HoaDon.SoCTT) AS NuocSuDung,
+        SUM(CT_HoaDon.TongTien) AS TongTien
+    FROM
+        HoaDon
+    INNER JOIN CT_HoaDon ON HoaDon.MaHD = CT_HoaDon.MaHD
+    WHERE
+        CT_HoaDon.NgayThanhToan = @NgayThanhToan;
+END;
+
+DECLARE @PaymentDate date = '2023-05-26';
+
+EXEC ThongKeHoaDon @NgayThanhToan = @PaymentDate;
+
+
+select *from CT_HoaDon
+
+-- tìm kiếm theo tháng hoặc năm
+alter PROCEDURE ThongKeHoaDonTheoThang
+    @ThoiGian int
+   
+AS
+BEGIN
+    SELECT
+        COUNT(DISTINCT HoaDon.MaKH) AS SoKhachHang,
+        SUM(CT_HoaDon.SoCTS - CT_HoaDon.SoCTT) AS NuocSuDung,
+        SUM(CT_HoaDon.TongTien) AS TongTien
+    FROM
+        HoaDon
+    INNER JOIN CT_HoaDon ON HoaDon.MaHD = CT_HoaDon.MaHD
+    WHERE
+        MONTH(CT_HoaDon.NgayThanhToan) = @ThoiGian
+        or YEAR(CT_HoaDon.NgayThanhToan) = @ThoiGian;
+END;
+
+
+DECLARE @Month int = 6; -- Example: May
+DECLARE @Year int = 2023; -- Example: 2023
+
+DECLARE @PaymentDate date = 6;
+EXEC ThongKeHoaDonTheoThang @Thang = @Month, @Nam = @Year;
+
+--thống kê theo mã khách hàng
+--CREATE PROCEDURE ThongKeHoaDonMK
+--    @MaKH varchar(30)
 --AS
 --BEGIN
---    -- Kiểm tra nếu SoCTS đã được cập nhật
---    IF UPDATE(SoCTS)
---    BEGIN
---        -- Lấy MaHD, MaKH của bản ghi đang được cập nhật
---        DECLARE @MaHD INT, @MaKH VARCHAR(30)
---        SELECT @MaHD = CT_HoaDon.MaHD, @MaKH = HoaDon.MaKH
---        FROM CT_HoaDon
---        INNER JOIN HoaDon ON CT_HoaDon.MaHD = HoaDon.MaHD
---        WHERE CT_HoaDon.MaHD IN (SELECT MaHD FROM inserted)
+--    SELECT
+--        COUNT(DISTINCT HoaDon.MaKH) AS SoKhachHang,
+--        SUM(CT_HoaDon.SoCTS - CT_HoaDon.SoCTT) AS NuocSuDung,
+--        SUM(CT_HoaDon.TongTien) AS TongTien
+--    FROM
+--        HoaDon
+--    INNER JOIN CT_HoaDon ON HoaDon.MaHD = CT_HoaDon.MaHD
+--    WHERE
+--        MaKH = @MaKH;
+--END;
 
---        -- Lấy giá trị mới của SoCTS
---        DECLARE @SoCTS FLOAT
---        SELECT @SoCTS = SoCTS FROM inserted
+--EXEC ThongKeHoaDonMK @MaKH='KH001';
 
---        -- Cập nhật trường SoCTT của bản ghi tiếp theo có NgayThanhToan lớn hơn và gần nhất với bản ghi đang thực hiện
---        UPDATE CT_HoaDon
---        SET SoCTT = @SoCTS
---        WHERE MaHD = (
---            SELECT TOP 1 MaHD
---            FROM CT_HoaDon
---            WHERE MaHD > @MaHD AND NgayThanhToan > (
---                SELECT NgayThanhToan
---                FROM CT_HoaDon
---                WHERE MaHD = @MaHD
---            )
---            ORDER BY NgayThanhToan ASC
---        )
 
---        -- Cập nhật lại trường TongTien theo công thức
---        UPDATE CT_HoaDon
---        SET TongTien = ((SoCTS - SoCTT) * GiaTien) + ((SoCTS - SoCTT) * GiaTien) * (Thue / 100)
---        WHERE MaHD IN (
---            SELECT MaHD
---            FROM HoaDon
---            WHERE MaKH = @MaKH
---        )
---    END
---END
+select *from TaiKhoan
+--thống kê số nhânviên cònhoạt động
+create procedure SoNV
+as
+begin
+		select COUNT(*) 
+		from TaiKhoan
+		where TrangThai='True'
+end
+exec SoNV
 
 
 
 
 
 
+create PROCEDURE Search_TK_HD
+      @ThoiGian int
+AS
+BEGIN
+    SELECT HD.MaHD,MaKH,MaNV,SoCTT,SoCTS,GiaTien,Thue,NgayThanhToan,HinhThucTT,TongTien
+    FROM HoaDon HD
+    INNER JOIN CT_HoaDon CTHD ON HD.MaHD = CTHD.MaHD
+     WHERE
+        MONTH(CTHD.NgayThanhToan) = @ThoiGian
+        or YEAR(CTHD.NgayThanhToan) = @ThoiGian;
+END
+
+
+--CT_HoaDon.NgayThanhToan = @NgayThanhToan;
+-- thống kê theo ngày tháng
+create PROCEDURE Search_TK_DT
+      @NgayThanhToan date
+AS
+BEGIN
+    SELECT HD.MaHD,MaKH,MaNV,SoCTT,SoCTS,GiaTien,Thue,NgayThanhToan,HinhThucTT,TongTien
+    FROM HoaDon HD
+    INNER JOIN CT_HoaDon CTHD ON HD.MaHD = CTHD.MaHD
+     WHERE
+        CTHD.NgayThanhToan = @NgayThanhToan;
+END

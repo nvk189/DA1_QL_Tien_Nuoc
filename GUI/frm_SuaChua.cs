@@ -73,6 +73,7 @@ namespace GUI
             else
             {
                 txtTenKH.Text = "";
+                txtDiaChi.Text = "";
             }
         }
 
