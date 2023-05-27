@@ -22,6 +22,7 @@ namespace GUI
         KhachHang_BLL bllkh = new KhachHang_BLL();
         private Excel excel;
        
+
         public frm_KhachHang()
         {
             InitializeComponent();
@@ -190,32 +191,56 @@ namespace GUI
         
         private void ptSearchKH_Click(object sender, EventArgs e)
         {
-            
+            if (txtSearchKH.Text == "")
+            {
+                MessageBox.Show("Nhập thông tin tìm kiếm");
+
+            }
+            else
+            {
+                dgvKhachHang.DataSource = bllkh.Search(txtSearchKH.Text);
+
+
+
+                txtMaKH.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
+                txtTenKH.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
+                txtDiaChi.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
+                txtSoDT.Text = dgvKhachHang.CurrentRow.Cells[3].Value.ToString();
+            }
            
-            dgvKhachHang.DataSource = bllkh.Search(txtSearchKH.Text);
-          
-
-
-            txtMaKH.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
-            txtTenKH.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
-            txtDiaChi.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
-            txtSoDT.Text = dgvKhachHang.CurrentRow.Cells[3].Value.ToString();
+           
 
         }
 
         private void btnExcelKKH_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            ////SaveFileDialog saveFileDialog = new SaveFileDialog();
+            ////saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = saveFileDialog.FileName;
-                DataTable dataTable = Datagriview();
-                //DataTable dataTable = GetDataTableFromDataGridView(dgvNhanVien);
-                excel.ExportToExcel(dataTable, filePath);
-                MessageBox.Show("Dữ liệu đã được xuất ra file Excel.");
-            }
+
+
+            //SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            //saveFileDialog.FileName = @"D:\Downloads\Book1.xlsx";
+
+
+            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    string filePath = saveFileDialog.FileName;
+            //    DataTable dataTable = Datagriview();
+            //    //DataTable dataTable = GetDataTableFromDataGridView(dgvNhanVien);
+            //    excel.ExportToExcel(dataTable, filePath);
+            //    MessageBox.Show("Dữ liệu đã được xuất ra file Excel.");
+            //}
+
+
+            //DataTable dataTable = new DataTable();
+            // Populate the DataTable with data from the DataGridView
+            DataTable dataTable = Datagriview();
+         
+            string filePath = @"D:\Downloads\Book1.xlsx";
+            excel.ExportToExcel(dataTable, filePath);
+            MessageBox.Show("Xuất thành công");
         }
     }
 }

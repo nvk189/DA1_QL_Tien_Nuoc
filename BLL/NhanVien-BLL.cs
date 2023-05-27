@@ -10,6 +10,13 @@ using System.Data.SqlClient;
 using Utility;
 using DataTable = System.Data.DataTable;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
+
+
+
+
+//using DataTable = System.Data.DataTable;
+using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace BLL
 {
@@ -69,37 +76,13 @@ namespace BLL
 
 
 
-        // xuất Excel
-       
-        //public DataTable GetDataTableFromDataGridView(DataGridView dataGridView)
-        //{
-        //    DataTable dataTable = new DataTable();
-
-        //    // Tạo cột trong DataTable từ các cột trong DataGridView
-        //    foreach (DataGridViewColumn column in dataGridView.Columns)
-        //    {
-        //        dataTable.Columns.Add(column.HeaderText);
-        //    }
-
-        //    // Thêm dữ liệu từ DataGridView vào DataTable
-        //    foreach (DataGridViewRow row in dataGridView.Rows)
-        //    {
-        //        DataRow dataRow = dataTable.NewRow();
-        //        for (int i = 0; i < dataGridView.Columns.Count; i++)
-        //        {
-        //            dataRow[i] = row.Cells[i].Value;
-        //        }
-        //        dataTable.Rows.Add(dataRow);
-        //    }
-
-        //    return dataTable;
-        //}
+      
 
         public DataTable Excel (DataGridView dataTable)
         {
             return Tool.GetDataTableFromDataGridView(dataTable);
         }
 
-
+      
     }
 }

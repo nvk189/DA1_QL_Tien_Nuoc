@@ -172,7 +172,7 @@ namespace GUI
                             //MessageBox.Show("Sửa thất bại ,Mật khẩu, tên đăng nhập  số  ký tự >6 và  không chứa khoảng trắng , Tên dăng nhập bắt đầu bằng _ hoặc a-z hoặc A-Z", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         ShowData();
-                        Reset();
+                        
                         
                     }
 
@@ -216,21 +216,30 @@ namespace GUI
 
         private void ptSearchTK_Click(object sender, EventArgs e)
         {
-            dtotk.MaNV1 = txtSearchTK.Text;
-            dtotk.ChucVu1 = txtSearchTK.Text;
-            dtotk.TrangThai1 = txtSearchTK.Text;
+
+            if (txtSearchTK.Text == "")
+            {
+                MessageBox.Show("Nhập thông tin tìm kiếm");
+            }
+            else
+            {
+                dtotk.MaNV1 = txtSearchTK.Text;
+                dtotk.ChucVu1 = txtSearchTK.Text;
+                dtotk.TrangThai1 = txtSearchTK.Text;
 
 
-            dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.MaNV1);
-            dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.ChucVu1);
-            dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.TrangThai1);
+                dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.MaNV1);
+                dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.ChucVu1);
+                dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.TrangThai1);
 
 
-            cboMaNVTK.Text = dgvTaiKhoan.CurrentRow.Cells[0].Value.ToString();
-            txtTenDN.Text = dgvTaiKhoan.CurrentRow.Cells[1].Value.ToString();
-            txtMatKhau.Text = dgvTaiKhoan.CurrentRow.Cells[2].Value.ToString();
-            cboQuyen.Text = dgvTaiKhoan.CurrentRow.Cells[3].Value.ToString();
-            cbTrangThai.Text = dgvTaiKhoan.CurrentRow.Cells[4].Value.ToString();
+                cboMaNVTK.Text = dgvTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+                txtTenDN.Text = dgvTaiKhoan.CurrentRow.Cells[1].Value.ToString();
+                txtMatKhau.Text = dgvTaiKhoan.CurrentRow.Cells[2].Value.ToString();
+                cboQuyen.Text = dgvTaiKhoan.CurrentRow.Cells[3].Value.ToString();
+                cbTrangThai.Text = dgvTaiKhoan.CurrentRow.Cells[4].Value.ToString();
+            }
+           
         }
     }
 }

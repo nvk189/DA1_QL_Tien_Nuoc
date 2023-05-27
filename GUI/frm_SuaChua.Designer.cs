@@ -52,14 +52,14 @@
             this.lblMaSC = new System.Windows.Forms.Label();
             this.gbdsSuaChua = new System.Windows.Forms.GroupBox();
             this.dgvSuaChua = new System.Windows.Forms.DataGridView();
-            this.txtSearchSC = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ptSearchSC = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearchSC = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ptSearchSC = new System.Windows.Forms.PictureBox();
             this.gbSuaChua.SuspendLayout();
             this.gbdsSuaChua.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuaChua)).BeginInit();
@@ -204,7 +204,7 @@
             this.cboTrangThai.Items.AddRange(new object[] {
             "Hoàn thành ",
             "Chưa hoàn thành"});
-            this.cboTrangThai.Location = new System.Drawing.Point(1343, 154);
+            this.cboTrangThai.Location = new System.Drawing.Point(1358, 154);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(227, 36);
             this.cboTrangThai.TabIndex = 32;
@@ -221,7 +221,7 @@
             this.cboMaNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaNV.ForeColor = System.Drawing.Color.Black;
             this.cboMaNV.ItemHeight = 30;
-            this.cboMaNV.Location = new System.Drawing.Point(1343, 76);
+            this.cboMaNV.Location = new System.Drawing.Point(1358, 83);
             this.cboMaNV.Name = "cboMaNV";
             this.cboMaNV.Size = new System.Drawing.Size(227, 36);
             this.cboMaNV.TabIndex = 31;
@@ -295,7 +295,7 @@
             this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTenKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKH.Location = new System.Drawing.Point(271, 207);
+            this.txtTenKH.Location = new System.Drawing.Point(267, 225);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
@@ -349,7 +349,7 @@
             // lblTrangThai
             // 
             this.lblTrangThai.AutoSize = true;
-            this.lblTrangThai.Location = new System.Drawing.Point(1162, 154);
+            this.lblTrangThai.Location = new System.Drawing.Point(1185, 154);
             this.lblTrangThai.Name = "lblTrangThai";
             this.lblTrangThai.Size = new System.Drawing.Size(152, 29);
             this.lblTrangThai.TabIndex = 24;
@@ -358,7 +358,7 @@
             // lblMaNV
             // 
             this.lblMaNV.AutoSize = true;
-            this.lblMaNV.Location = new System.Drawing.Point(1127, 83);
+            this.lblMaNV.Location = new System.Drawing.Point(1150, 83);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(187, 29);
             this.lblMaNV.TabIndex = 23;
@@ -426,7 +426,7 @@
             this.gbdsSuaChua.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbdsSuaChua.Location = new System.Drawing.Point(12, 504);
             this.gbdsSuaChua.Name = "gbdsSuaChua";
-            this.gbdsSuaChua.Size = new System.Drawing.Size(1602, 289);
+            this.gbdsSuaChua.Size = new System.Drawing.Size(1602, 345);
             this.gbdsSuaChua.TabIndex = 1;
             this.gbdsSuaChua.TabStop = false;
             this.gbdsSuaChua.Text = "Danh sách sửa chữa";
@@ -449,9 +449,57 @@
             this.dgvSuaChua.Name = "dgvSuaChua";
             this.dgvSuaChua.RowHeadersWidth = 51;
             this.dgvSuaChua.RowTemplate.Height = 24;
-            this.dgvSuaChua.Size = new System.Drawing.Size(1551, 179);
+            this.dgvSuaChua.Size = new System.Drawing.Size(1551, 280);
             this.dgvSuaChua.TabIndex = 1;
             this.dgvSuaChua.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuaChua_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaSC";
+            this.Column1.HeaderText = "Mã sửa chữa";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 130;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaKH";
+            this.Column2.HeaderText = "Mã khách hàng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 130;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TinhTrang";
+            this.Column3.HeaderText = "Tình trạng";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 330;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "NgaySC";
+            this.Column4.HeaderText = "Ngày sửa chữa";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 250;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "MaNV";
+            this.Column5.HeaderText = "Mã nhân viên";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 200;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.DataPropertyName = "TrangThai";
+            this.Column6.HeaderText = "Trạng thái";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
             // 
             // txtSearchSC
             // 
@@ -491,60 +539,12 @@
             this.ptSearchSC.TabStop = false;
             this.ptSearchSC.Click += new System.EventHandler(this.ptSearchSC_Click);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaSC";
-            this.Column1.HeaderText = "Mã sửa chữa";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 190;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "MaKH";
-            this.Column2.HeaderText = "Mã khách hàng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 250;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "TinhTrang";
-            this.Column3.HeaderText = "Tình trạng";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "NgaySC";
-            this.Column4.HeaderText = "Ngày sửa chữa";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 250;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "MaNV";
-            this.Column5.HeaderText = "Mã nhân viên";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 200;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "TrangThai";
-            this.Column6.HeaderText = "Trạng thái";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 200;
-            // 
             // frm_SuaChua
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1635, 784);
+            this.ClientSize = new System.Drawing.Size(1635, 850);
             this.Controls.Add(this.ptSearchSC);
             this.Controls.Add(this.txtSearchSC);
             this.Controls.Add(this.gbdsSuaChua);

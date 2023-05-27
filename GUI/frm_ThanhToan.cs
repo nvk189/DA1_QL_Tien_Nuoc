@@ -24,9 +24,15 @@ namespace GUI
             dgvThanhToan.DataSource = thanhToan_bll.ShowData();
         }
 
+        //public void capnhat()
+        //{
+        //    dgvThanhToan.DataSource = thanhToan_bll.capnhat();
+        //}
+
         private void frm_ThanhToan_Load(object sender, EventArgs e)
         {
             LoadData();
+            
             ShowMaNV();
             ShowMaKH();
         }
@@ -61,6 +67,7 @@ namespace GUI
             dtNgayThanhToan.Text = "";
             cboHTThanhToan.SelectedIndex = -1;
             txtTongTien.Clear();
+            txtSearchTT.Clear();
             LoadData();
         }
         private void btnThemTT_Click(object sender, EventArgs e)
@@ -75,16 +82,25 @@ namespace GUI
             float.TryParse(txtGIaTien.Text, out giatien);
             int thue;
             int.TryParse(txtThue.Text, out thue);
-           int var = thanhToan_bll.Insert(new ThanhToan_DTO(cboMaKH.Text, cboMaNV.Text, Sokhoisdt, Sokhoisds, giatien, thue, dtNgayThanhToan.Value.Date, cboHTThanhToan.Text, tongTien));
-            if(var == -1)
+            if(txtTenKH.Text=="" ||txtSoKhoisds.Text=="" || txtThue.Text=="" || cboHTThanhToan.Text == "")
             {
-                MessageBox.Show("thông tin không hợp lệ ,hãy kiểm tra lại!!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); 
+                MessageBox.Show("Nhập đầy đủ thông tin.");
             }
             else
             {
-                MessageBox.Show("Thêm thành công,hãy kiểm tra lại!!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                int var = thanhToan_bll.Insert(new ThanhToan_DTO(cboMaKH.Text, cboMaNV.Text, Sokhoisdt, Sokhoisds, giatien, thue, dtNgayThanhToan.Value.Date, cboHTThanhToan.Text, tongTien));
+                if (var == -1)
+                {
+                    MessageBox.Show("thông tin không hợp lệ ,số mới phải lớn hơn số cũ,hãy kiểm tra lại!!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Thêm thành công,hãy kiểm tra lại!!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+                MessageBox.Show("Thêm thành công");
+                LoadData();
             }
-            LoadData();
+          
         }
 
         private void cboMaKH_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,6 +144,7 @@ namespace GUI
         private void btnSuaTT_Click(object sender, EventArgs e)
         {
 
+            
             int MaHD;
             int.TryParse(txtMaHD.Text, out MaHD);
             float tongTien;
@@ -141,16 +158,27 @@ namespace GUI
             int thue;
             int.TryParse(txtThue.Text, out thue);
 
-            int var = thanhToan_bll.Update(new ThanhToan_DTO(MaHD, cboMaKH.Text, cboMaNV.Text, Sokhoisdt, Sokhoisds, giatien, thue, dtNgayThanhToan.Value.Date, cboHTThanhToan.Text, tongTien));
-            if (var == -1)
+            if (txtTenKH.Text == "" || txtSoKhoisds.Text == "" || txtThue.Text == "" || cboHTThanhToan.Text == "")
             {
-                MessageBox.Show("thông tin không hợp lệ ,hãy kiểm tra lại!!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                MessageBox.Show("Nhập đầy đủ thông tin.");
             }
             else
             {
-                MessageBox.Show("Sửa thành công,hãy kiểm tra lại!!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                int var = thanhToan_bll.Update(new ThanhToan_DTO(MaHD, cboMaKH.Text, cboMaNV.Text, Sokhoisdt, Sokhoisds, giatien, thue, dtNgayThanhToan.Value.Date, cboHTThanhToan.Text, tongTien));
+                if (var == 0)
+                {
+                    MessageBox.Show("thông tin không hợp lệ , số mới lớn hơn số cũ ,hãy kiểm tra lại!!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thành công,hãy kiểm tra lại!!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+                LoadData();
+                MessageBox.Show("Sử thành công");
+
             }
-            LoadData();
+
+          
 
           
           
@@ -158,17 +186,21 @@ namespace GUI
 
         private void dgvThanhToan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int hang = e.RowIndex;
-            txtMaHD.Text = dgvThanhToan[5,hang].Value.ToString();
-            cboMaKH.Text = dgvThanhToan[1, hang].Value.ToString();
-            cboMaNV.Text = dgvThanhToan[2, hang].Value.ToString();
-            txtSoKhoisdt.Text = dgvThanhToan[6, hang].Value.ToString();
-            txtSoKhoisds.Text = dgvThanhToan[7, hang].Value.ToString();
-            txtGIaTien.Text = dgvThanhToan[8, hang].Value.ToString();
-            txtThue.Text = dgvThanhToan[9, hang].Value.ToString();
-            //dtNgayThanhToan.Text = dgvThanhToan[3, hang].Value.ToString();
-            cboHTThanhToan.Text = dgvThanhToan[4, hang].Value.ToString();
-            txtTongTien.Text = dgvThanhToan[10, hang].Value.ToString();
+
+
+
+            txtMaHD.Text = dgvThanhToan.CurrentRow.Cells[0].Value.ToString();
+            cboMaKH.Text = dgvThanhToan.CurrentRow.Cells[1].Value.ToString();
+            cboMaNV.Text = dgvThanhToan.CurrentRow.Cells[2].Value.ToString();
+            txtSoKhoisdt.Text = dgvThanhToan.CurrentRow.Cells[3].Value.ToString();
+            txtSoKhoisds.Text = dgvThanhToan.CurrentRow.Cells[4].Value.ToString();
+            txtGIaTien.Text = dgvThanhToan.CurrentRow.Cells[5].Value.ToString();
+            txtThue.Text = dgvThanhToan.CurrentRow.Cells[6].Value.ToString();
+            dtNgayThanhToan.Text = dgvThanhToan.CurrentRow.Cells[7].Value.ToString();
+            cboHTThanhToan.Text = dgvThanhToan.CurrentRow.Cells[8].Value.ToString();
+            txtTongTien.Text = dgvThanhToan.CurrentRow.Cells[9].Value.ToString();
+
+
 
 
 
@@ -177,9 +209,34 @@ namespace GUI
 
         private void ptSearchTT_Click(object sender, EventArgs e)
         {
-            int MaHD;
-            int.TryParse(txtSearchTT.Text, out MaHD);
-            dgvThanhToan.DataSource = thanhToan_bll.Search(MaHD,txtSearchTT.Text);
+            if (txtSearchTT.Text == "")
+            {
+                MessageBox.Show("Nhập thông tin tìm kiếm");
+            }
+            else
+            {
+               
+                int MaHD;
+                int.TryParse(txtSearchTT.Text, out MaHD);
+                dgvThanhToan.DataSource = thanhToan_bll.Search(MaHD, txtSearchTT.Text);
+
+
+
+
+
+                txtMaHD.Text = dgvThanhToan.CurrentRow.Cells[0].Value.ToString();
+                cboMaKH.Text = dgvThanhToan.CurrentRow.Cells[1].Value.ToString();
+                cboMaNV.Text = dgvThanhToan.CurrentRow.Cells[2].Value.ToString();
+                txtSoKhoisdt.Text = dgvThanhToan.CurrentRow.Cells[3].Value.ToString();
+                txtSoKhoisds.Text = dgvThanhToan.CurrentRow.Cells[4].Value.ToString();
+                txtGIaTien.Text = dgvThanhToan.CurrentRow.Cells[5].Value.ToString();
+                txtThue.Text = dgvThanhToan.CurrentRow.Cells[6].Value.ToString();
+                dtNgayThanhToan.Text = dgvThanhToan.CurrentRow.Cells[7].Value.ToString();
+                cboHTThanhToan.Text = dgvThanhToan.CurrentRow.Cells[8].Value.ToString();
+                txtTongTien.Text = dgvThanhToan.CurrentRow.Cells[9].Value.ToString();
+            }
+            
+
         }
 
         private void btnResetTT_Click(object sender, EventArgs e)
@@ -189,33 +246,8 @@ namespace GUI
 
         private void txtXuatHD_Click(object sender, EventArgs e)
         {
-            //if(txtTenKH.Text=="" || txtDiaChi.Text=="" || txtGIaTien.Text=="" || txtThue.Text=="" || cboHTThanhToan.Text=="" || txtTongTien.Text == "")
-            //{
-            //    MessageBox.Show("Chọn thông tin khách hàng cần xuất hóa đơn ");
-
-            //}
-            //else
-            //{
-            //    DataTable dataTable = new DataTable();
-            //    dataTable.Rows[0][0] = txtMaHD.Text;
-            //    dataTable.Rows[0][1] = cboMaKH.Text;
-            //    dataTable.Rows[0][2] = txtTenKH.Text;
-            //    dataTable.Rows[0][3] = txtDiaChi.Text;
-            //    dataTable.Rows[0][4] = cboMaNV.Text;
-            //    dataTable.Rows[0][5] = txtSoKhoisdt.Text;
-            //    dataTable.Rows[0][6] = txtSoKhoisds.Text;
-            //    dataTable.Rows[0][7] = txtGIaTien.Text;
-            //    dataTable.Rows[0][8] = txtThue.Text;
-            //    dataTable.Rows[0][9] = dtNgayThanhToan.Value.Date;
-            //    dataTable.Rows[0][10] = cboHTThanhToan.Text;
-            //    dataTable.Rows[0][11] = txtTongTien.Text;
-
-
-            //}
-
-           
-
-             
+          
+            
             int MaHD;
             int.TryParse(txtMaHD.Text, out MaHD);
             float tongTien;
@@ -229,14 +261,44 @@ namespace GUI
             int thue;
             int.TryParse(txtThue.Text, out thue);
 
-            float soSD = soCTS - soCTT;
 
-            thanhToan_bll.ExportInvoiceToNotepad(MaHD,cboMaKH.Text, txtTenKH.Text, txtDiaChi.Text, cboMaNV.Text, soCTT, soCTS, soSD, giaTien, thue, dtNgayThanhToan.Value.Date, cboHTThanhToan.Text, tongTien);
+            if (txtTenKH.Text == "" || txtSoKhoisds.Text == "" || txtThue.Text == "" || cboHTThanhToan.Text == "")
+            {
+                MessageBox.Show("Nhập đầy đủ thông tin.");
+            }
+            else
+            {
+                float soSD = soCTS - soCTT;
+
+                thanhToan_bll.ExportInvoiceToNotepad(MaHD, cboMaKH.Text, txtTenKH.Text, txtDiaChi.Text, cboMaNV.Text, soCTT, soCTS, soSD, giaTien, thue, dtNgayThanhToan.Value.Date, cboHTThanhToan.Text, tongTien);
+
+            }
+           
+
+
            
 
 
 
 
+        }
+
+        private void btnXoaTT_Click(object sender, EventArgs e)
+        {
+
+
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa thông tin", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                int MaHD;
+                int.TryParse(txtMaHD.Text, out MaHD);
+                thanhToan_bll.Delete_HD(MaHD);
+                MessageBox.Show("Xóa thành công");
+            }
+            else
+            {
+                MessageBox.Show("Xóa thất bại,lỗi hệ thống");
+            }
         }
     }
 }

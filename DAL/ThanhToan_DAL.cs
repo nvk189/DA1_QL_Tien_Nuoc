@@ -18,6 +18,11 @@ namespace DAL
             return config_DAL.GetDataTable("GetHoaDonAndCT_HoaDon");
         }
 
+        //public DataTable capnhat()
+        //{
+        //    return config_DAL.GetDataTable("UpdateSoCTTOnNgayThanhToan");
+        //}
+
         public DataTable Select_MaKH()
         {
             return config_DAL.GetDataTable("select_MaKH_SC");
@@ -96,6 +101,17 @@ namespace DAL
             Name[8] = "@HinhThucTT"; Values[8] = hinhThucTT;
             Name[9] = "@TongTien"; Values[9] = tongTien;
 
+            return config_DAL.Excute(sql, Name, Values, So_luong);
+
+        }
+        public int Delete(int a)
+        {
+
+            int So_luong = 1;
+            string sql = "Delete_HD";
+            string[] Name= new string[So_luong];
+            object[] Values = new object[So_luong];
+            Name[0] = "@MaHD"; Values[0]=a ;
             return config_DAL.Excute(sql, Name, Values, So_luong);
 
         }

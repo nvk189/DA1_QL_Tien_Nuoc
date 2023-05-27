@@ -53,7 +53,7 @@ namespace BLL
 
         public int Update(TaiKhoan_DTO tk)
         {
-            if (MaT(tk.MaNV1) == true  &Tool.CheckStringLength(tk.MatKhau1) == true & Tool.CheckFirstCharacter(tk.TenDN1) == true & Tool.CheckWhitespace(tk.MatKhau1) == true & Tool.CheckWhitespace(tk.TenDN1) == true)
+            if (MaT(tk.MaNV1) == true  &Tool.CheckStringLength(tk.MatKhau1) == true & Tool.CheckFirstCharacter(tk.TenDN1) == true & Tool.CheckWhitespace(tk.MatKhau1) == true & Tool.CheckWhitespace(tk.TenDN1) == true & Tool.CheckStringLength(tk.TenDN1)==true)
             {
                 return daltk.Update(tk.MaNV1, tk.TenDN1, tk.MatKhau1, tk.ChucVu1, tk.TrangThai1);
             }

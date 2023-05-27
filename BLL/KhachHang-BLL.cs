@@ -9,6 +9,12 @@ using System.Data;
 using System.Data.SqlClient;
 using Utility;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
+
+
+using Microsoft.Office.Interop.Excel;
+using DataTable = System.Data.DataTable;
+using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace BLL
 {
@@ -74,5 +80,39 @@ namespace BLL
             return Tool.GetDataTableFromDataGridView(dataTable);
         }
 
+
+
+        //public void ExportToExcel(DataTable dataTable, string filePath)
+        //{
+        //    Application oExcel = new Application();
+        //    oExcel.Visible = true;
+        //    oExcel.DisplayAlerts = false;
+
+        //    Workbook oBook = oExcel.Workbooks.Add(Type.Missing);
+        //    Sheets oSheets = oBook.Worksheets;
+        //    Worksheet oSheet = (Worksheet)oSheets.get_Item(1);
+
+        //    int rowCount = 2;
+        //    int colCount = 1;
+        //    foreach (DataRow row in dataTable.Rows)
+        //    {
+        //        colCount = 1;
+        //        foreach (var item in row.ItemArray)
+        //        {
+        //            oSheet.Cells[1, 1] = "Mã khách hàng";
+        //            oSheet.Cells[1, 2] = "Họ và tên";
+        //            oSheet.Cells[1, 3] = "Địa chỉ";
+        //            oSheet.Cells[1, 4] = "Số điện thoại";
+
+        //            oSheet.Cells[rowCount, colCount] = item.ToString();
+        //            colCount++;
+        //        }
+        //        rowCount++;
+        //    }
+
+        //    oBook.SaveAs(filePath);
+        //    oBook.Close();
+        //    oExcel.Quit();
+        //}
     }
 }

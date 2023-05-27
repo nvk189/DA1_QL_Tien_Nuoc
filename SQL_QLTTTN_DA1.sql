@@ -235,6 +235,9 @@ WHERE
 SoDT=@TuKhoa
 or
  MaKH  LIKE '%'+@TuKhoa+'%'
+
+ or 
+ DiaChi  LIKE '%' +@TuKhoa+ '%'
 END
 Exec Search_KhachHang @TuKhoa='123456'
 
@@ -822,7 +825,26 @@ EXEC UpdateHoaDonAndCT_HoaDon
     @Thue = 10,
     @TongTien = 1000.0;
 
+CREATE PROCEDURE Delete_HD
+    @MaHD INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    BEGIN TRANSACTION;
+        
+    -- Xóa dữ liệu trong bảng CT_HoaDon
+    DELETE FROM CT_HoaDon WHERE MaHD = @MaHD;
+        
+    -- Xóa dữ liệu trong bảng HoaDon
+    DELETE FROM HoaDon WHERE MaHD = @MaHD;
+        
+    COMMIT TRANSACTION;
+    
+    -- Không cần xử lý lỗi vì không kiểm tra lỗi
+END
 
+exec Delete_HD @MaHD=3
 alter PROCEDURE SearchHoaDonAndCT_HoaDon
     @MaHD INT ,
 	@MaKH nvarchar(50)
@@ -842,6 +864,8 @@ exec SearchHoaDonAndCT_HoaDon @MaKH='Online'
 -- trigger tự cập nhật số công tơ nước
 
 --
+select *from HoaDon
+select *from  CT_HoaDon
 CREATE PROCEDURE GetSoCTS
     @MaKH varchar(30)
 AS
@@ -852,3 +876,129 @@ BEGIN
     WHERE HoaDon.MaKH = @MaKH
     ORDER BY NgayThanhToan DESC
 END
+
+drop trigger trg_UpdateSoCTT_MaKH
+
+
+-- Tạo trigger sau khi cập nhật trường SoCTS trong bảng CT_HoaDon
+--CREATE TRIGGER trg_UpdateSoCTT_MaKH
+--ON CT_HoaDon
+--AFTER UPDATE
+--AS
+--BEGIN
+--    -- Kiểm tra nếu SoCTS đã được cập nhật
+--    IF UPDATE(SoCTS)
+--    BEGIN
+--        -- Lấy MaHD và MaKH của bản ghi đang được cập nhật
+--        DECLARE @MaHD INT, @MaKH VARCHAR(30)
+--        SELECT @MaHD = MaHD, @MaKH = MaKH FROM inserted
+
+--        -- Lấy giá trị mới của SoCTS
+--        DECLARE @SoCTS FLOAT
+--        SELECT @SoCTS = SoCTS FROM inserted
+
+--        -- Cập nhật trường SoCTT của bản ghi tiếp theo có cùng MaKH
+--        UPDATE CT_HoaDon
+--        SET SoCTT = @SoCTS
+--        WHERE MaHD = (SELECT MIN(MaHD) FROM CT_HoaDon WHERE MaHD > @MaHD AND MaKH = @MaKH)
+
+--        -- Cập nhật lại trường TongTien theo công thức
+--        UPDATE CT_HoaDon
+--        SET TongTien = (@SoCTS - SoCTT) * GiaTien + ((@SoCTS - SoCTT) * GiaTien) * (Thue / 100)
+--        WHERE MaHD = @MaHD
+--    END
+--END
+
+
+-- Tạo trigger sau khi cập nhật trường SoCTS trong bảng CT_HoaDon
+drop TRIGGER update_new
+
+
+
+
+
+alter TRIGGER a
+ON CT_HoaDon 
+AFTER UPDATE
+AS
+BEGIN
+    -- Kiểm tra nếu SoCTS đã được cập nhật
+    IF UPDATE(SoCTS)
+    BEGIN
+        -- Lấy MaHD, MaKH của bản ghi đang được cập nhật
+        DECLARE @MaHD INT, @MaKH VARCHAR(30)
+        SELECT @MaHD = CT_HoaDon.MaHD, @MaKH = HoaDon.MaKH
+        FROM CT_HoaDon
+        INNER JOIN HoaDon ON CT_HoaDon.MaHD = HoaDon.MaHD
+        WHERE CT_HoaDon.MaHD IN (SELECT MaHD FROM inserted)
+
+        -- Lấy giá trị mới của SoCTS
+        DECLARE @SoCTS FLOAT
+        SELECT @SoCTS = SoCTS FROM inserted
+
+        -- Cập nhật trường SoCTT của bản ghi tiếp theo có cùng MaKH
+        UPDATE CT_HoaDon
+        SET SoCTT = @SoCTS
+        WHERE MaHD = (SELECT MIN(MaHD) FROM CT_HoaDon WHERE MaHD > @MaHD AND MaHD IN (SELECT MaHD FROM HoaDon WHERE MaKH = @MaKH))
+
+        -- Cập nhật lại trường TongTien theo công thức
+        UPDATE CT_HoaDon
+        SET TongTien = (@SoCTS - SoCTT) * GiaTien + (@SoCTS - SoCTT) * GiaTien * Thue / 100
+        WHERE MaHD = @MaHD
+
+        -- Cập nhật lại trường TongTien của các bản ghi có cùng MaKH trong bảng HoaDon
+        UPDATE CT_HoaDon
+        SET TongTien = (SoCTS - SoCTT) * GiaTien + ((SoCTS - SoCTT) * GiaTien) * Thue/100
+        WHERE MaHD IN (SELECT MaHD FROM HoaDon WHERE MaKH = @MaKH)
+    END
+END
+
+--create TRIGGER update_new
+--ON CT_HoaDon 
+--AFTER UPDATE
+--AS
+--BEGIN
+--    -- Kiểm tra nếu SoCTS đã được cập nhật
+--    IF UPDATE(SoCTS)
+--    BEGIN
+--        -- Lấy MaHD, MaKH của bản ghi đang được cập nhật
+--        DECLARE @MaHD INT, @MaKH VARCHAR(30)
+--        SELECT @MaHD = CT_HoaDon.MaHD, @MaKH = HoaDon.MaKH
+--        FROM CT_HoaDon
+--        INNER JOIN HoaDon ON CT_HoaDon.MaHD = HoaDon.MaHD
+--        WHERE CT_HoaDon.MaHD IN (SELECT MaHD FROM inserted)
+
+--        -- Lấy giá trị mới của SoCTS
+--        DECLARE @SoCTS FLOAT
+--        SELECT @SoCTS = SoCTS FROM inserted
+
+--        -- Cập nhật trường SoCTT của bản ghi tiếp theo có NgayThanhToan lớn hơn và gần nhất với bản ghi đang thực hiện
+--        UPDATE CT_HoaDon
+--        SET SoCTT = @SoCTS
+--        WHERE MaHD = (
+--            SELECT TOP 1 MaHD
+--            FROM CT_HoaDon
+--            WHERE MaHD > @MaHD AND NgayThanhToan > (
+--                SELECT NgayThanhToan
+--                FROM CT_HoaDon
+--                WHERE MaHD = @MaHD
+--            )
+--            ORDER BY NgayThanhToan ASC
+--        )
+
+--        -- Cập nhật lại trường TongTien theo công thức
+--        UPDATE CT_HoaDon
+--        SET TongTien = ((SoCTS - SoCTT) * GiaTien) + ((SoCTS - SoCTT) * GiaTien) * (Thue / 100)
+--        WHERE MaHD IN (
+--            SELECT MaHD
+--            FROM HoaDon
+--            WHERE MaKH = @MaKH
+--        )
+--    END
+--END
+
+
+
+
+
+

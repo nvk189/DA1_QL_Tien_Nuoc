@@ -99,7 +99,7 @@
             this.txtGiaNuoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaNuoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtGiaNuoc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGiaNuoc.Location = new System.Drawing.Point(871, 182);
+            this.txtGiaNuoc.Location = new System.Drawing.Point(883, 223);
             this.txtGiaNuoc.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtGiaNuoc.Name = "txtGiaNuoc";
             this.txtGiaNuoc.PasswordChar = '\0';
@@ -174,7 +174,7 @@
             "nds01",
             "nds02",
             "nds03"});
-            this.cboMaN.Location = new System.Drawing.Point(871, 126);
+            this.cboMaN.Location = new System.Drawing.Point(883, 158);
             this.cboMaN.Name = "cboMaN";
             this.cboMaN.Size = new System.Drawing.Size(297, 36);
             this.cboMaN.TabIndex = 18;
@@ -283,7 +283,7 @@
             this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTenKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKH.Location = new System.Drawing.Point(871, 46);
+            this.txtTenKH.Location = new System.Drawing.Point(883, 61);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
@@ -296,7 +296,7 @@
             // lblGiaTien
             // 
             this.lblGiaTien.AutoSize = true;
-            this.lblGiaTien.Location = new System.Drawing.Point(747, 198);
+            this.lblGiaTien.Location = new System.Drawing.Point(759, 236);
             this.lblGiaTien.Name = "lblGiaTien";
             this.lblGiaTien.Size = new System.Drawing.Size(117, 29);
             this.lblGiaTien.TabIndex = 16;
@@ -305,7 +305,7 @@
             // lblTenKH
             // 
             this.lblTenKH.AutoSize = true;
-            this.lblTenKH.Location = new System.Drawing.Point(652, 58);
+            this.lblTenKH.Location = new System.Drawing.Point(664, 72);
             this.lblTenKH.Name = "lblTenKH";
             this.lblTenKH.Size = new System.Drawing.Size(212, 29);
             this.lblTenKH.TabIndex = 15;
@@ -314,7 +314,7 @@
             // lblMaN
             // 
             this.lblMaN.AutoSize = true;
-            this.lblMaN.Location = new System.Drawing.Point(730, 133);
+            this.lblMaN.Location = new System.Drawing.Point(751, 165);
             this.lblMaN.Name = "lblMaN";
             this.lblMaN.Size = new System.Drawing.Size(125, 29);
             this.lblMaN.TabIndex = 14;
@@ -337,7 +337,7 @@
             this.gbDSGiaNuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDSGiaNuoc.Location = new System.Drawing.Point(12, 501);
             this.gbDSGiaNuoc.Name = "gbDSGiaNuoc";
-            this.gbDSGiaNuoc.Size = new System.Drawing.Size(1649, 212);
+            this.gbDSGiaNuoc.Size = new System.Drawing.Size(1649, 300);
             this.gbDSGiaNuoc.TabIndex = 1;
             this.gbDSGiaNuoc.TabStop = false;
             this.gbDSGiaNuoc.Text = "Danh sách giá nước";
@@ -354,11 +354,11 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvGiaNuoc.Location = new System.Drawing.Point(103, 33);
+            this.dgvGiaNuoc.Location = new System.Drawing.Point(87, 33);
             this.dgvGiaNuoc.Name = "dgvGiaNuoc";
             this.dgvGiaNuoc.RowHeadersWidth = 51;
             this.dgvGiaNuoc.RowTemplate.Height = 24;
-            this.dgvGiaNuoc.Size = new System.Drawing.Size(1167, 160);
+            this.dgvGiaNuoc.Size = new System.Drawing.Size(1290, 248);
             this.dgvGiaNuoc.TabIndex = 31;
             this.dgvGiaNuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaNuoc_CellContentClick);
             // 
@@ -380,7 +380,7 @@
             this.txtSearchGN.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearchGN.Name = "txtSearchGN";
             this.txtSearchGN.PasswordChar = '\0';
-            this.txtSearchGN.PlaceholderText = "Mã đăng ký hoặc mã khách hàng";
+            this.txtSearchGN.PlaceholderText = "Tìm kiếm theo mã";
             this.txtSearchGN.SelectedText = "";
             this.txtSearchGN.Size = new System.Drawing.Size(345, 52);
             this.txtSearchGN.TabIndex = 23;
@@ -424,18 +424,18 @@
             // 
             // Column4
             // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.DataPropertyName = "GiaTien";
             this.Column4.HeaderText = "Giá tiền";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 200;
             // 
             // frm_GiaNuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1673, 721);
+            this.ClientSize = new System.Drawing.Size(1673, 803);
             this.Controls.Add(this.ptSearchGN);
             this.Controls.Add(this.txtSearchGN);
             this.Controls.Add(this.gbDSGiaNuoc);

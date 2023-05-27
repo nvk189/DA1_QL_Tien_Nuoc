@@ -433,7 +433,7 @@
             this.Column1.HeaderText = "Mã nhân viên";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
+            this.Column1.Width = 120;
             // 
             // Column2
             // 
@@ -457,7 +457,7 @@
             this.Column4.HeaderText = "Số điện thoại";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 200;
+            this.Column4.Width = 140;
             // 
             // Column5
             // 
@@ -465,15 +465,15 @@
             this.Column5.HeaderText = "Ngày sinh";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 200;
+            this.Column5.Width = 150;
             // 
             // Column6
             // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column6.DataPropertyName = "GioiTinh";
             this.Column6.HeaderText = "Giới tính";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 150;
             // 
             // frm_NhanVien
             // 

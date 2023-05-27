@@ -37,6 +37,7 @@ namespace GUI
             txtTinhTrang.Clear();
             dtSuaChua.DataBindings.Clear();
             cboTrangThai.SelectedIndex = -1;
+            txtSearchSC.Clear();
             ShowData();
         }
         public void ShowData()
@@ -161,7 +162,7 @@ namespace GUI
         {
             if (txtMaSC.Text == "" || cboMaKH.Text == "" || cboMaNV.Text == "" || txtTinhTrang.Text == "")
             {
-                MessageBox.Show("Không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                MessageBox.Show("Chọn thông tin cần xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
             }
             else
@@ -184,17 +185,24 @@ namespace GUI
 
         private void ptSearchSC_Click(object sender, EventArgs e)
         {
+            if (txtSearchSC.Text == "")
+            {
+                MessageBox.Show("NHập thông tin tìm kiếm");
+            }
+            else
+            {
+                dgvSuaChua.DataSource = bllsc.Search_SC(txtSearchSC.Text);
 
-            dgvSuaChua.DataSource = bllsc.Search_SC(txtSearchSC.Text);
-          
-          
 
-            txtMaSC.Text = dgvSuaChua.CurrentRow.Cells[0].Value.ToString();
-            cboMaKH.Text = dgvSuaChua.CurrentRow.Cells[1].Value.ToString();
-            txtTinhTrang.Text = dgvSuaChua.CurrentRow.Cells[2].Value.ToString();
-            dtSuaChua.Text = dgvSuaChua.CurrentRow.Cells[3].Value.ToString();
-            cboMaNV.Text = dgvSuaChua.CurrentRow.Cells[4].Value.ToString();
-            cboTrangThai.Text = dgvSuaChua.CurrentRow.Cells[5].Value.ToString();
+
+                txtMaSC.Text = dgvSuaChua.CurrentRow.Cells[0].Value.ToString();
+                cboMaKH.Text = dgvSuaChua.CurrentRow.Cells[1].Value.ToString();
+                txtTinhTrang.Text = dgvSuaChua.CurrentRow.Cells[2].Value.ToString();
+                dtSuaChua.Text = dgvSuaChua.CurrentRow.Cells[3].Value.ToString();
+                cboMaNV.Text = dgvSuaChua.CurrentRow.Cells[4].Value.ToString();
+                cboTrangThai.Text = dgvSuaChua.CurrentRow.Cells[5].Value.ToString();
+            }
+            
         }
 
         private void dgvSuaChua_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -210,17 +218,23 @@ namespace GUI
 
         private void btnExcelSC_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            //SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = saveFileDialog.FileName;
-                DataTable dataTable = Datagriview();
-                //DataTable dataTable = GetDataTableFromDataGridView(dgvNhanVien);
-                excel.ExportToExcel(dataTable, filePath);
-                MessageBox.Show("Dữ liệu đã được xuất ra file Excel.");
-            }
+            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    string filePath = saveFileDialog.FileName;
+            //    DataTable dataTable = Datagriview();
+            //    //DataTable dataTable = GetDataTableFromDataGridView(dgvNhanVien);
+            //    excel.ExportToExcel(dataTable, filePath);
+            //    MessageBox.Show("Dữ liệu đã được xuất ra file Excel.");
+            //}
+
+            DataTable dataTable = Datagriview();
+
+            string filePath = @"D:\Downloads\Book1.xlsx";
+            excel.ExportToExcel(dataTable, filePath);
+            MessageBox.Show("Xuất thành công");
         }
     }
 }

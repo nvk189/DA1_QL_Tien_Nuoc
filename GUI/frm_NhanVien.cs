@@ -50,6 +50,7 @@ namespace GUI
             txtSoDTNV.Text = "";
             dtNgaySinhNV.Text = "";
             cbGioiTinhNV.SelectedIndex = -1;
+            txtSearchNV.Text = "";
             LoadData();
         }
 
@@ -60,15 +61,23 @@ namespace GUI
 
         private void ptSearchNV_Click(object sender, EventArgs e)
         {
-            dtonv.MaNV1 = txtSearchNV.Text;
-            dgvNhanVien.DataSource = bllnv.Search_NV(dtonv.MaNV1);
+            if (txtSearchNV.Text == "")
+            {
+                MessageBox.Show("Nhập thông tin tìn kiếm");
+            }
+            else
+            {
+                dtonv.MaNV1 = txtSearchNV.Text;
+                dgvNhanVien.DataSource = bllnv.Search_NV(dtonv.MaNV1);
 
-            txtMaNV.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
-            txtTenNV.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
-            txtDiaChiNV.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
-            txtSoDTNV.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
-            dtNgaySinhNV.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
-            cbGioiTinhNV.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
+                txtMaNV.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
+                txtTenNV.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
+                txtDiaChiNV.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
+                txtSoDTNV.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
+                dtNgaySinhNV.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
+                cbGioiTinhNV.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
+            }
+            
         }
 
         private void btnThemNV_Click(object sender, EventArgs e)
@@ -207,18 +216,25 @@ namespace GUI
         
         private void btnExcelNV_Click(object sender, EventArgs e)
         {
-            
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = saveFileDialog.FileName;
-                DataTable dataTable = Datagriview();
-                //DataTable dataTable = GetDataTableFromDataGridView(dgvNhanVien);
-                excel.ExportToExcel(dataTable, filePath);
-                MessageBox.Show("Dữ liệu đã được xuất ra file Excel.");
-            }
+            //SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+
+            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    string filePath = saveFileDialog.FileName;
+            //    DataTable dataTable = Datagriview();
+            //    //DataTable dataTable = GetDataTableFromDataGridView(dgvNhanVien);
+            //    excel.ExportToExcel(dataTable, filePath);
+            //    MessageBox.Show("Dữ liệu đã được xuất ra file Excel.");
+            //}
+
+            // Populate the DataTable with data from the DataGridView
+            DataTable dataTable = Datagriview();
+
+            string filePath = @"D:\Downloads\Book1.xlsx";
+            excel.ExportToExcel(dataTable, filePath);
+            MessageBox.Show("Xuất thành công");
         }
         
     }

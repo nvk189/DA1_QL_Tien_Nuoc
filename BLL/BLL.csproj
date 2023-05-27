@@ -248,6 +248,7 @@
     <Compile Include="SuaChua_BLL.cs" />
     <Compile Include="TaiKhoan_BLL.cs" />
     <Compile Include="ThanhToan_BLL.cs" />
+    <Compile Include="ThongKe_BLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

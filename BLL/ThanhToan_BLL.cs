@@ -22,7 +22,10 @@ namespace BLL
         {
             return thanhToan_DAL.Select_HD();
         }
-
+        //public DataTable capnhat()
+        //{
+        //     return thanhToan_DAL.capnhat();
+        //}
         public DataTable Search(int b, string a)
         {
             return thanhToan_DAL.Search_TT(b, a);
@@ -50,10 +53,10 @@ namespace BLL
         }
         public int Insert(ThanhToan_DTO tt)
         {
-            double a = TongTien((float)tt.SoCTT1, (float)tt.SoCTS1, (float)tt.GiaTien1, (int)tt.Thue1);
-            if (a > 0)
+            float a = TongTien((float)tt.SoCTT1, (float)tt.SoCTS1, (float)tt.GiaTien1, (int)tt.Thue1);
+            if (a >0 & (float)tt.SoCTS1 > (float)tt.SoCTT1)
             {
-                return thanhToan_DAL.Insert_TT(tt.MaKH1, tt.MaNV1, (float)tt.SoCTT1, (float)tt.SoCTS1, (float)tt.GiaTien1, (int)tt.Thue1, tt.NgayTT1, tt.HinhThucTT1, (float)a);
+                return thanhToan_DAL.Insert_TT(tt.MaKH1, tt.MaNV1, (float)tt.SoCTT1, (float)tt.SoCTS1, (float)tt.GiaTien1, (int)tt.Thue1, tt.NgayTT1, tt.HinhThucTT1, a);
             }
             else
             {
@@ -65,49 +68,64 @@ namespace BLL
         }
         public int Update(ThanhToan_DTO tt)
         {
-            //double a = TongTien((float)tt.SoCTT1, (float)tt.SoCTS1, (float)tt.GiaTien1, (int)tt.Thue1);
+            float a = TongTien((float)tt.SoCTT1, (float)tt.SoCTS1, (float)tt.GiaTien1, (int)tt.Thue1);
 
-            return thanhToan_DAL.Update_TT(tt.MaHD1, tt.MaKH1, tt.MaNV1, (float)tt.SoCTT1, (float)tt.SoCTS1, (float)tt.GiaTien1, (int)tt.Thue1, tt.NgayTT1, tt.HinhThucTT1, (float)tt.TongTien1);
+            if (a >0 & (float)tt.SoCTS1 > (float)tt.SoCTT1)
+            {
+                return thanhToan_DAL.Update_TT(tt.MaHD1, tt.MaKH1, tt.MaNV1, (float)tt.SoCTT1, (float)tt.SoCTS1, (float)tt.GiaTien1, (int)tt.Thue1, tt.NgayTT1, tt.HinhThucTT1, a);
+            }
+            else
+            {
+                return 0;
+            }
+            
+
+           
 
 
 
         }
 
-        public double TongTien(float a, float b, float c, int d)
+        public float TongTien(float a, float b, float c, int d)
         {
-            double TongTien;
+            float TongTien;
             TongTien = (b - a) * c + (((b - a) * c) * d / 100);
             return TongTien;
         }
 
-
+        public int Delete_HD(int a)
+        {
+            return thanhToan_DAL.Delete(a);
+        }
 
         public void ExportInvoiceToNotepad(int maHD, string maKH, string tenkh, string diachi, string maNV, float soCTT, float soCTS, float soSD, float giaTien, int thue, DateTime ngayTT, string hinhThucTT, float tongTien)
         {
             // Tạo nội dung hóa đơn
-            string invoiceContent = $"\r\r\r\r\r Hóa Đơn thanh toán tiền nước Ngọc Tuấn \r\n";
-            
-            invoiceContent += $"\n";
+            string invoiceContent = $"\t\tCÔNG TY NƯỚC SẠCH NGỌC TUẤN\n" +
+            $"\tĐịa chỉ thị chấn Lương Bằng -Kim Động -Hưng Yên \n" +
+            $"\tHotline: 01234567\r\n";
+
+            invoiceContent += $"\n Hóa Đơn thanh toán tiền nước Ngọc Tuấn \r\n";            
             invoiceContent += $"\n";
             invoiceContent += $"Thông tin hóa đơn \n";
-            invoiceContent += $"Mã HD:        {maHD}\r\n";
-            invoiceContent += $"Mã KH:        {maKH}\r\n";
-            invoiceContent += $"Họ và tên:    {tenkh}\r\n";
-            invoiceContent += $"Địa Chỉ:      {diachi}\r\n";
-            invoiceContent += $"Mã NV:        {maNV}\r\n";
-            invoiceContent += $"Số cũ:        {soCTT}\r\n";
-            invoiceContent += $"Số mới:       {soCTS}\r\n";
-            invoiceContent += $"Số SD:        {soSD}\r\n";
-            invoiceContent += $"Giá tiền:     {giaTien}\r\n";
-            invoiceContent += $"Thuế:        {thue}\r\n";
-            invoiceContent += $"Ngày thanh toán: {ngayTT.ToShortDateString()}\r\n";
+            invoiceContent += $"Mã HD:               {maHD}\r\n";
+            invoiceContent += $"Mã KH:               {maKH}\r\n";
+            invoiceContent += $"Họ và tên:           {tenkh}\r\n";
+            invoiceContent += $"Địa Chỉ:             {diachi}\r\n";
+            invoiceContent += $"Mã NV:               {maNV}\r\n";
+            invoiceContent += $"Số cũ:               {soCTT}\r\n";
+            invoiceContent += $"Số mới:              {soCTS}\r\n";
+            invoiceContent += $"Số sử dụng:          {soSD}\r\n";
+            invoiceContent += $"Giá tiền:            {giaTien}đ\r\n";
+            invoiceContent += $"Thuế:                {thue}%\r\n";
+            invoiceContent += $"Ngày thanh toán:     {ngayTT.ToShortDateString()}\r\n";
             invoiceContent += $"Hình thức thanh toán: {hinhThucTT}\r\n";
             invoiceContent += $"_____________________________________________________________\r\n";
-            invoiceContent += $"Tổng :       {tongTien}\r\n";
-            invoiceContent += $" \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t \t\t\t\t\t\t\t\tKý Tên\r\n";
+            invoiceContent += $"Tổng :        {tongTien}đ\r\n";
+            invoiceContent += $"\n \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Ký Tên\r\n";
 
             // Lưu hóa đơn vào file Notepad
-            string filePath = "HoaDON.txt";
+            string filePath = "ThanhToan.txt";
             File.WriteAllText(filePath, invoiceContent);
 
             // Mở file Notepad để hiển thị hóa đơn

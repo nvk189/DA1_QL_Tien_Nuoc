@@ -60,7 +60,8 @@
             this.lblMaKH = new System.Windows.Forms.Label();
             this.gbDsThanhToan = new System.Windows.Forms.GroupBox();
             this.dgvThanhToan = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearchTT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ptSearchTT = new System.Windows.Forms.PictureBox();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,8 +72,6 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSearchTT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ptSearchTT = new System.Windows.Forms.PictureBox();
             this.gbTTThanhToan.SuspendLayout();
             this.gbDsThanhToan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhToan)).BeginInit();
@@ -111,9 +110,9 @@
             this.gbTTThanhToan.Controls.Add(this.lblTenKH);
             this.gbTTThanhToan.Controls.Add(this.lblMaKH);
             this.gbTTThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTTThanhToan.Location = new System.Drawing.Point(38, 73);
+            this.gbTTThanhToan.Location = new System.Drawing.Point(78, 59);
             this.gbTTThanhToan.Name = "gbTTThanhToan";
-            this.gbTTThanhToan.Size = new System.Drawing.Size(1641, 483);
+            this.gbTTThanhToan.Size = new System.Drawing.Size(1641, 485);
             this.gbTTThanhToan.TabIndex = 0;
             this.gbTTThanhToan.TabStop = false;
             this.gbTTThanhToan.Text = "Thông tin thanh toán";
@@ -141,7 +140,7 @@
             this.txtMaHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaHD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtMaHD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaHD.Location = new System.Drawing.Point(252, 98);
+            this.txtMaHD.Location = new System.Drawing.Point(268, 90);
             this.txtMaHD.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.PasswordChar = '\0';
@@ -203,6 +202,7 @@
             this.btnXoaTT.Size = new System.Drawing.Size(152, 55);
             this.btnXoaTT.TabIndex = 43;
             this.btnXoaTT.Text = "Xóa";
+            this.btnXoaTT.Click += new System.EventHandler(this.btnXoaTT_Click);
             // 
             // btnSuaTT
             // 
@@ -254,7 +254,7 @@
             this.txtTongTien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTongTien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTongTien.Location = new System.Drawing.Point(1272, 317);
+            this.txtTongTien.Location = new System.Drawing.Point(1316, 317);
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.PasswordChar = '\0';
@@ -279,7 +279,7 @@
             this.cboHTThanhToan.Items.AddRange(new object[] {
             "Online",
             "Offline"});
-            this.cboHTThanhToan.Location = new System.Drawing.Point(1272, 248);
+            this.cboHTThanhToan.Location = new System.Drawing.Point(1316, 238);
             this.cboHTThanhToan.Name = "cboHTThanhToan";
             this.cboHTThanhToan.Size = new System.Drawing.Size(231, 36);
             this.cboHTThanhToan.TabIndex = 11;
@@ -287,7 +287,7 @@
             // dtNgayThanhToan
             // 
             this.dtNgayThanhToan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayThanhToan.Location = new System.Drawing.Point(1272, 183);
+            this.dtNgayThanhToan.Location = new System.Drawing.Point(1316, 170);
             this.dtNgayThanhToan.Name = "dtNgayThanhToan";
             this.dtNgayThanhToan.Size = new System.Drawing.Size(231, 34);
             this.dtNgayThanhToan.TabIndex = 10;
@@ -306,7 +306,7 @@
             this.txtSoKhoisdt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoKhoisdt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSoKhoisdt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoKhoisdt.Location = new System.Drawing.Point(747, 165);
+            this.txtSoKhoisdt.Location = new System.Drawing.Point(747, 163);
             this.txtSoKhoisdt.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSoKhoisdt.Name = "txtSoKhoisdt";
             this.txtSoKhoisdt.PasswordChar = '\0';
@@ -352,7 +352,7 @@
             this.txtThue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtThue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtThue.Location = new System.Drawing.Point(1272, 98);
+            this.txtThue.Location = new System.Drawing.Point(1316, 106);
             this.txtThue.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtThue.Name = "txtThue";
             this.txtThue.PasswordChar = '\0';
@@ -399,7 +399,7 @@
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiaChi.Location = new System.Drawing.Point(248, 317);
+            this.txtDiaChi.Location = new System.Drawing.Point(268, 317);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
@@ -421,7 +421,7 @@
             this.cboMaNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaNV.ForeColor = System.Drawing.Color.Black;
             this.cboMaNV.ItemHeight = 30;
-            this.cboMaNV.Location = new System.Drawing.Point(761, 106);
+            this.cboMaNV.Location = new System.Drawing.Point(775, 106);
             this.cboMaNV.Name = "cboMaNV";
             this.cboMaNV.Size = new System.Drawing.Size(142, 36);
             this.cboMaNV.TabIndex = 5;
@@ -440,7 +440,7 @@
             this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTenKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKH.Location = new System.Drawing.Point(252, 232);
+            this.txtTenKH.Location = new System.Drawing.Point(268, 232);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
@@ -462,7 +462,7 @@
             this.cboMaKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaKH.ForeColor = System.Drawing.Color.Black;
             this.cboMaKH.ItemHeight = 30;
-            this.cboMaKH.Location = new System.Drawing.Point(252, 179);
+            this.cboMaKH.Location = new System.Drawing.Point(268, 170);
             this.cboMaKH.Name = "cboMaKH";
             this.cboMaKH.Size = new System.Drawing.Size(136, 36);
             this.cboMaKH.TabIndex = 2;
@@ -471,7 +471,7 @@
             // lblMaNV
             // 
             this.lblMaNV.AutoSize = true;
-            this.lblMaNV.Location = new System.Drawing.Point(538, 98);
+            this.lblMaNV.Location = new System.Drawing.Point(569, 106);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(187, 29);
             this.lblMaNV.TabIndex = 27;
@@ -480,7 +480,7 @@
             // lblHinhThucTT
             // 
             this.lblHinhThucTT.AutoSize = true;
-            this.lblHinhThucTT.Location = new System.Drawing.Point(1004, 248);
+            this.lblHinhThucTT.Location = new System.Drawing.Point(1035, 248);
             this.lblHinhThucTT.Name = "lblHinhThucTT";
             this.lblHinhThucTT.Size = new System.Drawing.Size(262, 29);
             this.lblHinhThucTT.TabIndex = 26;
@@ -489,7 +489,7 @@
             // lblNgayTT
             // 
             this.lblNgayTT.AutoSize = true;
-            this.lblNgayTT.Location = new System.Drawing.Point(1052, 186);
+            this.lblNgayTT.Location = new System.Drawing.Point(1083, 170);
             this.lblNgayTT.Name = "lblNgayTT";
             this.lblNgayTT.Size = new System.Drawing.Size(214, 29);
             this.lblNgayTT.TabIndex = 25;
@@ -498,7 +498,7 @@
             // lblThue
             // 
             this.lblThue.AutoSize = true;
-            this.lblThue.Location = new System.Drawing.Point(1161, 113);
+            this.lblThue.Location = new System.Drawing.Point(1210, 106);
             this.lblThue.Name = "lblThue";
             this.lblThue.Size = new System.Drawing.Size(87, 29);
             this.lblThue.TabIndex = 24;
@@ -516,7 +516,7 @@
             // lblSKS
             // 
             this.lblSKS.AutoSize = true;
-            this.lblSKS.Location = new System.Drawing.Point(623, 245);
+            this.lblSKS.Location = new System.Drawing.Point(623, 248);
             this.lblSKS.Name = "lblSKS";
             this.lblSKS.Size = new System.Drawing.Size(102, 29);
             this.lblSKS.TabIndex = 22;
@@ -525,7 +525,7 @@
             // lblSKT
             // 
             this.lblSKT.AutoSize = true;
-            this.lblSKT.Location = new System.Drawing.Point(639, 163);
+            this.lblSKT.Location = new System.Drawing.Point(639, 170);
             this.lblSKT.Name = "lblSKT";
             this.lblSKT.Size = new System.Drawing.Size(86, 29);
             this.lblSKT.TabIndex = 21;
@@ -534,7 +534,7 @@
             // lblTongTien
             // 
             this.lblTongTien.AutoSize = true;
-            this.lblTongTien.Location = new System.Drawing.Point(1111, 324);
+            this.lblTongTien.Location = new System.Drawing.Point(1150, 324);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(138, 29);
             this.lblTongTien.TabIndex = 20;
@@ -571,9 +571,9 @@
             // 
             this.gbDsThanhToan.Controls.Add(this.dgvThanhToan);
             this.gbDsThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDsThanhToan.Location = new System.Drawing.Point(38, 584);
+            this.gbDsThanhToan.Location = new System.Drawing.Point(52, 550);
             this.gbDsThanhToan.Name = "gbDsThanhToan";
-            this.gbDsThanhToan.Size = new System.Drawing.Size(1641, 459);
+            this.gbDsThanhToan.Size = new System.Drawing.Size(1667, 380);
             this.gbDsThanhToan.TabIndex = 1;
             this.gbDsThanhToan.TabStop = false;
             this.gbDsThanhToan.Text = "Danh sách thanh toán";
@@ -583,7 +583,6 @@
             this.dgvThanhToan.BackgroundColor = System.Drawing.Color.White;
             this.dgvThanhToan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThanhToan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
@@ -598,97 +597,9 @@
             this.dgvThanhToan.Name = "dgvThanhToan";
             this.dgvThanhToan.RowHeadersWidth = 51;
             this.dgvThanhToan.RowTemplate.Height = 24;
-            this.dgvThanhToan.Size = new System.Drawing.Size(1601, 426);
+            this.dgvThanhToan.Size = new System.Drawing.Size(1627, 320);
             this.dgvThanhToan.TabIndex = 0;
             this.dgvThanhToan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThanhToan_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaCTHD";
-            this.Column1.HeaderText = "ID";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "MaHD";
-            this.Column2.HeaderText = "Mã hóa đơn";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "MaKH";
-            this.Column3.HeaderText = "Mã khách hàng";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "MaNV";
-            this.Column4.HeaderText = "Mã nhân viên";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "SoCTT";
-            this.Column5.HeaderText = "Số cũ";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "SoCTS";
-            this.Column6.HeaderText = "Số mới";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "GiaTien";
-            this.Column7.HeaderText = "giá tiền ";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Thue";
-            this.Column8.HeaderText = "Thuế";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "NgayThanhToan";
-            this.Column9.HeaderText = "Ngày thanh toán";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "HinhThucTT";
-            this.Column10.HeaderText = "Hình thức thanh toán";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "TongTien";
-            this.Column11.HeaderText = "Tổng tiền";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 125;
             // 
             // txtSearchTT
             // 
@@ -705,7 +616,7 @@
             this.txtSearchTT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchTT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearchTT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchTT.Location = new System.Drawing.Point(1134, 15);
+            this.txtSearchTT.Location = new System.Drawing.Point(1146, 12);
             this.txtSearchTT.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearchTT.Name = "txtSearchTT";
             this.txtSearchTT.PasswordChar = '\0';
@@ -720,13 +631,93 @@
             this.ptSearchTT.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ptSearchTT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptSearchTT.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchTT.Location = new System.Drawing.Point(1528, 26);
+            this.ptSearchTT.Location = new System.Drawing.Point(1540, 23);
             this.ptSearchTT.Name = "ptSearchTT";
             this.ptSearchTT.Size = new System.Drawing.Size(45, 41);
             this.ptSearchTT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptSearchTT.TabIndex = 25;
             this.ptSearchTT.TabStop = false;
             this.ptSearchTT.Click += new System.EventHandler(this.ptSearchTT_Click);
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaHD";
+            this.Column2.HeaderText = "Mã HD";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 80;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "MaKH";
+            this.Column3.HeaderText = "Mã KH";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 110;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "MaNV";
+            this.Column4.HeaderText = "Mã NV";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 110;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "SoCTT";
+            this.Column5.HeaderText = "Số cũ";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 80;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "SoCTS";
+            this.Column6.HeaderText = "Số mới";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 80;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "GiaTien";
+            this.Column7.HeaderText = "giá tiền ";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Thue";
+            this.Column8.HeaderText = "Thuế";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 80;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "NgayThanhToan";
+            this.Column9.HeaderText = "Ngày thanh toán";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 145;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "HinhThucTT";
+            this.Column10.HeaderText = "Hình thức thanh toán";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 150;
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column11.DataPropertyName = "TongTien";
+            this.Column11.HeaderText = "Tổng tiền";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
             // 
             // frm_ThanhToan
             // 
@@ -786,7 +777,6 @@
         private System.Windows.Forms.DataGridView dgvThanhToan;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtMaHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;

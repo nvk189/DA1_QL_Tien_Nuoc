@@ -50,6 +50,7 @@
     <Compile Include="SuaChua_DAL.cs" />
     <Compile Include="TaiKhoan_DAL.cs" />
     <Compile Include="ThanhToan_DAL.cs" />
+    <Compile Include="ThongKe_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
