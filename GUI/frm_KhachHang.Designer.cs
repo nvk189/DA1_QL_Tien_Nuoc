@@ -34,19 +34,20 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMaKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
+            this.lblTrangThaiKH = new System.Windows.Forms.Label();
+            this.cbonTrangThaiKH = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnExcelKKH = new Guna.UI2.WinForms.Guna2Button();
             this.btnResetKH = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoaKH = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuaKH = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemKH = new Guna.UI2.WinForms.Guna2Button();
-            this.lblNgayBD = new System.Windows.Forms.Label();
             this.lblSoDT = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.lblTenKH = new System.Windows.Forms.Label();
             this.lblMaKH = new System.Windows.Forms.Label();
-            this.dtNgayBD = new System.Windows.Forms.DateTimePicker();
             this.txtSoDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenKH = new Guna.UI2.WinForms.Guna2TextBox();
@@ -67,7 +68,7 @@
             this.gbDsKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDsKhachHang.Location = new System.Drawing.Point(12, 530);
             this.gbDsKhachHang.Name = "gbDsKhachHang";
-            this.gbDsKhachHang.Size = new System.Drawing.Size(1481, 296);
+            this.gbDsKhachHang.Size = new System.Drawing.Size(1534, 367);
             this.gbDsKhachHang.TabIndex = 1;
             this.gbDsKhachHang.TabStop = false;
             this.gbDsKhachHang.Text = "Danh sách khách hàng";
@@ -83,12 +84,13 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column5});
             this.dgvKhachHang.Location = new System.Drawing.Point(30, 33);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
-            this.dgvKhachHang.Size = new System.Drawing.Size(1445, 237);
+            this.dgvKhachHang.Size = new System.Drawing.Size(1498, 308);
             this.dgvKhachHang.TabIndex = 0;
             this.dgvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellContentClick);
             // 
@@ -106,15 +108,15 @@
             this.Column2.HeaderText = "Họ và tên";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 250;
+            this.Column2.Width = 200;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "DiaChi";
-            this.Column3.HeaderText = "Địa chỉ";
+            this.Column3.HeaderText = "Địa chỉ ";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 500;
+            this.Column3.Width = 200;
             // 
             // Column4
             // 
@@ -122,7 +124,15 @@
             this.Column4.HeaderText = "Số điện thoại";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 220;
+            this.Column4.Width = 200;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "TrangThai";
+            this.Column5.HeaderText = "Trạng thái";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
             // 
             // txtMaKH
             // 
@@ -151,17 +161,17 @@
             // 
             this.gbKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbKhachHang.Controls.Add(this.lblTrangThaiKH);
+            this.gbKhachHang.Controls.Add(this.cbonTrangThaiKH);
             this.gbKhachHang.Controls.Add(this.btnExcelKKH);
             this.gbKhachHang.Controls.Add(this.btnResetKH);
             this.gbKhachHang.Controls.Add(this.btnXoaKH);
             this.gbKhachHang.Controls.Add(this.btnSuaKH);
             this.gbKhachHang.Controls.Add(this.btnThemKH);
-            this.gbKhachHang.Controls.Add(this.lblNgayBD);
             this.gbKhachHang.Controls.Add(this.lblSoDT);
             this.gbKhachHang.Controls.Add(this.lblDiaChi);
             this.gbKhachHang.Controls.Add(this.lblTenKH);
             this.gbKhachHang.Controls.Add(this.lblMaKH);
-            this.gbKhachHang.Controls.Add(this.dtNgayBD);
             this.gbKhachHang.Controls.Add(this.txtSoDT);
             this.gbKhachHang.Controls.Add(this.txtDiaChi);
             this.gbKhachHang.Controls.Add(this.txtTenKH);
@@ -169,10 +179,39 @@
             this.gbKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbKhachHang.Location = new System.Drawing.Point(12, 83);
             this.gbKhachHang.Name = "gbKhachHang";
-            this.gbKhachHang.Size = new System.Drawing.Size(1481, 429);
+            this.gbKhachHang.Size = new System.Drawing.Size(1534, 429);
             this.gbKhachHang.TabIndex = 0;
             this.gbKhachHang.TabStop = false;
             this.gbKhachHang.Text = "Thông tin khách hàng";
+            // 
+            // lblTrangThaiKH
+            // 
+            this.lblTrangThaiKH.AutoSize = true;
+            this.lblTrangThaiKH.Location = new System.Drawing.Point(861, 183);
+            this.lblTrangThaiKH.Name = "lblTrangThaiKH";
+            this.lblTrangThaiKH.Size = new System.Drawing.Size(145, 29);
+            this.lblTrangThaiKH.TabIndex = 29;
+            this.lblTrangThaiKH.Text = "Trạng thái :";
+            // 
+            // cbonTrangThaiKH
+            // 
+            this.cbonTrangThaiKH.AutoRoundedCorners = true;
+            this.cbonTrangThaiKH.BackColor = System.Drawing.Color.Transparent;
+            this.cbonTrangThaiKH.BorderRadius = 17;
+            this.cbonTrangThaiKH.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbonTrangThaiKH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbonTrangThaiKH.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbonTrangThaiKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbonTrangThaiKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.cbonTrangThaiKH.ForeColor = System.Drawing.Color.Black;
+            this.cbonTrangThaiKH.ItemHeight = 30;
+            this.cbonTrangThaiKH.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.cbonTrangThaiKH.Location = new System.Drawing.Point(1031, 176);
+            this.cbonTrangThaiKH.Name = "cbonTrangThaiKH";
+            this.cbonTrangThaiKH.Size = new System.Drawing.Size(181, 36);
+            this.cbonTrangThaiKH.TabIndex = 28;
             // 
             // btnExcelKKH
             // 
@@ -264,15 +303,6 @@
             this.btnThemKH.Text = "Lưu";
             this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
             // 
-            // lblNgayBD
-            // 
-            this.lblNgayBD.AutoSize = true;
-            this.lblNgayBD.Location = new System.Drawing.Point(822, 165);
-            this.lblNgayBD.Name = "lblNgayBD";
-            this.lblNgayBD.Size = new System.Drawing.Size(184, 29);
-            this.lblNgayBD.TabIndex = 16;
-            this.lblNgayBD.Text = "Ngày đăng ký :";
-            // 
             // lblSoDT
             // 
             this.lblSoDT.AutoSize = true;
@@ -308,14 +338,6 @@
             this.lblMaKH.Size = new System.Drawing.Size(194, 29);
             this.lblMaKH.TabIndex = 12;
             this.lblMaKH.Text = "Mã khách hàng:";
-            // 
-            // dtNgayBD
-            // 
-            this.dtNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayBD.Location = new System.Drawing.Point(1031, 160);
-            this.dtNgayBD.Name = "dtNgayBD";
-            this.dtNgayBD.Size = new System.Drawing.Size(301, 34);
-            this.dtNgayBD.TabIndex = 5;
             // 
             // txtSoDT
             // 
@@ -400,7 +422,7 @@
             this.txtSearchKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearchKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchKH.Location = new System.Drawing.Point(1141, 38);
+            this.txtSearchKH.Location = new System.Drawing.Point(1163, 38);
             this.txtSearchKH.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearchKH.Name = "txtSearchKH";
             this.txtSearchKH.PasswordChar = '\0';
@@ -422,7 +444,7 @@
             // 
             this.ptSearchKH.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptSearchKH.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchKH.Location = new System.Drawing.Point(1462, 49);
+            this.ptSearchKH.Location = new System.Drawing.Point(1495, 49);
             this.ptSearchKH.Name = "ptSearchKH";
             this.ptSearchKH.Size = new System.Drawing.Size(45, 41);
             this.ptSearchKH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -435,7 +457,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1530, 838);
+            this.ClientSize = new System.Drawing.Size(1583, 909);
             this.Controls.Add(this.ptSearchKH);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSearchKH);
@@ -458,11 +480,9 @@
         private System.Windows.Forms.GroupBox gbDsKhachHang;
         private Guna.UI2.WinForms.Guna2TextBox txtMaKH;
         private System.Windows.Forms.GroupBox gbKhachHang;
-        private System.Windows.Forms.DateTimePicker dtNgayBD;
         private Guna.UI2.WinForms.Guna2TextBox txtSoDT;
         private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
         private Guna.UI2.WinForms.Guna2TextBox txtTenKH;
-        private System.Windows.Forms.Label lblNgayBD;
         private System.Windows.Forms.Label lblSoDT;
         private System.Windows.Forms.Label lblDiaChi;
         private System.Windows.Forms.Label lblTenKH;
@@ -476,9 +496,12 @@
         private System.Windows.Forms.DataGridView dgvKhachHang;
         private System.Windows.Forms.PictureBox ptSearchKH;
         private Guna.UI2.WinForms.Guna2Button btnExcelKKH;
+        private System.Windows.Forms.Label lblTrangThaiKH;
+        private Guna.UI2.WinForms.Guna2ComboBox cbonTrangThaiKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

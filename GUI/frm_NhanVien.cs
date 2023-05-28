@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using DTO;
 using BLL;
 
@@ -49,7 +50,7 @@ namespace GUI
             txtDiaChiNV.Text = "";
             txtSoDTNV.Text = "";
             dtNgaySinhNV.Text = "";
-            cbGioiTinhNV.SelectedIndex = -1;
+            cboGioiTinhNV.SelectedIndex = -1;
             txtSearchNV.Text = "";
             LoadData();
         }
@@ -61,23 +62,40 @@ namespace GUI
 
         private void ptSearchNV_Click(object sender, EventArgs e)
         {
-            if (txtSearchNV.Text == "")
+
+
+
+
+
+            if (string.IsNullOrWhiteSpace(txtSearchNV.Text))
             {
-                MessageBox.Show("Nhập thông tin tìn kiếm");
+                MessageBox.Show("Nhập thông tin tìm kiếm");
             }
             else
             {
-                dtonv.MaNV1 = txtSearchNV.Text;
-                dgvNhanVien.DataSource = bllnv.Search_NV(dtonv.MaNV1);
+                DataTable data = bllnv.Search_NV(txtSearchNV.Text);
 
-                txtMaNV.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
-                txtTenNV.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
-                txtDiaChiNV.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
-                txtSoDTNV.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
-                dtNgaySinhNV.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
-                cbGioiTinhNV.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
+
+                if (data != null && data.Rows.Count > 0)
+                {
+                    dgvNhanVien.DataSource = data;
+
+                    txtMaNV.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
+                    txtTenNV.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
+                    txtDiaChiNV.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
+                    txtSoDTNV.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
+                    dtNgaySinhNV.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
+                    cboGioiTinhNV.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
+                    cboTrangThaiNV.Text = dgvNhanVien.CurrentRow.Cells[6].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin tìm kiếm không tồn tại");
+                }
             }
-            
+
+
+
         }
 
         private void btnThemNV_Click(object sender, EventArgs e)
@@ -101,7 +119,7 @@ namespace GUI
 
                         try
                         {
-                            int var = bllnv.Insert(new NhanVien_DTO(txtMaNV.Text, txtTenNV.Text, txtDiaChiNV.Text, txtSoDTNV.Text, dtNgaySinhNV.Value.Date, cbGioiTinhNV.Text));
+                            int var = bllnv.Insert(new NhanVien_DTO(txtMaNV.Text, txtTenNV.Text, txtDiaChiNV.Text, txtSoDTNV.Text, dtNgaySinhNV.Value.Date, cboGioiTinhNV.Text,cboTrangThaiNV.Text));
 
                             if (var == 1)
                             {
@@ -133,13 +151,16 @@ namespace GUI
 
         private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int hang = e.RowIndex;
-            txtMaNV.Text = dgvNhanVien[0, hang].Value.ToString();
-            txtTenNV.Text = dgvNhanVien[1, hang].Value.ToString();
-            txtDiaChiNV.Text = dgvNhanVien[2, hang].Value.ToString();
-            txtSoDTNV.Text = dgvNhanVien[3, hang].Value.ToString();
-            dtNgaySinhNV.Text = dgvNhanVien[4, hang].Value.ToString();
-            cbGioiTinhNV.Text = dgvNhanVien[5, hang].Value.ToString();
+           
+
+
+            txtMaNV.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
+            txtTenNV.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
+            txtDiaChiNV.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
+            txtSoDTNV.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
+            dtNgaySinhNV.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
+            cboGioiTinhNV.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
+            cboTrangThaiNV.Text = dgvNhanVien.CurrentRow.Cells[6].Value.ToString();
         }
 
         private void btnSuaNV_Click(object sender, EventArgs e)
@@ -159,7 +180,7 @@ namespace GUI
                         
 
 
-                        int var = bllnv.Update(new NhanVien_DTO(txtMaNV.Text, txtTenNV.Text, txtDiaChiNV.Text, txtSoDTNV.Text, dtNgaySinhNV.Value.Date, cbGioiTinhNV.Text));
+                        int var = bllnv.Update(new NhanVien_DTO(txtMaNV.Text, txtTenNV.Text, txtDiaChiNV.Text, txtSoDTNV.Text, dtNgaySinhNV.Value.Date, cboGioiTinhNV.Text,cboTrangThaiNV.Text));
 
                         if (var == 1)
                         {

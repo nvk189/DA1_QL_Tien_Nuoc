@@ -206,7 +206,7 @@
             "Chưa hoàn thành"});
             this.cboTrangThai.Location = new System.Drawing.Point(1358, 154);
             this.cboTrangThai.Name = "cboTrangThai";
-            this.cboTrangThai.Size = new System.Drawing.Size(227, 36);
+            this.cboTrangThai.Size = new System.Drawing.Size(244, 36);
             this.cboTrangThai.TabIndex = 32;
             // 
             // cboMaNV
@@ -426,7 +426,7 @@
             this.gbdsSuaChua.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbdsSuaChua.Location = new System.Drawing.Point(12, 504);
             this.gbdsSuaChua.Name = "gbdsSuaChua";
-            this.gbdsSuaChua.Size = new System.Drawing.Size(1602, 345);
+            this.gbdsSuaChua.Size = new System.Drawing.Size(1602, 407);
             this.gbdsSuaChua.TabIndex = 1;
             this.gbdsSuaChua.TabStop = false;
             this.gbdsSuaChua.Text = "Danh sách sửa chữa";
@@ -449,7 +449,7 @@
             this.dgvSuaChua.Name = "dgvSuaChua";
             this.dgvSuaChua.RowHeadersWidth = 51;
             this.dgvSuaChua.RowTemplate.Height = 24;
-            this.dgvSuaChua.Size = new System.Drawing.Size(1551, 280);
+            this.dgvSuaChua.Size = new System.Drawing.Size(1551, 342);
             this.dgvSuaChua.TabIndex = 1;
             this.dgvSuaChua.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuaChua_CellContentClick);
             // 
@@ -516,13 +516,13 @@
             this.txtSearchSC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchSC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearchSC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchSC.Location = new System.Drawing.Point(1175, 23);
+            this.txtSearchSC.Location = new System.Drawing.Point(1213, 23);
             this.txtSearchSC.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearchSC.Name = "txtSearchSC";
             this.txtSearchSC.PasswordChar = '\0';
             this.txtSearchSC.PlaceholderText = "Tìm kiếm ";
             this.txtSearchSC.SelectedText = "";
-            this.txtSearchSC.Size = new System.Drawing.Size(387, 52);
+            this.txtSearchSC.Size = new System.Drawing.Size(302, 52);
             this.txtSearchSC.TabIndex = 33;
             this.txtSearchSC.Tag = "";
             // 
@@ -531,7 +531,7 @@
             this.ptSearchSC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ptSearchSC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptSearchSC.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchSC.Location = new System.Drawing.Point(1569, 34);
+            this.ptSearchSC.Location = new System.Drawing.Point(1537, 34);
             this.ptSearchSC.Name = "ptSearchSC";
             this.ptSearchSC.Size = new System.Drawing.Size(45, 41);
             this.ptSearchSC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -544,7 +544,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1635, 850);
+            this.ClientSize = new System.Drawing.Size(1635, 923);
             this.Controls.Add(this.ptSearchSC);
             this.Controls.Add(this.txtSearchSC);
             this.Controls.Add(this.gbdsSuaChua);

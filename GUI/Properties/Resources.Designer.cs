@@ -63,6 +63,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3844476_eye_see_show_view_watch_icon {
+            get {
+                object obj = ResourceManager.GetObject("3844476_eye_see_show_view_watch_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8674983_ic_fluent_eye_hide_regular_icon {
+            get {
+                object obj = ResourceManager.GetObject("8674983_ic_fluent_eye_hide_regular_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap banner_wed_2 {
             get {
                 object obj = ResourceManager.GetObject("banner wed 2", resourceCulture);

@@ -28,29 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenDN = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnDangNhap = new Guna.UI2.WinForms.Guna2Button();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
-            this.cbMatKhau = new System.Windows.Forms.CheckBox();
+            this.chk1 = new System.Windows.Forms.CheckBox();
+            this.txtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::GUI.Properties.Resources.banner_wed_2;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(666, 674);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -105,30 +93,6 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Mật khẩu :";
             // 
-            // txtMatKhau
-            // 
-            this.txtMatKhau.AutoRoundedCorners = true;
-            this.txtMatKhau.BorderRadius = 25;
-            this.txtMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMatKhau.DefaultText = "";
-            this.txtMatKhau.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMatKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMatKhau.Location = new System.Drawing.Point(968, 344);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.PasswordChar = '●';
-            this.txtMatKhau.PlaceholderText = "";
-            this.txtMatKhau.SelectedText = "";
-            this.txtMatKhau.Size = new System.Drawing.Size(301, 52);
-            this.txtMatKhau.TabIndex = 22;
-            this.txtMatKhau.UseSystemPasswordChar = true;
-            // 
             // btnDangNhap
             // 
             this.btnDangNhap.AutoRoundedCorners = true;
@@ -165,17 +129,55 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // cbMatKhau
+            // chk1
             // 
-            this.cbMatKhau.AutoSize = true;
-            this.cbMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMatKhau.Location = new System.Drawing.Point(977, 422);
-            this.cbMatKhau.Name = "cbMatKhau";
-            this.cbMatKhau.Size = new System.Drawing.Size(172, 29);
-            this.cbMatKhau.TabIndex = 28;
-            this.cbMatKhau.Text = "Hiện mật khẩu";
-            this.cbMatKhau.UseVisualStyleBackColor = true;
-            this.cbMatKhau.CheckedChanged += new System.EventHandler(this.cbMatKhau_CheckedChanged);
+            this.chk1.AutoSize = true;
+            this.chk1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk1.Location = new System.Drawing.Point(977, 422);
+            this.chk1.Name = "chk1";
+            this.chk1.Size = new System.Drawing.Size(172, 29);
+            this.chk1.TabIndex = 28;
+            this.chk1.Text = "Hiện mật khẩu";
+            this.chk1.UseVisualStyleBackColor = true;
+            this.chk1.CheckedChanged += new System.EventHandler(this.chk1_CheckedChanged);
+            // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.AutoRoundedCorners = true;
+            this.txtMatKhau.BorderRadius = 25;
+            this.txtMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMatKhau.DefaultText = "";
+            this.txtMatKhau.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMatKhau.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMatKhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMatKhau.IconRight = global::GUI.Properties.Resources._3844476_eye_see_show_view_watch_icon;
+            this.txtMatKhau.Location = new System.Drawing.Point(968, 344);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '●';
+            this.txtMatKhau.PlaceholderText = "";
+            this.txtMatKhau.SelectedText = "";
+            this.txtMatKhau.Size = new System.Drawing.Size(301, 52);
+            this.txtMatKhau.TabIndex = 22;
+            this.txtMatKhau.UseSystemPasswordChar = true;
+            this.txtMatKhau.IconRightClick += new System.EventHandler(this.txtMatKhau_IconRightClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::GUI.Properties.Resources.banner_wed_2;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(666, 674);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frm_DangNhap
             // 
@@ -183,7 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1336, 673);
-            this.Controls.Add(this.cbMatKhau);
+            this.Controls.Add(this.chk1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtMatKhau);
@@ -211,6 +213,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMatKhau;
         private Guna.UI2.WinForms.Guna2Button btnDangNhap;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
-        private System.Windows.Forms.CheckBox cbMatKhau;
+        private System.Windows.Forms.CheckBox chk1;
     }
 }

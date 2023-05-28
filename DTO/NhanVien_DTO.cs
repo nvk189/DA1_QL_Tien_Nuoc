@@ -9,19 +9,15 @@ namespace DTO
 {
     public  class NhanVien_DTO
     {
+
         protected string MaNV;
         protected string TenNV;
         protected string DiaChi;
         protected string SoDT;
         protected DateTime NgaySinh;
         protected string GioiTinh;
-
-        public string MaNV1 { get => MaNV; set => MaNV = value; }
-        public string TenNV1 { get => TenNV; set => TenNV = value; }
-        public string DiaChi1 { get => DiaChi; set => DiaChi = value; }
-        public string SoDT1 { get => SoDT; set => SoDT = value; }
-        public DateTime NgaySinh1 { get => NgaySinh; set => NgaySinh = value; }
-        public string GioiTinh1 { get => GioiTinh; set => GioiTinh = value; }
+        protected string TrangThai;
+        
 
         public NhanVien_DTO()
         {
@@ -36,8 +32,9 @@ namespace DTO
             this.SoDT = dtonv.SoDT;
             this.NgaySinh = dtonv.NgaySinh;
             this.GioiTinh = dtonv.GioiTinh;
+            this.TrangThai = dtonv.TrangThai;
         }
-        public NhanVien_DTO(string maNV, string tenNV, string diaChi, string soDT, DateTime ngaySinh, string gioiTinh)
+        public NhanVien_DTO(string maNV, string tenNV, string diaChi, string soDT, DateTime ngaySinh, string gioiTinh, string trangthai)
         {
             this.MaNV = maNV;
             this.TenNV = tenNV;
@@ -45,10 +42,16 @@ namespace DTO
             this.SoDT = soDT;
             this.NgaySinh=ngaySinh;
             this.GioiTinh = gioiTinh;
+            this.TrangThai = trangthai;
             
         }
 
-      
-        
+        public string MaNV1 { get => MaNV; set => MaNV = value; }
+        public string TenNV1 { get => TenNV; set => TenNV = value; }
+        public string DiaChi1 { get => DiaChi; set => DiaChi = value; }
+        public string SoDT1 { get => SoDT; set => SoDT = value; }
+        public DateTime NgaySinh1 { get => NgaySinh; set => NgaySinh = value; }
+        public string GioiTinh1 { get => GioiTinh; set => GioiTinh = value; }
+        public string TrangThai1 { get => TrangThai; set => TrangThai = value; }
     }
 }

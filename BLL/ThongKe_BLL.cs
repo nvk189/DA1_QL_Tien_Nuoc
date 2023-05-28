@@ -42,10 +42,10 @@ namespace BLL
             return  thongKe_DAL.SearchMY(b);
         }
 
-        public DataTable TK_MaKH(string d)
-        {
-            return thongKe_DAL.TK_MaKH(d);
-        }
+        //public DataTable TK_MaKH(string d)
+        //{
+        //    return thongKe_DAL.TK_MaKH(d);
+        //}
 
         public DataTable Excel(DataGridView dataTable)
         {

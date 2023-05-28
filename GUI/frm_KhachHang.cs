@@ -56,16 +56,7 @@ namespace GUI
 
 
         }
-        private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int hang = e.RowIndex;
-            txtMaKH.Text = dgvKhachHang[0, hang].Value.ToString();
-            txtTenKH.Text = dgvKhachHang[1, hang].Value.ToString();
-            txtDiaChi.Text = dgvKhachHang[2, hang].Value.ToString();
-            txtSoDT.Text = dgvKhachHang[3, hang].Value.ToString();
-
-
-        }
+       
 
 
 
@@ -87,7 +78,7 @@ namespace GUI
 
 
 
-                        int var = bllkh.Insert(new KhachHang_DTO(txtMaKH.Text, txtTenKH.Text, txtDiaChi.Text, txtSoDT.Text));
+                        int var = bllkh.Insert(new KhachHang_DTO(txtMaKH.Text, txtTenKH.Text, txtDiaChi.Text, txtSoDT.Text,cbonTrangThaiKH.Text));
 
                        
                         if (var == -1)
@@ -107,8 +98,9 @@ namespace GUI
 
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show(" Lỗi hệ thống ", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
@@ -140,7 +132,7 @@ namespace GUI
                     DialogResult result = MessageBox.Show("Sửa thông tin khách hàng", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
-                        int var=bllkh.Update(new KhachHang_DTO(txtMaKH.Text, txtTenKH.Text, txtDiaChi.Text, txtSoDT.Text));
+                        int var=bllkh.Update(new KhachHang_DTO(txtMaKH.Text, txtTenKH.Text, txtDiaChi.Text, txtSoDT.Text,cbonTrangThaiKH.Text));
                         if(var == 0)
                         {
                             MessageBox.Show("Sửa dữ liệu  thất bại, hãy kiểm tra lại, số điện thoại đã tồn tại ,  số điện thoại gồm 10 số ,mã , số điện thoại không chứa khoảng trắng!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -191,56 +183,52 @@ namespace GUI
         
         private void ptSearchKH_Click(object sender, EventArgs e)
         {
-            if (txtSearchKH.Text == "")
+        
+            if (string.IsNullOrWhiteSpace(txtSearchKH.Text))
             {
                 MessageBox.Show("Nhập thông tin tìm kiếm");
-
             }
             else
             {
-                dgvKhachHang.DataSource = bllkh.Search(txtSearchKH.Text);
+                DataTable data = bllkh.Search(txtSearchKH.Text);
 
+                if (data != null && data.Rows.Count > 0)
+                {
+                    dgvKhachHang.DataSource = data;
 
-
-                txtMaKH.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
-                txtTenKH.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
-                txtDiaChi.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
-                txtSoDT.Text = dgvKhachHang.CurrentRow.Cells[3].Value.ToString();
+                    txtMaKH.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
+                    txtTenKH.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
+                    txtDiaChi.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
+                    txtSoDT.Text = dgvKhachHang.CurrentRow.Cells[3].Value.ToString();
+                    cbonTrangThaiKH.Text= dgvKhachHang.CurrentRow.Cells[4].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin tìm kiếm không tồn tại");
+                }
             }
-           
-           
+
+
 
         }
 
         private void btnExcelKKH_Click(object sender, EventArgs e)
         {
-            ////SaveFileDialog saveFileDialog = new SaveFileDialog();
-            ////saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
-
-
-
-            //SaveFileDialog saveFileDialog = new SaveFileDialog();
-            //saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
-            //saveFileDialog.FileName = @"D:\Downloads\Book1.xlsx";
-
-
-            //if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    string filePath = saveFileDialog.FileName;
-            //    DataTable dataTable = Datagriview();
-            //    //DataTable dataTable = GetDataTableFromDataGridView(dgvNhanVien);
-            //    excel.ExportToExcel(dataTable, filePath);
-            //    MessageBox.Show("Dữ liệu đã được xuất ra file Excel.");
-            //}
-
-
-            //DataTable dataTable = new DataTable();
-            // Populate the DataTable with data from the DataGridView
+            
             DataTable dataTable = Datagriview();
          
             string filePath = @"D:\Downloads\Book1.xlsx";
             excel.ExportToExcel(dataTable, filePath);
             MessageBox.Show("Xuất thành công");
+        }
+
+        private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaKH.Text = dgvKhachHang.CurrentRow.Cells[0].Value.ToString();
+            txtTenKH.Text = dgvKhachHang.CurrentRow.Cells[1].Value.ToString();
+            txtDiaChi.Text = dgvKhachHang.CurrentRow.Cells[2].Value.ToString();
+            txtSoDT.Text = dgvKhachHang.CurrentRow.Cells[3].Value.ToString();
+            cbonTrangThaiKH.Text = dgvKhachHang.CurrentRow.Cells[4].Value.ToString();
         }
     }
 }

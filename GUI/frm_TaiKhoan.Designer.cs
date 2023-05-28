@@ -47,13 +47,13 @@
             this.lblMaNV = new System.Windows.Forms.Label();
             this.gbTaiKhoanDS = new System.Windows.Forms.GroupBox();
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
-            this.txtSearchTK = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ptSearchTK = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearchTK = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ptSearchTK = new System.Windows.Forms.PictureBox();
             this.gbTaiKhoan.SuspendLayout();
             this.gbTaiKhoanDS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
@@ -111,7 +111,7 @@
             this.txtTenNVTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNVTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTenNVTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenNVTK.Location = new System.Drawing.Point(886, 60);
+            this.txtTenNVTK.Location = new System.Drawing.Point(903, 60);
             this.txtTenNVTK.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTenNVTK.Name = "txtTenNVTK";
             this.txtTenNVTK.PasswordChar = '\0';
@@ -207,7 +207,7 @@
             this.cbTrangThai.Items.AddRange(new object[] {
             "True",
             "False"});
-            this.cbTrangThai.Location = new System.Drawing.Point(903, 236);
+            this.cbTrangThai.Location = new System.Drawing.Point(903, 218);
             this.cbTrangThai.Name = "cbTrangThai";
             this.cbTrangThai.Size = new System.Drawing.Size(142, 36);
             this.cbTrangThai.TabIndex = 5;
@@ -226,8 +226,9 @@
             this.cboQuyen.ItemHeight = 30;
             this.cboQuyen.Items.AddRange(new object[] {
             "user",
+            "user_1",
             "admin"});
-            this.cboQuyen.Location = new System.Drawing.Point(886, 135);
+            this.cboQuyen.Location = new System.Drawing.Point(903, 135);
             this.cboQuyen.Name = "cboQuyen";
             this.cboQuyen.Size = new System.Drawing.Size(283, 36);
             this.cboQuyen.TabIndex = 4;
@@ -281,7 +282,7 @@
             // lblTrangThai
             // 
             this.lblTrangThai.AutoSize = true;
-            this.lblTrangThai.Location = new System.Drawing.Point(764, 236);
+            this.lblTrangThai.Location = new System.Drawing.Point(758, 220);
             this.lblTrangThai.Name = "lblTrangThai";
             this.lblTrangThai.Size = new System.Drawing.Size(122, 29);
             this.lblTrangThai.TabIndex = 24;
@@ -375,44 +376,6 @@
             this.dgvTaiKhoan.TabIndex = 0;
             this.dgvTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellContentClick);
             // 
-            // txtSearchTK
-            // 
-            this.txtSearchTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSearchTK.AutoRoundedCorners = true;
-            this.txtSearchTK.BorderRadius = 25;
-            this.txtSearchTK.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearchTK.DefaultText = "";
-            this.txtSearchTK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearchTK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearchTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchTK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearchTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchTK.Location = new System.Drawing.Point(1178, 24);
-            this.txtSearchTK.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtSearchTK.Name = "txtSearchTK";
-            this.txtSearchTK.PasswordChar = '\0';
-            this.txtSearchTK.PlaceholderText = "Tìm kiếm theo mã";
-            this.txtSearchTK.SelectedText = "";
-            this.txtSearchTK.Size = new System.Drawing.Size(273, 52);
-            this.txtSearchTK.TabIndex = 24;
-            this.txtSearchTK.Tag = "";
-            // 
-            // ptSearchTK
-            // 
-            this.ptSearchTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ptSearchTK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptSearchTK.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchTK.Location = new System.Drawing.Point(1458, 35);
-            this.ptSearchTK.Name = "ptSearchTK";
-            this.ptSearchTK.Size = new System.Drawing.Size(45, 41);
-            this.ptSearchTK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptSearchTK.TabIndex = 25;
-            this.ptSearchTK.TabStop = false;
-            this.ptSearchTK.Click += new System.EventHandler(this.ptSearchTK_Click);
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "MaNV";
@@ -452,6 +415,44 @@
             this.Column5.HeaderText = "Hiệu lực";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            // 
+            // txtSearchTK
+            // 
+            this.txtSearchTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSearchTK.AutoRoundedCorners = true;
+            this.txtSearchTK.BorderRadius = 25;
+            this.txtSearchTK.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchTK.DefaultText = "";
+            this.txtSearchTK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearchTK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearchTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchTK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearchTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchTK.Location = new System.Drawing.Point(1178, 24);
+            this.txtSearchTK.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtSearchTK.Name = "txtSearchTK";
+            this.txtSearchTK.PasswordChar = '\0';
+            this.txtSearchTK.PlaceholderText = "Tìm kiếm theo mã";
+            this.txtSearchTK.SelectedText = "";
+            this.txtSearchTK.Size = new System.Drawing.Size(273, 52);
+            this.txtSearchTK.TabIndex = 24;
+            this.txtSearchTK.Tag = "";
+            // 
+            // ptSearchTK
+            // 
+            this.ptSearchTK.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptSearchTK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptSearchTK.Image = global::GUI.Properties.Resources.search_interface_symbol;
+            this.ptSearchTK.Location = new System.Drawing.Point(1458, 35);
+            this.ptSearchTK.Name = "ptSearchTK";
+            this.ptSearchTK.Size = new System.Drawing.Size(45, 41);
+            this.ptSearchTK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptSearchTK.TabIndex = 25;
+            this.ptSearchTK.TabStop = false;
+            this.ptSearchTK.Click += new System.EventHandler(this.ptSearchTK_Click);
             // 
             // frm_TaiKhoan
             // 

@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.gbNhanVien = new System.Windows.Forms.GroupBox();
+            this.cboTrangThaiNV = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblTrangThai = new System.Windows.Forms.Label();
             this.btnExcelNV = new Guna.UI2.WinForms.Guna2Button();
             this.btnResetNV = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoaNV = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuaNV = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemNV = new Guna.UI2.WinForms.Guna2Button();
-            this.cbGioiTinhNV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtNgaySinhNV = new System.Windows.Forms.DateTimePicker();
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.lblNgaySinh = new System.Windows.Forms.Label();
@@ -50,12 +51,14 @@
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.txtSearchNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.ptSearchNV = new System.Windows.Forms.PictureBox();
+            this.cboGioiTinhNV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbNhanVien.SuspendLayout();
             this.gbDSNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -66,12 +69,14 @@
             // 
             this.gbNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbNhanVien.Controls.Add(this.cboGioiTinhNV);
+            this.gbNhanVien.Controls.Add(this.cboTrangThaiNV);
+            this.gbNhanVien.Controls.Add(this.lblTrangThai);
             this.gbNhanVien.Controls.Add(this.btnExcelNV);
             this.gbNhanVien.Controls.Add(this.btnResetNV);
             this.gbNhanVien.Controls.Add(this.btnXoaNV);
             this.gbNhanVien.Controls.Add(this.btnSuaNV);
             this.gbNhanVien.Controls.Add(this.btnThemNV);
-            this.gbNhanVien.Controls.Add(this.cbGioiTinhNV);
             this.gbNhanVien.Controls.Add(this.dtNgaySinhNV);
             this.gbNhanVien.Controls.Add(this.lblGioiTinh);
             this.gbNhanVien.Controls.Add(this.lblNgaySinh);
@@ -86,10 +91,39 @@
             this.gbNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbNhanVien.Location = new System.Drawing.Point(12, 57);
             this.gbNhanVien.Name = "gbNhanVien";
-            this.gbNhanVien.Size = new System.Drawing.Size(1487, 402);
+            this.gbNhanVien.Size = new System.Drawing.Size(1661, 402);
             this.gbNhanVien.TabIndex = 0;
             this.gbNhanVien.TabStop = false;
             this.gbNhanVien.Text = "Thông tin nhân viên";
+            // 
+            // cboTrangThaiNV
+            // 
+            this.cboTrangThaiNV.AutoRoundedCorners = true;
+            this.cboTrangThaiNV.BackColor = System.Drawing.Color.Transparent;
+            this.cboTrangThaiNV.BorderRadius = 17;
+            this.cboTrangThaiNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboTrangThaiNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTrangThaiNV.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTrangThaiNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTrangThaiNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.cboTrangThaiNV.ForeColor = System.Drawing.Color.Black;
+            this.cboTrangThaiNV.ItemHeight = 30;
+            this.cboTrangThaiNV.Items.AddRange(new object[] {
+            "True",
+            "False"});
+            this.cboTrangThaiNV.Location = new System.Drawing.Point(1462, 75);
+            this.cboTrangThaiNV.Name = "cboTrangThaiNV";
+            this.cboTrangThaiNV.Size = new System.Drawing.Size(193, 36);
+            this.cboTrangThaiNV.TabIndex = 28;
+            // 
+            // lblTrangThai
+            // 
+            this.lblTrangThai.AutoSize = true;
+            this.lblTrangThai.Location = new System.Drawing.Point(1301, 82);
+            this.lblTrangThai.Name = "lblTrangThai";
+            this.lblTrangThai.Size = new System.Drawing.Size(145, 29);
+            this.lblTrangThai.TabIndex = 27;
+            this.lblTrangThai.Text = "Trạng thái :";
             // 
             // btnExcelNV
             // 
@@ -180,26 +214,6 @@
             this.btnThemNV.TabIndex = 22;
             this.btnThemNV.Text = "Lưu";
             this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
-            // 
-            // cbGioiTinhNV
-            // 
-            this.cbGioiTinhNV.AutoRoundedCorners = true;
-            this.cbGioiTinhNV.BackColor = System.Drawing.Color.Transparent;
-            this.cbGioiTinhNV.BorderRadius = 17;
-            this.cbGioiTinhNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbGioiTinhNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGioiTinhNV.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGioiTinhNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGioiTinhNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGioiTinhNV.ForeColor = System.Drawing.Color.Black;
-            this.cbGioiTinhNV.ItemHeight = 30;
-            this.cbGioiTinhNV.Items.AddRange(new object[] {
-            "Nam ",
-            "Nữ"});
-            this.cbGioiTinhNV.Location = new System.Drawing.Point(958, 243);
-            this.cbGioiTinhNV.Name = "cbGioiTinhNV";
-            this.cbGioiTinhNV.Size = new System.Drawing.Size(193, 36);
-            this.cbGioiTinhNV.TabIndex = 9;
             // 
             // dtNgaySinhNV
             // 
@@ -363,7 +377,7 @@
             this.gbDSNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDSNhanVien.Location = new System.Drawing.Point(12, 465);
             this.gbDSNhanVien.Name = "gbDSNhanVien";
-            this.gbDSNhanVien.Size = new System.Drawing.Size(1487, 439);
+            this.gbDSNhanVien.Size = new System.Drawing.Size(1661, 439);
             this.gbDSNhanVien.TabIndex = 1;
             this.gbDSNhanVien.TabStop = false;
             this.gbDSNhanVien.Text = "Danh sách nhân viên";
@@ -380,12 +394,13 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6});
+            this.Column6,
+            this.Column7});
             this.dgvNhanVien.Location = new System.Drawing.Point(15, 33);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.RowTemplate.Height = 24;
-            this.dgvNhanVien.Size = new System.Drawing.Size(1466, 391);
+            this.dgvNhanVien.Size = new System.Drawing.Size(1640, 391);
             this.dgvNhanVien.TabIndex = 25;
             this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellContentClick);
             // 
@@ -404,7 +419,7 @@
             this.txtSearchNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearchNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchNV.Location = new System.Drawing.Point(1022, 15);
+            this.txtSearchNV.Location = new System.Drawing.Point(1109, 15);
             this.txtSearchNV.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearchNV.Name = "txtSearchNV";
             this.txtSearchNV.PasswordChar = '\0';
@@ -419,13 +434,33 @@
             this.ptSearchNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ptSearchNV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptSearchNV.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchNV.Location = new System.Drawing.Point(1416, 26);
+            this.ptSearchNV.Location = new System.Drawing.Point(1503, 26);
             this.ptSearchNV.Name = "ptSearchNV";
             this.ptSearchNV.Size = new System.Drawing.Size(45, 41);
             this.ptSearchNV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptSearchNV.TabIndex = 24;
             this.ptSearchNV.TabStop = false;
             this.ptSearchNV.Click += new System.EventHandler(this.ptSearchNV_Click);
+            // 
+            // cboGioiTinhNV
+            // 
+            this.cboGioiTinhNV.AutoRoundedCorners = true;
+            this.cboGioiTinhNV.BackColor = System.Drawing.Color.Transparent;
+            this.cboGioiTinhNV.BorderRadius = 17;
+            this.cboGioiTinhNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboGioiTinhNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGioiTinhNV.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboGioiTinhNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboGioiTinhNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.cboGioiTinhNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboGioiTinhNV.ItemHeight = 30;
+            this.cboGioiTinhNV.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cboGioiTinhNV.Location = new System.Drawing.Point(958, 236);
+            this.cboGioiTinhNV.Name = "cboGioiTinhNV";
+            this.cboGioiTinhNV.Size = new System.Drawing.Size(257, 36);
+            this.cboGioiTinhNV.TabIndex = 29;
             // 
             // Column1
             // 
@@ -449,7 +484,7 @@
             this.Column3.HeaderText = "Địa chỉ";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 450;
+            this.Column3.Width = 300;
             // 
             // Column4
             // 
@@ -469,18 +504,26 @@
             // 
             // Column6
             // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column6.DataPropertyName = "GioiTinh";
             this.Column6.HeaderText = "Giới tính";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.Width = 120;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.DataPropertyName = "TrangThai";
+            this.Column7.HeaderText = "Trạng thái";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
             // 
             // frm_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1511, 948);
+            this.ClientSize = new System.Drawing.Size(1685, 948);
             this.Controls.Add(this.ptSearchNV);
             this.Controls.Add(this.txtSearchNV);
             this.Controls.Add(this.gbDSNhanVien);
@@ -505,7 +548,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSoDTNV;
         private Guna.UI2.WinForms.Guna2TextBox txtDiaChiNV;
         private Guna.UI2.WinForms.Guna2TextBox txtTenNV;
-        private Guna.UI2.WinForms.Guna2ComboBox cbGioiTinhNV;
         private System.Windows.Forms.DateTimePicker dtNgaySinhNV;
         private System.Windows.Forms.Label lblGioiTinh;
         private System.Windows.Forms.Label lblNgaySinh;
@@ -521,11 +563,15 @@
         private Guna.UI2.WinForms.Guna2Button btnExcelNV;
         private Guna.UI2.WinForms.Guna2Button btnResetNV;
         private System.Windows.Forms.DataGridView dgvNhanVien;
+        private Guna.UI2.WinForms.Guna2ComboBox cboTrangThaiNV;
+        private System.Windows.Forms.Label lblTrangThai;
+        private Guna.UI2.WinForms.Guna2ComboBox cboGioiTinhNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

@@ -49,7 +49,7 @@ namespace BLL
 
             if (MaT(d.MaNV1) == false & SoDTT(d.SoDT1) ==false & Tool.CheckWhitespace(d.MaNV1)==true & Tool.CheckWhitespace(d.SoDT1)==true & Tool.CheckStringLengthint(d.SoDT1))
             {
-                return dalnv.Insert_NV(d.MaNV1, Tool.Chuan_Hoa_Chuoi(d.TenNV1), Tool.Chuan_Hoa_Chuoi(d.DiaChi1), d.SoDT1, d.NgaySinh1, d.GioiTinh1);
+                return dalnv.Insert_NV(d.MaNV1, Tool.Chuan_Hoa_Chuoi(d.TenNV1), Tool.Chuan_Hoa_Chuoi(d.DiaChi1), d.SoDT1, d.NgaySinh1,d.GioiTinh1,d.TrangThai1);
             }
             else
             {
@@ -61,7 +61,7 @@ namespace BLL
         {
             if (  Tool.CheckWhitespace(d.SoDT1) == true & Tool.CheckStringLengthint(d.SoDT1)==true)
             {
-                return dalnv.Upadate_NV(d.MaNV1, Tool.Chuan_Hoa_Chuoi(d.TenNV1), Tool.Chuan_Hoa_Chuoi(d.DiaChi1), d.SoDT1, d.NgaySinh1, d.GioiTinh1);
+                return dalnv.Upadate_NV(d.MaNV1, Tool.Chuan_Hoa_Chuoi(d.TenNV1), Tool.Chuan_Hoa_Chuoi(d.DiaChi1), d.SoDT1, d.NgaySinh1, d.GioiTinh1,d.TrangThai1);
             }
             else
             {

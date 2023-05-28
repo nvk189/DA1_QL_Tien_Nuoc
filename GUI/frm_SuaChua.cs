@@ -186,24 +186,34 @@ namespace GUI
 
         private void ptSearchSC_Click(object sender, EventArgs e)
         {
-            if (txtSearchSC.Text == "")
+           
+
+            if (string.IsNullOrWhiteSpace(txtSearchSC.Text))
             {
-                MessageBox.Show("NHập thông tin tìm kiếm");
+                MessageBox.Show("Nhập thông tin tìm kiếm");
             }
             else
             {
-                dgvSuaChua.DataSource = bllsc.Search_SC(txtSearchSC.Text);
+                
+                DataTable data = bllsc.Search_SC(txtSearchSC.Text);
 
+                if (data != null && data.Rows.Count > 0)
+                {
+                    dgvSuaChua.DataSource = data;
 
-
-                txtMaSC.Text = dgvSuaChua.CurrentRow.Cells[0].Value.ToString();
-                cboMaKH.Text = dgvSuaChua.CurrentRow.Cells[1].Value.ToString();
-                txtTinhTrang.Text = dgvSuaChua.CurrentRow.Cells[2].Value.ToString();
-                dtSuaChua.Text = dgvSuaChua.CurrentRow.Cells[3].Value.ToString();
-                cboMaNV.Text = dgvSuaChua.CurrentRow.Cells[4].Value.ToString();
-                cboTrangThai.Text = dgvSuaChua.CurrentRow.Cells[5].Value.ToString();
+                    txtMaSC.Text = dgvSuaChua.CurrentRow.Cells[0].Value.ToString();
+                    cboMaKH.Text = dgvSuaChua.CurrentRow.Cells[1].Value.ToString();
+                    txtTinhTrang.Text = dgvSuaChua.CurrentRow.Cells[2].Value.ToString();
+                    dtSuaChua.Text = dgvSuaChua.CurrentRow.Cells[3].Value.ToString();
+                    cboMaNV.Text = dgvSuaChua.CurrentRow.Cells[4].Value.ToString();
+                    cboTrangThai.Text = dgvSuaChua.CurrentRow.Cells[5].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin tìm kiếm không tồn tại");
+                }
             }
-            
+
         }
 
         private void dgvSuaChua_CellContentClick(object sender, DataGridViewCellEventArgs e)

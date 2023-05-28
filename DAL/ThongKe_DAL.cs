@@ -23,6 +23,15 @@ namespace DAL
             return config_DAL.GetDataTable("SoNV");
         }
 
+        //public DataTable Search_DT(DateTime a)
+        //{
+        //    int So_luong = 1;
+        //    string sql = "ThongKeHoaDon";
+        //    string[] Name = new string[So_luong];
+        //    object[] Values = new object[So_luong];
+        //    Name[0] = "@NgayThanhToan"; Values[0] = a;
+        //    return config_DAL.ExecuteSearch(sql, Name, Values, So_luong);
+        //}
         public DataTable Searchdt1(int a)
         {
             int So_luong = 1;
@@ -47,8 +56,8 @@ namespace DAL
             string sql = "ThongKeHoaDon";
             string[] Name = new string[So_luong];
             object[] Values = new object[So_luong];
-            Name[0] = "@NgayThanhToan";Values[0] = a;
-            return config_DAL.ExecuteSearch(sql,Name,Values,So_luong);
+            Name[0] = "@NgayThanhToan"; Values[0] = a;
+            return config_DAL.ExecuteSearch(sql, Name, Values, So_luong);
         }
 
 
@@ -62,15 +71,15 @@ namespace DAL
             return config_DAL.ExecuteSearch(sql, Name, Values, So_luong);
         }
 
-        public DataTable TK_MaKH(string c)
-        {
-            int So_luong = 1;
-            string sql = "ThongKeHoaDonMK";
-            string[] Name = new string[So_luong];
-            object[] Values = new object[So_luong];
-            Name[0] = "@MaKH"; Values[0] = c;
-            return config_DAL.ExecuteSearch(sql, Name, Values, So_luong);
-        }
+        //public DataTable TK_MaKH(string c)
+        //{
+        //    int So_luong = 1;
+        //    string sql = "ThongKeHoaDonMK";
+        //    string[] Name = new string[So_luong];
+        //    object[] Values = new object[So_luong];
+        //    Name[0] = "@MaKH"; Values[0] = c;
+        //    return config_DAL.ExecuteSearch(sql, Name, Values, So_luong);
+        //}
 
     }
 }

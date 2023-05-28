@@ -104,16 +104,11 @@ namespace GUI
 
         private void btnExcelTK_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            DataTable dataTable = Datagriview();
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = saveFileDialog.FileName;
-                DataTable dataTable = Datagriview();
-                excel.ExportToExcel(dataTable, filePath);
-                MessageBox.Show("Dữ liệu đã được xuất ra file Excel.");
-            }
+            string filePath = @"D:\Downloads\Book1.xlsx";
+            excel.ExportToExcel(dataTable, filePath);
+            MessageBox.Show("Xuất thành công");
         }
     }
 }

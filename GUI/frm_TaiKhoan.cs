@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -217,29 +218,58 @@ namespace GUI
         private void ptSearchTK_Click(object sender, EventArgs e)
         {
 
-            if (txtSearchTK.Text == "")
+            //if (txtSearchTK.Text == "")
+            //{
+            //    MessageBox.Show("Nhập thông tin tìm kiếm");
+            //}
+            //else
+            //{
+            //    dtotk.MaNV1 = txtSearchTK.Text;
+            //    dtotk.ChucVu1 = txtSearchTK.Text;
+            //    dtotk.TrangThai1 = txtSearchTK.Text;
+
+
+            //    dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.MaNV1);
+            //    dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.ChucVu1);
+            //    dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.TrangThai1);
+
+
+            //    cboMaNVTK.Text = dgvTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+            //    txtTenDN.Text = dgvTaiKhoan.CurrentRow.Cells[1].Value.ToString();
+            //    txtMatKhau.Text = dgvTaiKhoan.CurrentRow.Cells[2].Value.ToString();
+            //    cboQuyen.Text = dgvTaiKhoan.CurrentRow.Cells[3].Value.ToString();
+            //    cbTrangThai.Text = dgvTaiKhoan.CurrentRow.Cells[4].Value.ToString();
+            //}
+
+            if (string.IsNullOrWhiteSpace(txtSearchTK.Text))
             {
                 MessageBox.Show("Nhập thông tin tìm kiếm");
             }
             else
             {
-                dtotk.MaNV1 = txtSearchTK.Text;
-                dtotk.ChucVu1 = txtSearchTK.Text;
-                dtotk.TrangThai1 = txtSearchTK.Text;
 
 
-                dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.MaNV1);
-                dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.ChucVu1);
-                dgvTaiKhoan.DataSource = blltk.Search_Gn(dtotk.TrangThai1);
+                DataTable data = blltk.Search_Gn(txtSearchTK.Text);
 
 
-                cboMaNVTK.Text = dgvTaiKhoan.CurrentRow.Cells[0].Value.ToString();
-                txtTenDN.Text = dgvTaiKhoan.CurrentRow.Cells[1].Value.ToString();
-                txtMatKhau.Text = dgvTaiKhoan.CurrentRow.Cells[2].Value.ToString();
-                cboQuyen.Text = dgvTaiKhoan.CurrentRow.Cells[3].Value.ToString();
-                cbTrangThai.Text = dgvTaiKhoan.CurrentRow.Cells[4].Value.ToString();
+
+                if (data != null && data.Rows.Count > 0)
+                {
+                    dgvTaiKhoan.DataSource = data;
+
+                    cboMaNVTK.Text = dgvTaiKhoan.CurrentRow.Cells[0].Value.ToString();
+                    txtTenDN.Text = dgvTaiKhoan.CurrentRow.Cells[1].Value.ToString();
+                    txtMatKhau.Text = dgvTaiKhoan.CurrentRow.Cells[2].Value.ToString();
+                    cboQuyen.Text = dgvTaiKhoan.CurrentRow.Cells[3].Value.ToString();
+                    cbTrangThai.Text = dgvTaiKhoan.CurrentRow.Cells[4].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin tìm kiếm không tồn tại");
+                }
             }
-           
+
+
         }
     }
 }

@@ -191,5 +191,11 @@
   <ItemGroup>
     <None Include="Resources\logout %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8674983_ic_fluent_eye_hide_regular_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3844476_eye_see_show_view_watch_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

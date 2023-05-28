@@ -205,9 +205,9 @@
             this.gbHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.gbHoaDon.Controls.Add(this.dgvThongKe);
             this.gbHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbHoaDon.Location = new System.Drawing.Point(12, 471);
+            this.gbHoaDon.Location = new System.Drawing.Point(21, 413);
             this.gbHoaDon.Name = "gbHoaDon";
-            this.gbHoaDon.Size = new System.Drawing.Size(1611, 483);
+            this.gbHoaDon.Size = new System.Drawing.Size(1828, 483);
             this.gbHoaDon.TabIndex = 2;
             this.gbHoaDon.TabStop = false;
             this.gbHoaDon.Text = "Danh sách hóa đơn";
@@ -231,7 +231,7 @@
             this.dgvThongKe.Name = "dgvThongKe";
             this.dgvThongKe.RowHeadersWidth = 51;
             this.dgvThongKe.RowTemplate.Height = 24;
-            this.dgvThongKe.Size = new System.Drawing.Size(1593, 383);
+            this.dgvThongKe.Size = new System.Drawing.Size(1701, 383);
             this.dgvThongKe.TabIndex = 0;
             // 
             // btnReset
@@ -245,7 +245,7 @@
             this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(1424, 386);
+            this.btnReset.Location = new System.Drawing.Point(1406, 338);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(152, 55);
             this.btnReset.TabIndex = 38;
@@ -256,7 +256,7 @@
             // 
             this.dtSearchtime.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtSearchtime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtSearchtime.Location = new System.Drawing.Point(402, 394);
+            this.dtSearchtime.Location = new System.Drawing.Point(402, 341);
             this.dtSearchtime.Name = "dtSearchtime";
             this.dtSearchtime.Size = new System.Drawing.Size(283, 38);
             this.dtSearchtime.TabIndex = 36;
@@ -265,7 +265,7 @@
             // 
             this.ptSearchDate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptSearchDate.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchDate.Location = new System.Drawing.Point(691, 394);
+            this.ptSearchDate.Location = new System.Drawing.Point(691, 341);
             this.ptSearchDate.Name = "ptSearchDate";
             this.ptSearchDate.Size = new System.Drawing.Size(45, 41);
             this.ptSearchDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -277,7 +277,7 @@
             // 
             this.ptSearchTK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptSearchTK.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchTK.Location = new System.Drawing.Point(1127, 394);
+            this.ptSearchTK.Location = new System.Drawing.Point(1118, 352);
             this.ptSearchTK.Name = "ptSearchTK";
             this.ptSearchTK.Size = new System.Drawing.Size(45, 41);
             this.ptSearchTK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -299,7 +299,7 @@
             this.txtSearchTK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearchTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchTK.Location = new System.Drawing.Point(806, 383);
+            this.txtSearchTK.Location = new System.Drawing.Point(797, 338);
             this.txtSearchTK.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearchTK.Name = "txtSearchTK";
             this.txtSearchTK.PasswordChar = '\0';
@@ -320,7 +320,7 @@
             this.btnExcelTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnExcelTK.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcelTK.ForeColor = System.Drawing.Color.White;
-            this.btnExcelTK.Location = new System.Drawing.Point(1240, 386);
+            this.btnExcelTK.Location = new System.Drawing.Point(1212, 338);
             this.btnExcelTK.Name = "btnExcelTK";
             this.btnExcelTK.Size = new System.Drawing.Size(152, 55);
             this.btnExcelTK.TabIndex = 31;
@@ -333,6 +333,7 @@
             this.Column1.HeaderText = "Mã HD";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
             // 
             // Column2
             // 
@@ -340,6 +341,7 @@
             this.Column2.HeaderText = "Mã KH";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
             // 
             // Column3
             // 
@@ -347,6 +349,7 @@
             this.Column3.HeaderText = "Mã NV";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             // 
             // Column4
             // 
@@ -370,6 +373,7 @@
             this.Column6.HeaderText = "giá tiền";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
             // 
             // Column7
             // 
@@ -377,6 +381,7 @@
             this.Column7.HeaderText = "Thuế";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
             // 
             // Column8
             // 
@@ -407,7 +412,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1635, 980);
+            this.ClientSize = new System.Drawing.Size(1852, 980);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtSearchTK);
             this.Controls.Add(this.ptSearchTK);

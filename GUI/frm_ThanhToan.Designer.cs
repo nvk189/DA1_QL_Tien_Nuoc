@@ -60,8 +60,6 @@
             this.lblMaKH = new System.Windows.Forms.Label();
             this.gbDsThanhToan = new System.Windows.Forms.GroupBox();
             this.dgvThanhToan = new System.Windows.Forms.DataGridView();
-            this.txtSearchTT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ptSearchTT = new System.Windows.Forms.PictureBox();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +70,8 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearchTT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ptSearchTT = new System.Windows.Forms.PictureBox();
             this.gbTTThanhToan.SuspendLayout();
             this.gbDsThanhToan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhToan)).BeginInit();
@@ -571,9 +571,9 @@
             // 
             this.gbDsThanhToan.Controls.Add(this.dgvThanhToan);
             this.gbDsThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDsThanhToan.Location = new System.Drawing.Point(52, 550);
+            this.gbDsThanhToan.Location = new System.Drawing.Point(27, 550);
             this.gbDsThanhToan.Name = "gbDsThanhToan";
-            this.gbDsThanhToan.Size = new System.Drawing.Size(1667, 380);
+            this.gbDsThanhToan.Size = new System.Drawing.Size(1811, 380);
             this.gbDsThanhToan.TabIndex = 1;
             this.gbDsThanhToan.TabStop = false;
             this.gbDsThanhToan.Text = "Danh sách thanh toán";
@@ -593,51 +593,13 @@
             this.Column9,
             this.Column10,
             this.Column11});
-            this.dgvThanhToan.Location = new System.Drawing.Point(34, 33);
+            this.dgvThanhToan.Location = new System.Drawing.Point(6, 33);
             this.dgvThanhToan.Name = "dgvThanhToan";
             this.dgvThanhToan.RowHeadersWidth = 51;
             this.dgvThanhToan.RowTemplate.Height = 24;
-            this.dgvThanhToan.Size = new System.Drawing.Size(1627, 320);
+            this.dgvThanhToan.Size = new System.Drawing.Size(1799, 320);
             this.dgvThanhToan.TabIndex = 0;
             this.dgvThanhToan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThanhToan_CellContentClick);
-            // 
-            // txtSearchTT
-            // 
-            this.txtSearchTT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSearchTT.AutoRoundedCorners = true;
-            this.txtSearchTT.BorderRadius = 25;
-            this.txtSearchTT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearchTT.DefaultText = "";
-            this.txtSearchTT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearchTT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearchTT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchTT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchTT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchTT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchTT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearchTT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchTT.Location = new System.Drawing.Point(1146, 12);
-            this.txtSearchTT.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtSearchTT.Name = "txtSearchTT";
-            this.txtSearchTT.PasswordChar = '\0';
-            this.txtSearchTT.PlaceholderText = "Tìm kiếm";
-            this.txtSearchTT.SelectedText = "";
-            this.txtSearchTT.Size = new System.Drawing.Size(387, 52);
-            this.txtSearchTT.TabIndex = 24;
-            this.txtSearchTT.Tag = "";
-            // 
-            // ptSearchTT
-            // 
-            this.ptSearchTT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ptSearchTT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptSearchTT.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchTT.Location = new System.Drawing.Point(1540, 23);
-            this.ptSearchTT.Name = "ptSearchTT";
-            this.ptSearchTT.Size = new System.Drawing.Size(45, 41);
-            this.ptSearchTT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptSearchTT.TabIndex = 25;
-            this.ptSearchTT.TabStop = false;
-            this.ptSearchTT.Click += new System.EventHandler(this.ptSearchTT_Click);
             // 
             // Column2
             // 
@@ -645,7 +607,7 @@
             this.Column2.HeaderText = "Mã HD";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 80;
+            this.Column2.Width = 125;
             // 
             // Column3
             // 
@@ -669,7 +631,7 @@
             this.Column5.HeaderText = "Số cũ";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 80;
+            this.Column5.Width = 125;
             // 
             // Column6
             // 
@@ -677,7 +639,7 @@
             this.Column6.HeaderText = "Số mới";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 80;
+            this.Column6.Width = 125;
             // 
             // Column7
             // 
@@ -685,7 +647,7 @@
             this.Column7.HeaderText = "giá tiền ";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
+            this.Column7.Width = 150;
             // 
             // Column8
             // 
@@ -701,7 +663,7 @@
             this.Column9.HeaderText = "Ngày thanh toán";
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
-            this.Column9.Width = 145;
+            this.Column9.Width = 160;
             // 
             // Column10
             // 
@@ -709,7 +671,7 @@
             this.Column10.HeaderText = "Hình thức thanh toán";
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
-            this.Column10.Width = 150;
+            this.Column10.Width = 200;
             // 
             // Column11
             // 
@@ -719,12 +681,50 @@
             this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";
             // 
+            // txtSearchTT
+            // 
+            this.txtSearchTT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSearchTT.AutoRoundedCorners = true;
+            this.txtSearchTT.BorderRadius = 25;
+            this.txtSearchTT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchTT.DefaultText = "";
+            this.txtSearchTT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearchTT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearchTT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchTT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchTT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchTT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchTT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearchTT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchTT.Location = new System.Drawing.Point(1149, 15);
+            this.txtSearchTT.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtSearchTT.Name = "txtSearchTT";
+            this.txtSearchTT.PasswordChar = '\0';
+            this.txtSearchTT.PlaceholderText = "Tìm kiếm";
+            this.txtSearchTT.SelectedText = "";
+            this.txtSearchTT.Size = new System.Drawing.Size(332, 52);
+            this.txtSearchTT.TabIndex = 24;
+            this.txtSearchTT.Tag = "";
+            // 
+            // ptSearchTT
+            // 
+            this.ptSearchTT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptSearchTT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptSearchTT.Image = global::GUI.Properties.Resources.search_interface_symbol;
+            this.ptSearchTT.Location = new System.Drawing.Point(1488, 26);
+            this.ptSearchTT.Name = "ptSearchTT";
+            this.ptSearchTT.Size = new System.Drawing.Size(45, 41);
+            this.ptSearchTT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptSearchTT.TabIndex = 25;
+            this.ptSearchTT.TabStop = false;
+            this.ptSearchTT.Click += new System.EventHandler(this.ptSearchTT_Click);
+            // 
             // frm_ThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1691, 1055);
+            this.ClientSize = new System.Drawing.Size(1850, 1055);
             this.Controls.Add(this.ptSearchTT);
             this.Controls.Add(this.txtSearchTT);
             this.Controls.Add(this.gbDsThanhToan);

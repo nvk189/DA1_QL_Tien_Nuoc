@@ -97,7 +97,7 @@ namespace GUI
                 {
                     MessageBox.Show("Thêm thành công,hãy kiểm tra lại!!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 }
-                MessageBox.Show("Thêm thành công");
+            
                 LoadData();
             }
           
@@ -174,7 +174,7 @@ namespace GUI
                     MessageBox.Show("Sửa thành công,hãy kiểm tra lại!!!", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 }
                 LoadData();
-                MessageBox.Show("Sử thành công");
+          
 
             }
 
@@ -209,33 +209,40 @@ namespace GUI
 
         private void ptSearchTT_Click(object sender, EventArgs e)
         {
-            if (txtSearchTT.Text == "")
+            
+
+            if (string.IsNullOrWhiteSpace(txtSearchTT.Text))
             {
                 MessageBox.Show("Nhập thông tin tìm kiếm");
             }
             else
             {
-               
                 int MaHD;
                 int.TryParse(txtSearchTT.Text, out MaHD);
-                dgvThanhToan.DataSource = thanhToan_bll.Search(MaHD, txtSearchTT.Text);
+                DataTable data = thanhToan_bll.Search(MaHD, txtSearchTT.Text);
 
+                if (data != null && data.Rows.Count > 0)
+                {
+                    dgvThanhToan.DataSource = data;
 
-
-
-
-                txtMaHD.Text = dgvThanhToan.CurrentRow.Cells[0].Value.ToString();
-                cboMaKH.Text = dgvThanhToan.CurrentRow.Cells[1].Value.ToString();
-                cboMaNV.Text = dgvThanhToan.CurrentRow.Cells[2].Value.ToString();
-                txtSoKhoisdt.Text = dgvThanhToan.CurrentRow.Cells[3].Value.ToString();
-                txtSoKhoisds.Text = dgvThanhToan.CurrentRow.Cells[4].Value.ToString();
-                txtGIaTien.Text = dgvThanhToan.CurrentRow.Cells[5].Value.ToString();
-                txtThue.Text = dgvThanhToan.CurrentRow.Cells[6].Value.ToString();
-                dtNgayThanhToan.Text = dgvThanhToan.CurrentRow.Cells[7].Value.ToString();
-                cboHTThanhToan.Text = dgvThanhToan.CurrentRow.Cells[8].Value.ToString();
-                txtTongTien.Text = dgvThanhToan.CurrentRow.Cells[9].Value.ToString();
+                    txtMaHD.Text = dgvThanhToan.CurrentRow.Cells[0].Value.ToString();
+                    cboMaKH.Text = dgvThanhToan.CurrentRow.Cells[1].Value.ToString();
+                    cboMaNV.Text = dgvThanhToan.CurrentRow.Cells[2].Value.ToString();
+                    txtSoKhoisdt.Text = dgvThanhToan.CurrentRow.Cells[3].Value.ToString();
+                    txtSoKhoisds.Text = dgvThanhToan.CurrentRow.Cells[4].Value.ToString();
+                    txtGIaTien.Text = dgvThanhToan.CurrentRow.Cells[5].Value.ToString();
+                    txtThue.Text = dgvThanhToan.CurrentRow.Cells[6].Value.ToString();
+                    dtNgayThanhToan.Text = dgvThanhToan.CurrentRow.Cells[7].Value.ToString();
+                    cboHTThanhToan.Text = dgvThanhToan.CurrentRow.Cells[8].Value.ToString();
+                    txtTongTien.Text = dgvThanhToan.CurrentRow.Cells[9].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin tìm kiếm không tồn tại");
+                }
             }
-            
+
+
 
         }
 
@@ -299,6 +306,7 @@ namespace GUI
             {
                 MessageBox.Show("Xóa thất bại,lỗi hệ thống");
             }
+            LoadData();
         }
     }
 }

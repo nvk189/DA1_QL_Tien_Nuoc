@@ -121,13 +121,19 @@
   <data name="banner wed 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\banner wed 2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search-interface-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search-interface-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo_Nuoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_Nuoc.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="search-interface-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search-interface-symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logout (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="8674983_ic_fluent_eye_hide_regular_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8674983_ic_fluent_eye_hide_regular_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3844476_eye_see_show_view_watch_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3844476_eye_see_show_view_watch_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

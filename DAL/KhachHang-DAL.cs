@@ -74,9 +74,9 @@ namespace DAL
             }
         }
 
-        public int Insert_KH(string makh,string tenkh,string diachi,string sodt)
+        public int Insert_KH(string makh,string tenkh,string diachi,string sodt, string trangthai)
         {
-            int So_luong = 4;
+            int So_luong = 5;
             string sql = "Insert_KhachHang";
             string[] Name = new string[So_luong];
             object[] Values = new object[So_luong];
@@ -84,12 +84,13 @@ namespace DAL
             Name[1] = "@TenKH";  Values[1] = tenkh;
             Name[2] = "@DiaChi"; Values[2] = diachi;
             Name[3] = "@SoDT";   Values[3] = sodt;
+            Name[4] = "@TrangThai";   Values[4] = trangthai;
             return Config_DAL.Excute(sql, Name, Values, So_luong);
         }
-        public int Update_KH(string makh, string tenkh, string diachi, string sodt) 
+        public int Update_KH(string makh, string tenkh, string diachi, string sodt ,string trangthai) 
         {
 
-            int So_luong = 4;
+            int So_luong = 5;
             string sql = "Update_KhachHang";
             string[] Name = new string[So_luong];
             object[] Values = new object[So_luong];
@@ -97,6 +98,7 @@ namespace DAL
             Name[1] = "@TenKH";  Values[1] = tenkh;
             Name[2] = "@DiaChi"; Values[2] = diachi;
             Name[3] = "@SoDT";   Values[3] = sodt;
+            Name[4] = "@TrangThai"; Values[4] = trangthai;
             return Config_DAL.Excute(sql, Name, Values, So_luong);
         }
 

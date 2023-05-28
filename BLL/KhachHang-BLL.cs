@@ -47,7 +47,7 @@ namespace BLL
         {
             if(  MaTrung(kh.MaKH1)==false & SoDTTrung(kh.SoDT1)== false & Tool.CheckStringLengthint(kh.SoDT1)==true & Tool.CheckWhitespace(kh.SoDT1)==true)
             {
-                return dal.Insert_KH(kh.MaKH1, Tool.Chuan_Hoa_Chuoi(kh.TenKH1), Tool.Chuan_Hoa_Chuoi(kh.DiaChi1), kh.SoDT1);
+                return dal.Insert_KH(kh.MaKH1, Tool.Chuan_Hoa_Chuoi(kh.TenKH1), Tool.Chuan_Hoa_Chuoi(kh.DiaChi1), kh.SoDT1,kh.TrangThai1);
             }
             else
             {
@@ -60,7 +60,7 @@ namespace BLL
            
             if(  Tool.CheckStringLengthint(kh.SoDT1) == true & Tool.CheckWhitespace(kh.SoDT1) == true)
             {
-                return dal.Update_KH(kh.MaKH1, Tool.Chuan_Hoa_Chuoi(kh.TenKH1), Tool.Chuan_Hoa_Chuoi(kh.DiaChi1), kh.SoDT1);
+                return dal.Update_KH(kh.MaKH1, Tool.Chuan_Hoa_Chuoi(kh.TenKH1), Tool.Chuan_Hoa_Chuoi(kh.DiaChi1), kh.SoDT1,kh.TrangThai1);
             }
             else
             {

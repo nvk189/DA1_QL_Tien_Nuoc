@@ -74,30 +74,31 @@ namespace DAL
                 return false;
             }
         }
-        public int Insert_NV(string manv,string tennv,string diachi, string sodt, DateTime ngaysinh,string gioitinh)
+        public int Insert_NV(string maNV, string tenNV, string diaChi, string soDT, DateTime ngaySinh, string gioiTinh, string trangthai)
         {
-            int so_luong = 6;
+            int so_luong = 7;
             string sql = "Insert_NhanVien";
             string[] Name = new string[so_luong];
             object[] Values = new object[so_luong];
 
             // xet cac gia tri cho doi tuong
-            Name[0] = "@MaNV"; Values[0] = manv;
-            Name[1] = "@TenNV"; Values[1] = tennv;
-            Name[2] = "@DiaChi"; Values[2] = diachi;
-            Name[3] = "@SoDT"; Values[3] = sodt;
-            Name[4] = "@NgaySinh"; Values[4] = ngaysinh;
-            Name[5] = "@GioiTinh"; Values[5] = gioitinh;
+            Name[0] = "@MaNV"; Values[0] = maNV;
+            Name[1] = "@TenNV"; Values[1] = tenNV;
+            Name[2] = "@DiaChi"; Values[2] = diaChi;
+            Name[3] = "@SoDT"; Values[3] = soDT;
+            Name[4] = "@NgaySinh"; Values[4] = ngaySinh;
+            Name[5] = "@GioiTinh"; Values[5] = gioiTinh;
+            Name[6] = "@TrangThai"; Values[6] = trangthai;
 
             // thao tac voi database
             return config.Excute(sql, Name, Values, so_luong);
         }
 
-        public int Upadate_NV(string manv, string tennv, string diachi, string sodt, DateTime ngaysinh, string gioitinh)
+        public int Upadate_NV(string manv, string tennv, string diachi, string sodt, DateTime ngaysinh, string gioitinh ,string trangthai)
         {
             
 
-            int so_luong = 6;
+            int so_luong = 7;
             string sql = "Update_NhanVien";
             string[] Name = new string[so_luong];
             object[] Values = new object[so_luong];
@@ -109,6 +110,7 @@ namespace DAL
             Name[3] = "@SoDT"; Values[3] = sodt;
             Name[4] = "@NgaySinh"; Values[4] = ngaysinh;
             Name[5] = "@GioiTinh"; Values[5] = gioitinh;
+            Name[6] = "@TrangThai"; Values[6] = trangthai;
 
             // thao tac voi database
             return config.Excute(sql, Name, Values, so_luong);

@@ -207,23 +207,35 @@ namespace GUI
 
         private void ptSearchGN_Click(object sender, EventArgs e)
         {
-            if (txtSearchGN.Text == "")
+
+
+         
+
+            if (string.IsNullOrWhiteSpace(txtSearchGN.Text))
             {
                 MessageBox.Show("Nhập thông tin tìm kiếm");
             }
             else
             {
-                dgvGiaNuoc.DataSource = bllgn.Search_Gn(txtSearchGN.Text);
+                DataTable data = bllgn.Search_Gn(txtSearchGN.Text);
 
-
-
-
-                txtMaDK.Text = dgvGiaNuoc.CurrentRow.Cells[0].Value.ToString();
-                cboMaKH.Text = dgvGiaNuoc.CurrentRow.Cells[1].Value.ToString();
-                cboMaN.Text = dgvGiaNuoc.CurrentRow.Cells[2].Value.ToString();
-                txtGiaNuoc.Text = dgvGiaNuoc.CurrentRow.Cells[3].Value.ToString();
+                if (data != null && data.Rows.Count > 0)
+                {
+                    dgvGiaNuoc.DataSource = data;
+                   
+                    txtMaDK.Text = dgvGiaNuoc.CurrentRow.Cells[0].Value.ToString();
+                    cboMaKH.Text = dgvGiaNuoc.CurrentRow.Cells[1].Value.ToString();
+                    cboMaN.Text = dgvGiaNuoc.CurrentRow.Cells[2].Value.ToString();
+                    txtGiaNuoc.Text = dgvGiaNuoc.CurrentRow.Cells[3].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin tìm kiếm không tồn tại");
+                }
             }
-          
+
+
+
         }
 
         private void btnExcelGN_Click(object sender, EventArgs e)

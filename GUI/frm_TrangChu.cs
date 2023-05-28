@@ -23,8 +23,8 @@ namespace GUI
 
         public void quyen()
         {
-            lblquyen.Text = quyen1;
-            if (lblquyen.Text == "admin")
+            txtQuyen.Text = quyen1;
+            if (txtQuyen.Text == "admin")
             {
 
                 btnTaiKhoan.Enabled = true;
@@ -34,7 +34,18 @@ namespace GUI
                 btnKhachhang.Enabled = true;
                 btnThanhToan.Enabled = true;
                 btnQLSuaChua.Enabled = true;
-               
+
+            }
+
+            else if (txtQuyen.Text == "user_1")
+            {
+                btnTaiKhoan.Enabled = false;
+                btnThongKe.Enabled = true;
+                btnNhanVien.Enabled = false;
+                btnGiaNuoc.Enabled = true;
+                btnKhachhang.Enabled = true;
+                btnThanhToan.Enabled = true;
+                btnQLSuaChua.Enabled = true;
             }
             else
             {
