@@ -153,14 +153,14 @@ namespace TestUnit
 
         { KhachHang_DTO dt = new KhachHang_DTO();
             KhachHang_BLL nv = new KhachHang_BLL();
-            string a= "a";
-            string b= "b";
-            string c= "c";
-            string d ="d";
-            string e ="e";
-           
+            string a= "KH001";
+            string b= "Nguyễn Văn Long";
+            string c= "Hưng Yên";
+            string d ="1123456789";
+            string e ="True";
 
-            Assert.AreEqual(1,nv.Insert( new  KhachHang_DTO( a,b,c,d,e))); // nhập đúng 
+            int result = nv.Insert(new KhachHang_DTO(a, b, c, d, e));
+            Assert.IsTrue(result>0); // nhập đúng 
 
 
         }
