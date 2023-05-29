@@ -42,12 +42,6 @@
             this.lblTongTien = new System.Windows.Forms.Label();
             this.gbHoaDon = new System.Windows.Forms.GroupBox();
             this.dgvThongKe = new System.Windows.Forms.DataGridView();
-            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
-            this.dtSearchtime = new System.Windows.Forms.DateTimePicker();
-            this.ptSearchDate = new System.Windows.Forms.PictureBox();
-            this.ptSearchTK = new System.Windows.Forms.PictureBox();
-            this.txtSearchTK = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnExcelTK = new Guna.UI2.WinForms.Guna2Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +52,12 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
+            this.dtSearchtime = new System.Windows.Forms.DateTimePicker();
+            this.ptSearchDate = new System.Windows.Forms.PictureBox();
+            this.ptSearchTK = new System.Windows.Forms.PictureBox();
+            this.txtSearchTK = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnExcelTK = new Guna.UI2.WinForms.Guna2Button();
             this.pnKhachHang.SuspendLayout();
             this.pnNhanVien.SuspendLayout();
             this.pnSoKhoiNuoc.SuspendLayout();
@@ -207,7 +207,7 @@
             this.gbHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbHoaDon.Location = new System.Drawing.Point(21, 413);
             this.gbHoaDon.Name = "gbHoaDon";
-            this.gbHoaDon.Size = new System.Drawing.Size(1828, 483);
+            this.gbHoaDon.Size = new System.Drawing.Size(1828, 546);
             this.gbHoaDon.TabIndex = 2;
             this.gbHoaDon.TabStop = false;
             this.gbHoaDon.Text = "Danh sách hóa đơn";
@@ -231,8 +231,88 @@
             this.dgvThongKe.Name = "dgvThongKe";
             this.dgvThongKe.RowHeadersWidth = 51;
             this.dgvThongKe.RowTemplate.Height = 24;
-            this.dgvThongKe.Size = new System.Drawing.Size(1701, 383);
+            this.dgvThongKe.Size = new System.Drawing.Size(1810, 418);
             this.dgvThongKe.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaHD";
+            this.Column1.HeaderText = "Mã HD";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaKH";
+            this.Column2.HeaderText = "Mã KH";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "MaNV";
+            this.Column3.HeaderText = "Mã NV";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SoCTT";
+            this.Column4.HeaderText = "Số cũ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 80;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "SoCTS";
+            this.Column5.HeaderText = "Số mới";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 80;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "GiaTien";
+            this.Column6.HeaderText = "giá tiền";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Thue";
+            this.Column7.HeaderText = "Thuế";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "NgayThanhToan";
+            this.Column8.HeaderText = "Ngày Thanh toán";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 180;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "HinhThucTT";
+            this.Column9.HeaderText = "Hình thức thanh toán";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 180;
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column10.DataPropertyName = "TongTien";
+            this.Column10.HeaderText = "Tổng tiền";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
             // 
             // btnReset
             // 
@@ -326,86 +406,6 @@
             this.btnExcelTK.TabIndex = 31;
             this.btnExcelTK.Text = "Excel";
             this.btnExcelTK.Click += new System.EventHandler(this.btnExcelTK_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaHD";
-            this.Column1.HeaderText = "Mã HD";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "MaKH";
-            this.Column2.HeaderText = "Mã KH";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "MaNV";
-            this.Column3.HeaderText = "Mã NV";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "SoCTT";
-            this.Column4.HeaderText = "Số cũ";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 80;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "SoCTS";
-            this.Column5.HeaderText = "Số mới";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 80;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "GiaTien";
-            this.Column6.HeaderText = "giá tiền";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Thue";
-            this.Column7.HeaderText = "Thuế";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "NgayThanhToan";
-            this.Column8.HeaderText = "Ngày Thanh toán";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 180;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "HinhThucTT";
-            this.Column9.HeaderText = "Hình thức thanh toán";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 180;
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column10.DataPropertyName = "TongTien";
-            this.Column10.HeaderText = "Tổng tiền";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
             // 
             // frm_ThongKe
             // 

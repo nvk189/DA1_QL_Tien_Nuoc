@@ -98,7 +98,7 @@ namespace BLL
         public void ExportInvoiceToNotepad(int maHD, string maKH, string tenkh, string diachi, string maNV, float soCTT, float soCTS, float soSD, float giaTien, int thue, DateTime ngayTT, string hinhThucTT, float tongTien)
         {
             // Tạo nội dung hóa đơn
-            string invoiceContent = $"\t\tCÔNG TY NƯỚC SẠCH NGỌC TUẤN\n" +
+            string invoiceContent = $"CÔNG TY NƯỚC SẠCH NGỌC TUẤN\n" +
             $"\tĐịa chỉ thị chấn Lương Bằng -Kim Động -Hưng Yên \n" +
             $"\tHotline: 01234567\r\n";
 

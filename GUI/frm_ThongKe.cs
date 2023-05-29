@@ -59,12 +59,7 @@ namespace GUI
                 MessageBox.Show("Không tìm thấy thông tin cần tìm kiếm");
             }
         }
-        public void ShowData()
-        {
-            int MaHD;
-            int.TryParse(txtSearchTK.Text, out MaHD);
-            dgvThongKe.DataSource= thongKe_BLL.Search1(MaHD);
-        }
+      
         public void ShowDT()
         {
             DateTime da = dtSearchtime.Value.Date;
@@ -81,8 +76,8 @@ namespace GUI
                 lbKhachHang.Text = data1.Rows[0][0].ToString();
                 lblNuocSD.Text = data1.Rows[0][1].ToString();
                 lblTongTien.Text = data1.Rows[0][2].ToString();
-                dgvThongKe.DataSource = data1;
-                ShowData();
+              
+                dgvThongKe.DataSource = thongKe_BLL.Search1(MaHD);
             }
             else
             {

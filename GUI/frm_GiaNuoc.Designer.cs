@@ -46,12 +46,12 @@
             this.lblMaKH = new System.Windows.Forms.Label();
             this.gbDSGiaNuoc = new System.Windows.Forms.GroupBox();
             this.dgvGiaNuoc = new System.Windows.Forms.DataGridView();
-            this.txtSearchGN = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ptSearchGN = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearchGN = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ptSearchGN = new System.Windows.Forms.PictureBox();
             this.gbGiaNuoc.SuspendLayout();
             this.gbDSGiaNuoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaNuoc)).BeginInit();
@@ -337,7 +337,7 @@
             this.gbDSGiaNuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDSGiaNuoc.Location = new System.Drawing.Point(12, 501);
             this.gbDSGiaNuoc.Name = "gbDSGiaNuoc";
-            this.gbDSGiaNuoc.Size = new System.Drawing.Size(1649, 300);
+            this.gbDSGiaNuoc.Size = new System.Drawing.Size(1649, 396);
             this.gbDSGiaNuoc.TabIndex = 1;
             this.gbDSGiaNuoc.TabStop = false;
             this.gbDSGiaNuoc.Text = "Danh sách giá nước";
@@ -354,13 +354,45 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvGiaNuoc.Location = new System.Drawing.Point(87, 33);
+            this.dgvGiaNuoc.Location = new System.Drawing.Point(17, 38);
             this.dgvGiaNuoc.Name = "dgvGiaNuoc";
             this.dgvGiaNuoc.RowHeadersWidth = 51;
             this.dgvGiaNuoc.RowTemplate.Height = 24;
-            this.dgvGiaNuoc.Size = new System.Drawing.Size(1290, 248);
+            this.dgvGiaNuoc.Size = new System.Drawing.Size(1290, 344);
             this.dgvGiaNuoc.TabIndex = 31;
             this.dgvGiaNuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaNuoc_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaDK";
+            this.Column1.HeaderText = "Mã đăng ký";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 200;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaKH";
+            this.Column2.HeaderText = "Mã khách hàng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 300;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "MaNuocSD";
+            this.Column3.HeaderText = "Mã nước";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "GiaTien";
+            this.Column4.HeaderText = "Giá tiền";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
             // 
             // txtSearchGN
             // 
@@ -398,44 +430,12 @@
             this.ptSearchGN.TabStop = false;
             this.ptSearchGN.Click += new System.EventHandler(this.ptSearchGN_Click);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaDK";
-            this.Column1.HeaderText = "Mã đăng ký";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "MaKH";
-            this.Column2.HeaderText = "Mã khách hàng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 300;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "MaNuocSD";
-            this.Column3.HeaderText = "Mã nước";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "GiaTien";
-            this.Column4.HeaderText = "Giá tiền";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
             // frm_GiaNuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1673, 803);
+            this.ClientSize = new System.Drawing.Size(1673, 895);
             this.Controls.Add(this.ptSearchGN);
             this.Controls.Add(this.txtSearchGN);
             this.Controls.Add(this.gbDSGiaNuoc);

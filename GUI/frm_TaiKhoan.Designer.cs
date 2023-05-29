@@ -350,7 +350,7 @@
             this.gbTaiKhoanDS.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTaiKhoanDS.Location = new System.Drawing.Point(0, 466);
             this.gbTaiKhoanDS.Name = "gbTaiKhoanDS";
-            this.gbTaiKhoanDS.Size = new System.Drawing.Size(1509, 346);
+            this.gbTaiKhoanDS.Size = new System.Drawing.Size(1509, 432);
             this.gbTaiKhoanDS.TabIndex = 1;
             this.gbTaiKhoanDS.TabStop = false;
             this.gbTaiKhoanDS.Text = "Danh sách tài khoản";
@@ -372,7 +372,7 @@
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersWidth = 51;
             this.dgvTaiKhoan.RowTemplate.Height = 24;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(1424, 278);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(1424, 364);
             this.dgvTaiKhoan.TabIndex = 0;
             this.dgvTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellContentClick);
             // 
@@ -459,7 +459,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1580, 824);
+            this.ClientSize = new System.Drawing.Size(1580, 924);
             this.Controls.Add(this.ptSearchTK);
             this.Controls.Add(this.txtSearchTK);
             this.Controls.Add(this.gbTaiKhoanDS);

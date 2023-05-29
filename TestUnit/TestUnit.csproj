@@ -61,6 +61,10 @@
       <Project>{cf59743f-2c11-42cf-90b9-cb796d9fafb3}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{c5bb608b-5348-4cfb-9d16-1a2b849ba814}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

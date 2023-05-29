@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using BLL;
+using DTO;
 
 namespace TestUnit
 {
@@ -13,7 +14,7 @@ namespace TestUnit
         {
             DangNhap_BLL dn = new DangNhap_BLL();
             string a = "admin23";
-            string b = "_admin2";
+            string b = "_admin231";
             Assert.IsTrue(dn.DangNhap(a, b)); // nhập đúng tài khoản mật khẩu
             
 
@@ -138,9 +139,28 @@ namespace TestUnit
 
         {
             NhanVien_BLL nv = new NhanVien_BLL();
-            string a = "NV001";
+            string a = "NV01";
 
             Assert.IsTrue(nv.MaT(a)); // nhập đúng 
+
+
+        }
+
+
+
+        [TestMethod]
+        public void TestThemKhachHang()
+
+        { KhachHang_DTO dt = new KhachHang_DTO();
+            KhachHang_BLL nv = new KhachHang_BLL();
+            string a= "a";
+            string b= "b";
+            string c= "c";
+            string d ="d";
+            string e ="e";
+           
+
+            Assert.AreEqual(1,nv.Insert( new  KhachHang_DTO( a,b,c,d,e))); // nhập đúng 
 
 
         }

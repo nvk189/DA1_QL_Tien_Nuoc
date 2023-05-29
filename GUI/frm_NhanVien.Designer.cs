@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbNhanVien = new System.Windows.Forms.GroupBox();
+            this.cboGioiTinhNV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cboTrangThaiNV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTrangThai = new System.Windows.Forms.Label();
             this.btnExcelNV = new Guna.UI2.WinForms.Guna2Button();
@@ -49,9 +50,6 @@
             this.txtMaNV = new Guna.UI2.WinForms.Guna2TextBox();
             this.gbDSNhanVien = new System.Windows.Forms.GroupBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.txtSearchNV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ptSearchNV = new System.Windows.Forms.PictureBox();
-            this.cboGioiTinhNV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +57,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearchNV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ptSearchNV = new System.Windows.Forms.PictureBox();
             this.gbNhanVien.SuspendLayout();
             this.gbDSNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -96,6 +96,26 @@
             this.gbNhanVien.TabStop = false;
             this.gbNhanVien.Text = "Thông tin nhân viên";
             // 
+            // cboGioiTinhNV
+            // 
+            this.cboGioiTinhNV.AutoRoundedCorners = true;
+            this.cboGioiTinhNV.BackColor = System.Drawing.Color.Transparent;
+            this.cboGioiTinhNV.BorderRadius = 17;
+            this.cboGioiTinhNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboGioiTinhNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGioiTinhNV.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboGioiTinhNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboGioiTinhNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.cboGioiTinhNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboGioiTinhNV.ItemHeight = 30;
+            this.cboGioiTinhNV.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cboGioiTinhNV.Location = new System.Drawing.Point(848, 236);
+            this.cboGioiTinhNV.Name = "cboGioiTinhNV";
+            this.cboGioiTinhNV.Size = new System.Drawing.Size(257, 36);
+            this.cboGioiTinhNV.TabIndex = 29;
+            // 
             // cboTrangThaiNV
             // 
             this.cboTrangThaiNV.AutoRoundedCorners = true;
@@ -111,7 +131,7 @@
             this.cboTrangThaiNV.Items.AddRange(new object[] {
             "True",
             "False"});
-            this.cboTrangThaiNV.Location = new System.Drawing.Point(1462, 75);
+            this.cboTrangThaiNV.Location = new System.Drawing.Point(1409, 87);
             this.cboTrangThaiNV.Name = "cboTrangThaiNV";
             this.cboTrangThaiNV.Size = new System.Drawing.Size(193, 36);
             this.cboTrangThaiNV.TabIndex = 28;
@@ -119,7 +139,7 @@
             // lblTrangThai
             // 
             this.lblTrangThai.AutoSize = true;
-            this.lblTrangThai.Location = new System.Drawing.Point(1301, 82);
+            this.lblTrangThai.Location = new System.Drawing.Point(1242, 94);
             this.lblTrangThai.Name = "lblTrangThai";
             this.lblTrangThai.Size = new System.Drawing.Size(145, 29);
             this.lblTrangThai.TabIndex = 27;
@@ -218,7 +238,7 @@
             // dtNgaySinhNV
             // 
             this.dtNgaySinhNV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgaySinhNV.Location = new System.Drawing.Point(958, 172);
+            this.dtNgaySinhNV.Location = new System.Drawing.Point(848, 163);
             this.dtNgaySinhNV.Name = "dtNgaySinhNV";
             this.dtNgaySinhNV.Size = new System.Drawing.Size(301, 34);
             this.dtNgaySinhNV.TabIndex = 8;
@@ -226,7 +246,7 @@
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
-            this.lblGioiTinh.Location = new System.Drawing.Point(803, 243);
+            this.lblGioiTinh.Location = new System.Drawing.Point(706, 243);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(124, 29);
             this.lblGioiTinh.TabIndex = 21;
@@ -235,7 +255,7 @@
             // lblNgaySinh
             // 
             this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Location = new System.Drawing.Point(785, 168);
+            this.lblNgaySinh.Location = new System.Drawing.Point(688, 168);
             this.lblNgaySinh.Name = "lblNgaySinh";
             this.lblNgaySinh.Size = new System.Drawing.Size(142, 29);
             this.lblNgaySinh.TabIndex = 20;
@@ -244,7 +264,7 @@
             // lblSoDT
             // 
             this.lblSoDT.AutoSize = true;
-            this.lblSoDT.Location = new System.Drawing.Point(739, 82);
+            this.lblSoDT.Location = new System.Drawing.Point(642, 94);
             this.lblSoDT.Name = "lblSoDT";
             this.lblSoDT.Size = new System.Drawing.Size(188, 29);
             this.lblSoDT.TabIndex = 19;
@@ -253,7 +273,7 @@
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Location = new System.Drawing.Point(251, 243);
+            this.lblDiaChi.Location = new System.Drawing.Point(90, 243);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(107, 29);
             this.lblDiaChi.TabIndex = 18;
@@ -262,7 +282,7 @@
             // lblTenNV
             // 
             this.lblTenNV.AutoSize = true;
-            this.lblTenNV.Location = new System.Drawing.Point(222, 168);
+            this.lblTenNV.Location = new System.Drawing.Point(61, 168);
             this.lblTenNV.Name = "lblTenNV";
             this.lblTenNV.Size = new System.Drawing.Size(136, 29);
             this.lblTenNV.TabIndex = 17;
@@ -271,7 +291,7 @@
             // lblMaNV
             // 
             this.lblMaNV.AutoSize = true;
-            this.lblMaNV.Location = new System.Drawing.Point(171, 82);
+            this.lblMaNV.Location = new System.Drawing.Point(10, 94);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(187, 29);
             this.lblMaNV.TabIndex = 16;
@@ -291,7 +311,7 @@
             this.txtSoDTNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDTNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSoDTNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoDTNV.Location = new System.Drawing.Point(958, 71);
+            this.txtSoDTNV.Location = new System.Drawing.Point(848, 82);
             this.txtSoDTNV.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSoDTNV.Name = "txtSoDTNV";
             this.txtSoDTNV.PasswordChar = '\0';
@@ -314,13 +334,13 @@
             this.txtDiaChiNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChiNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDiaChiNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiaChiNV.Location = new System.Drawing.Point(382, 227);
+            this.txtDiaChiNV.Location = new System.Drawing.Point(220, 236);
             this.txtDiaChiNV.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtDiaChiNV.Name = "txtDiaChiNV";
             this.txtDiaChiNV.PasswordChar = '\0';
             this.txtDiaChiNV.PlaceholderText = "";
             this.txtDiaChiNV.SelectedText = "";
-            this.txtDiaChiNV.Size = new System.Drawing.Size(301, 52);
+            this.txtDiaChiNV.Size = new System.Drawing.Size(432, 52);
             this.txtDiaChiNV.TabIndex = 4;
             // 
             // txtTenNV
@@ -337,7 +357,7 @@
             this.txtTenNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTenNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenNV.Location = new System.Drawing.Point(382, 154);
+            this.txtTenNV.Location = new System.Drawing.Point(220, 154);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.PasswordChar = '\0';
@@ -360,7 +380,7 @@
             this.txtMaNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtMaNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaNV.Location = new System.Drawing.Point(382, 71);
+            this.txtMaNV.Location = new System.Drawing.Point(220, 82);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.PasswordChar = '\0';
@@ -387,6 +407,7 @@
             this.dgvNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvNhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -403,64 +424,6 @@
             this.dgvNhanVien.Size = new System.Drawing.Size(1640, 391);
             this.dgvNhanVien.TabIndex = 25;
             this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellContentClick);
-            // 
-            // txtSearchNV
-            // 
-            this.txtSearchNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSearchNV.AutoRoundedCorners = true;
-            this.txtSearchNV.BorderRadius = 25;
-            this.txtSearchNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearchNV.DefaultText = "";
-            this.txtSearchNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearchNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearchNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearchNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearchNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchNV.Location = new System.Drawing.Point(1109, 15);
-            this.txtSearchNV.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtSearchNV.Name = "txtSearchNV";
-            this.txtSearchNV.PasswordChar = '\0';
-            this.txtSearchNV.PlaceholderText = "Tìm kiếm mã hoặc số điện thoại";
-            this.txtSearchNV.SelectedText = "";
-            this.txtSearchNV.Size = new System.Drawing.Size(387, 52);
-            this.txtSearchNV.TabIndex = 23;
-            this.txtSearchNV.Tag = "";
-            // 
-            // ptSearchNV
-            // 
-            this.ptSearchNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ptSearchNV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptSearchNV.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchNV.Location = new System.Drawing.Point(1503, 26);
-            this.ptSearchNV.Name = "ptSearchNV";
-            this.ptSearchNV.Size = new System.Drawing.Size(45, 41);
-            this.ptSearchNV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptSearchNV.TabIndex = 24;
-            this.ptSearchNV.TabStop = false;
-            this.ptSearchNV.Click += new System.EventHandler(this.ptSearchNV_Click);
-            // 
-            // cboGioiTinhNV
-            // 
-            this.cboGioiTinhNV.AutoRoundedCorners = true;
-            this.cboGioiTinhNV.BackColor = System.Drawing.Color.Transparent;
-            this.cboGioiTinhNV.BorderRadius = 17;
-            this.cboGioiTinhNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboGioiTinhNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGioiTinhNV.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboGioiTinhNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboGioiTinhNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.cboGioiTinhNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboGioiTinhNV.ItemHeight = 30;
-            this.cboGioiTinhNV.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cboGioiTinhNV.Location = new System.Drawing.Point(958, 236);
-            this.cboGioiTinhNV.Name = "cboGioiTinhNV";
-            this.cboGioiTinhNV.Size = new System.Drawing.Size(257, 36);
-            this.cboGioiTinhNV.TabIndex = 29;
             // 
             // Column1
             // 
@@ -517,6 +480,44 @@
             this.Column7.HeaderText = "Trạng thái";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            // 
+            // txtSearchNV
+            // 
+            this.txtSearchNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSearchNV.AutoRoundedCorners = true;
+            this.txtSearchNV.BorderRadius = 25;
+            this.txtSearchNV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchNV.DefaultText = "";
+            this.txtSearchNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearchNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearchNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearchNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchNV.Location = new System.Drawing.Point(1109, 15);
+            this.txtSearchNV.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtSearchNV.Name = "txtSearchNV";
+            this.txtSearchNV.PasswordChar = '\0';
+            this.txtSearchNV.PlaceholderText = "Tìm kiếm mã hoặc số điện thoại";
+            this.txtSearchNV.SelectedText = "";
+            this.txtSearchNV.Size = new System.Drawing.Size(387, 52);
+            this.txtSearchNV.TabIndex = 23;
+            this.txtSearchNV.Tag = "";
+            // 
+            // ptSearchNV
+            // 
+            this.ptSearchNV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ptSearchNV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptSearchNV.Image = global::GUI.Properties.Resources.search_interface_symbol;
+            this.ptSearchNV.Location = new System.Drawing.Point(1503, 26);
+            this.ptSearchNV.Name = "ptSearchNV";
+            this.ptSearchNV.Size = new System.Drawing.Size(45, 41);
+            this.ptSearchNV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptSearchNV.TabIndex = 24;
+            this.ptSearchNV.TabStop = false;
+            this.ptSearchNV.Click += new System.EventHandler(this.ptSearchNV_Click);
             // 
             // frm_NhanVien
             // 

@@ -276,9 +276,9 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT MaNV, TenNV, DiaChi, SoDT, NgaySinh, GioiTinh
+    SELECT *
     FROM NhanVien
-    WHERE MaNV LIKE '%'+@TuKhoa+'%' or DiaChi LIKE '%'+ @TuKhoa+'%'or SoDT LIKE '%'+ @TuKhoa+'%' or GioiTinh LIKE '%'+ @TuKhoa+'%'
+    WHERE MaNV LIKE '%'+@TuKhoa+'%' or DiaChi LIKE '%'+ @TuKhoa+'%'or SoDT LIKE '%'+ @TuKhoa+'%' or GioiTinh LIKE '%'+ @TuKhoa+'%' or TrangThai  LIKE '%'+ @TuKhoa+'%'
 END;
 
 exec Search_NhanVien @TuKhoa=N'Hưng Yên'

@@ -94,7 +94,7 @@
             this.gbSuaChua.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSuaChua.Location = new System.Drawing.Point(12, 73);
             this.gbSuaChua.Name = "gbSuaChua";
-            this.gbSuaChua.Size = new System.Drawing.Size(1619, 425);
+            this.gbSuaChua.Size = new System.Drawing.Size(1699, 425);
             this.gbSuaChua.TabIndex = 0;
             this.gbSuaChua.TabStop = false;
             this.gbSuaChua.Text = "Thông tin sửa chữa";
@@ -110,7 +110,7 @@
             this.btnExcelSC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnExcelSC.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcelSC.ForeColor = System.Drawing.Color.White;
-            this.btnExcelSC.Location = new System.Drawing.Point(1025, 337);
+            this.btnExcelSC.Location = new System.Drawing.Point(1045, 364);
             this.btnExcelSC.Name = "btnExcelSC";
             this.btnExcelSC.Size = new System.Drawing.Size(152, 55);
             this.btnExcelSC.TabIndex = 38;
@@ -128,7 +128,7 @@
             this.btnResetSC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnResetSC.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResetSC.ForeColor = System.Drawing.Color.White;
-            this.btnResetSC.Location = new System.Drawing.Point(840, 337);
+            this.btnResetSC.Location = new System.Drawing.Point(853, 364);
             this.btnResetSC.Name = "btnResetSC";
             this.btnResetSC.Size = new System.Drawing.Size(152, 55);
             this.btnResetSC.TabIndex = 37;
@@ -146,7 +146,7 @@
             this.btnXoaSC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnXoaSC.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaSC.ForeColor = System.Drawing.Color.White;
-            this.btnXoaSC.Location = new System.Drawing.Point(649, 337);
+            this.btnXoaSC.Location = new System.Drawing.Point(659, 364);
             this.btnXoaSC.Name = "btnXoaSC";
             this.btnXoaSC.Size = new System.Drawing.Size(152, 55);
             this.btnXoaSC.TabIndex = 36;
@@ -164,7 +164,7 @@
             this.btnSuaSC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSuaSC.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaSC.ForeColor = System.Drawing.Color.White;
-            this.btnSuaSC.Location = new System.Drawing.Point(447, 337);
+            this.btnSuaSC.Location = new System.Drawing.Point(443, 364);
             this.btnSuaSC.Name = "btnSuaSC";
             this.btnSuaSC.Size = new System.Drawing.Size(152, 55);
             this.btnSuaSC.TabIndex = 34;
@@ -182,7 +182,7 @@
             this.btnThemSC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnThemSC.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemSC.ForeColor = System.Drawing.Color.White;
-            this.btnThemSC.Location = new System.Drawing.Point(232, 337);
+            this.btnThemSC.Location = new System.Drawing.Point(231, 364);
             this.btnThemSC.Name = "btnThemSC";
             this.btnThemSC.Size = new System.Drawing.Size(152, 55);
             this.btnThemSC.TabIndex = 33;
@@ -204,7 +204,7 @@
             this.cboTrangThai.Items.AddRange(new object[] {
             "Hoàn thành ",
             "Chưa hoàn thành"});
-            this.cboTrangThai.Location = new System.Drawing.Point(1358, 154);
+            this.cboTrangThai.Location = new System.Drawing.Point(1447, 189);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(244, 36);
             this.cboTrangThai.TabIndex = 32;
@@ -221,7 +221,7 @@
             this.cboMaNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaNV.ForeColor = System.Drawing.Color.Black;
             this.cboMaNV.ItemHeight = 30;
-            this.cboMaNV.Location = new System.Drawing.Point(1358, 83);
+            this.cboMaNV.Location = new System.Drawing.Point(1455, 90);
             this.cboMaNV.Name = "cboMaNV";
             this.cboMaNV.Size = new System.Drawing.Size(227, 36);
             this.cboMaNV.TabIndex = 31;
@@ -229,7 +229,7 @@
             // dtSuaChua
             // 
             this.dtSuaChua.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtSuaChua.Location = new System.Drawing.Point(840, 225);
+            this.dtSuaChua.Location = new System.Drawing.Point(853, 271);
             this.dtSuaChua.Name = "dtSuaChua";
             this.dtSuaChua.Size = new System.Drawing.Size(241, 34);
             this.dtSuaChua.TabIndex = 30;
@@ -248,7 +248,7 @@
             this.txtTinhTrang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTinhTrang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTinhTrang.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTinhTrang.Location = new System.Drawing.Point(795, 145);
+            this.txtTinhTrang.Location = new System.Drawing.Point(796, 182);
             this.txtTinhTrang.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTinhTrang.Name = "txtTinhTrang";
             this.txtTinhTrang.PasswordChar = '\0';
@@ -271,14 +271,14 @@
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiaChi.Location = new System.Drawing.Point(795, 74);
+            this.txtDiaChi.Location = new System.Drawing.Point(728, 83);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
-            this.txtDiaChi.PlaceholderText = "";
+            this.txtDiaChi.PlaceholderText = "Chọn mã khách hàng";
             this.txtDiaChi.ReadOnly = true;
             this.txtDiaChi.SelectedText = "";
-            this.txtDiaChi.Size = new System.Drawing.Size(301, 52);
+            this.txtDiaChi.Size = new System.Drawing.Size(488, 52);
             this.txtDiaChi.TabIndex = 28;
             // 
             // txtTenKH
@@ -295,11 +295,11 @@
             this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTenKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKH.Location = new System.Drawing.Point(267, 225);
+            this.txtTenKH.Location = new System.Drawing.Point(244, 260);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
-            this.txtTenKH.PlaceholderText = "";
+            this.txtTenKH.PlaceholderText = "Chọn mã khách hàng";
             this.txtTenKH.ReadOnly = true;
             this.txtTenKH.SelectedText = "";
             this.txtTenKH.Size = new System.Drawing.Size(301, 52);
@@ -317,7 +317,7 @@
             this.cboMaKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.cboMaKH.ForeColor = System.Drawing.Color.Black;
             this.cboMaKH.ItemHeight = 30;
-            this.cboMaKH.Location = new System.Drawing.Point(271, 154);
+            this.cboMaKH.Location = new System.Drawing.Point(244, 182);
             this.cboMaKH.Name = "cboMaKH";
             this.cboMaKH.Size = new System.Drawing.Size(297, 36);
             this.cboMaKH.TabIndex = 26;
@@ -337,7 +337,7 @@
             this.txtMaSC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtMaSC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaSC.Location = new System.Drawing.Point(267, 74);
+            this.txtMaSC.Location = new System.Drawing.Point(244, 83);
             this.txtMaSC.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtMaSC.Name = "txtMaSC";
             this.txtMaSC.PasswordChar = '\0';
@@ -349,7 +349,7 @@
             // lblTrangThai
             // 
             this.lblTrangThai.AutoSize = true;
-            this.lblTrangThai.Location = new System.Drawing.Point(1185, 154);
+            this.lblTrangThai.Location = new System.Drawing.Point(1273, 189);
             this.lblTrangThai.Name = "lblTrangThai";
             this.lblTrangThai.Size = new System.Drawing.Size(152, 29);
             this.lblTrangThai.TabIndex = 24;
@@ -358,7 +358,7 @@
             // lblMaNV
             // 
             this.lblMaNV.AutoSize = true;
-            this.lblMaNV.Location = new System.Drawing.Point(1150, 83);
+            this.lblMaNV.Location = new System.Drawing.Point(1251, 97);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(187, 29);
             this.lblMaNV.TabIndex = 23;
@@ -367,7 +367,7 @@
             // lblNgaySC
             // 
             this.lblNgaySC.AutoSize = true;
-            this.lblNgaySC.Location = new System.Drawing.Point(614, 225);
+            this.lblNgaySC.Location = new System.Drawing.Point(614, 271);
             this.lblNgaySC.Name = "lblNgaySC";
             this.lblNgaySC.Size = new System.Drawing.Size(197, 29);
             this.lblNgaySC.TabIndex = 22;
@@ -376,7 +376,7 @@
             // lblTinhTrang
             // 
             this.lblTinhTrang.AutoSize = true;
-            this.lblTinhTrang.Location = new System.Drawing.Point(641, 154);
+            this.lblTinhTrang.Location = new System.Drawing.Point(637, 189);
             this.lblTinhTrang.Name = "lblTinhTrang";
             this.lblTinhTrang.Size = new System.Drawing.Size(138, 29);
             this.lblTinhTrang.TabIndex = 21;
@@ -385,7 +385,7 @@
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Location = new System.Drawing.Point(659, 83);
+            this.lblDiaChi.Location = new System.Drawing.Point(614, 97);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(107, 29);
             this.lblDiaChi.TabIndex = 20;
@@ -394,7 +394,7 @@
             // lblTenKH
             // 
             this.lblTenKH.AutoSize = true;
-            this.lblTenKH.Location = new System.Drawing.Point(106, 230);
+            this.lblTenKH.Location = new System.Drawing.Point(77, 271);
             this.lblTenKH.Name = "lblTenKH";
             this.lblTenKH.Size = new System.Drawing.Size(136, 29);
             this.lblTenKH.TabIndex = 19;
@@ -403,7 +403,7 @@
             // lblMaKH
             // 
             this.lblMaKH.AutoSize = true;
-            this.lblMaKH.Location = new System.Drawing.Point(34, 154);
+            this.lblMaKH.Location = new System.Drawing.Point(6, 189);
             this.lblMaKH.Name = "lblMaKH";
             this.lblMaKH.Size = new System.Drawing.Size(208, 29);
             this.lblMaKH.TabIndex = 18;
@@ -412,7 +412,7 @@
             // lblMaSC
             // 
             this.lblMaSC.AutoSize = true;
-            this.lblMaSC.Location = new System.Drawing.Point(63, 83);
+            this.lblMaSC.Location = new System.Drawing.Point(34, 97);
             this.lblMaSC.Name = "lblMaSC";
             this.lblMaSC.Size = new System.Drawing.Size(179, 29);
             this.lblMaSC.TabIndex = 17;
@@ -426,7 +426,7 @@
             this.gbdsSuaChua.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbdsSuaChua.Location = new System.Drawing.Point(12, 504);
             this.gbdsSuaChua.Name = "gbdsSuaChua";
-            this.gbdsSuaChua.Size = new System.Drawing.Size(1602, 407);
+            this.gbdsSuaChua.Size = new System.Drawing.Size(1682, 407);
             this.gbdsSuaChua.TabIndex = 1;
             this.gbdsSuaChua.TabStop = false;
             this.gbdsSuaChua.Text = "Danh sách sửa chữa";
@@ -449,7 +449,7 @@
             this.dgvSuaChua.Name = "dgvSuaChua";
             this.dgvSuaChua.RowHeadersWidth = 51;
             this.dgvSuaChua.RowTemplate.Height = 24;
-            this.dgvSuaChua.Size = new System.Drawing.Size(1551, 342);
+            this.dgvSuaChua.Size = new System.Drawing.Size(1631, 342);
             this.dgvSuaChua.TabIndex = 1;
             this.dgvSuaChua.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuaChua_CellContentClick);
             // 
@@ -516,7 +516,7 @@
             this.txtSearchSC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchSC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearchSC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearchSC.Location = new System.Drawing.Point(1213, 23);
+            this.txtSearchSC.Location = new System.Drawing.Point(1253, 23);
             this.txtSearchSC.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSearchSC.Name = "txtSearchSC";
             this.txtSearchSC.PasswordChar = '\0';
@@ -531,7 +531,7 @@
             this.ptSearchSC.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ptSearchSC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptSearchSC.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchSC.Location = new System.Drawing.Point(1537, 34);
+            this.ptSearchSC.Location = new System.Drawing.Point(1577, 34);
             this.ptSearchSC.Name = "ptSearchSC";
             this.ptSearchSC.Size = new System.Drawing.Size(45, 41);
             this.ptSearchSC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -544,7 +544,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1635, 923);
+            this.ClientSize = new System.Drawing.Size(1715, 923);
             this.Controls.Add(this.ptSearchSC);
             this.Controls.Add(this.txtSearchSC);
             this.Controls.Add(this.gbdsSuaChua);

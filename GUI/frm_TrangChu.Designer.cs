@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_TrangChu));
             this.panel_Left = new System.Windows.Forms.Panel();
             this.ptExit = new System.Windows.Forms.PictureBox();
             this.ptHome = new System.Windows.Forms.PictureBox();
@@ -39,11 +40,10 @@
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnKhachhang = new System.Windows.Forms.Button();
             this.panel_Top = new System.Windows.Forms.Panel();
+            this.txtQuyen = new System.Windows.Forms.TextBox();
             this.lblTrangChu = new System.Windows.Forms.Label();
             this.panel_Body = new System.Windows.Forms.Panel();
             this.ptSologan = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtQuyen = new System.Windows.Forms.TextBox();
             this.panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptHome)).BeginInit();
@@ -55,6 +55,7 @@
             // panel_Left
             // 
             this.panel_Left.BackColor = System.Drawing.Color.Teal;
+            this.panel_Left.Controls.Add(this.txtQuyen);
             this.panel_Left.Controls.Add(this.ptExit);
             this.panel_Left.Controls.Add(this.ptHome);
             this.panel_Left.Controls.Add(this.btnThongKe);
@@ -201,14 +202,24 @@
             // panel_Top
             // 
             this.panel_Top.BackColor = System.Drawing.Color.Teal;
-            this.panel_Top.Controls.Add(this.txtQuyen);
-            this.panel_Top.Controls.Add(this.label1);
             this.panel_Top.Controls.Add(this.lblTrangChu);
             this.panel_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Top.Location = new System.Drawing.Point(229, 0);
             this.panel_Top.Name = "panel_Top";
             this.panel_Top.Size = new System.Drawing.Size(1089, 118);
             this.panel_Top.TabIndex = 1;
+            // 
+            // txtQuyen
+            // 
+            this.txtQuyen.BackColor = System.Drawing.Color.Teal;
+            this.txtQuyen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuyen.ForeColor = System.Drawing.Color.Teal;
+            this.txtQuyen.Location = new System.Drawing.Point(64, 187);
+            this.txtQuyen.Name = "txtQuyen";
+            this.txtQuyen.ReadOnly = true;
+            this.txtQuyen.Size = new System.Drawing.Size(100, 23);
+            this.txtQuyen.TabIndex = 3;
             // 
             // lblTrangChu
             // 
@@ -242,27 +253,6 @@
             this.ptSologan.TabIndex = 0;
             this.ptSologan.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(125, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Quyền";
-            // 
-            // txtQuyen
-            // 
-            this.txtQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuyen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtQuyen.Location = new System.Drawing.Point(128, 61);
-            this.txtQuyen.Name = "txtQuyen";
-            this.txtQuyen.ReadOnly = true;
-            this.txtQuyen.Size = new System.Drawing.Size(100, 30);
-            this.txtQuyen.TabIndex = 3;
-            // 
             // frm_TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -273,10 +263,12 @@
             this.Controls.Add(this.panel_Top);
             this.Controls.Add(this.panel_Left);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_TrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel_Left.ResumeLayout(false);
+            this.panel_Left.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptHome)).EndInit();
             this.panel_Top.ResumeLayout(false);
@@ -304,7 +296,6 @@
         private System.Windows.Forms.PictureBox ptHome;
         private System.Windows.Forms.PictureBox ptExit;
         private System.Windows.Forms.TextBox txtQuyen;
-        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -30,11 +30,6 @@
         {
             this.gbDsKhachHang = new System.Windows.Forms.GroupBox();
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMaKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
             this.lblTrangThaiKH = new System.Windows.Forms.Label();
@@ -54,6 +49,11 @@
             this.txtSearchKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ptSearchKH = new System.Windows.Forms.PictureBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDsKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.gbKhachHang.SuspendLayout();
@@ -94,46 +94,6 @@
             this.dgvKhachHang.TabIndex = 0;
             this.dgvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellContentClick);
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaKH";
-            this.Column1.HeaderText = "Mã khách hàng";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 220;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenKH";
-            this.Column2.HeaderText = "Họ và tên";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "DiaChi";
-            this.Column3.HeaderText = "Địa chỉ ";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "SoDT";
-            this.Column4.HeaderText = "Số điện thoại";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 200;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "TrangThai";
-            this.Column5.HeaderText = "Trạng thái";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            // 
             // txtMaKH
             // 
             this.txtMaKH.AutoRoundedCorners = true;
@@ -148,7 +108,7 @@
             this.txtMaKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtMaKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaKH.Location = new System.Drawing.Point(423, 77);
+            this.txtMaKH.Location = new System.Drawing.Point(251, 77);
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.PasswordChar = '\0';
@@ -187,7 +147,7 @@
             // lblTrangThaiKH
             // 
             this.lblTrangThaiKH.AutoSize = true;
-            this.lblTrangThaiKH.Location = new System.Drawing.Point(861, 183);
+            this.lblTrangThaiKH.Location = new System.Drawing.Point(751, 160);
             this.lblTrangThaiKH.Name = "lblTrangThaiKH";
             this.lblTrangThaiKH.Size = new System.Drawing.Size(145, 29);
             this.lblTrangThaiKH.TabIndex = 29;
@@ -208,7 +168,7 @@
             this.cbonTrangThaiKH.Items.AddRange(new object[] {
             "True",
             "False"});
-            this.cbonTrangThaiKH.Location = new System.Drawing.Point(1031, 176);
+            this.cbonTrangThaiKH.Location = new System.Drawing.Point(911, 160);
             this.cbonTrangThaiKH.Name = "cbonTrangThaiKH";
             this.cbonTrangThaiKH.Size = new System.Drawing.Size(181, 36);
             this.cbonTrangThaiKH.TabIndex = 28;
@@ -306,7 +266,7 @@
             // lblSoDT
             // 
             this.lblSoDT.AutoSize = true;
-            this.lblSoDT.Location = new System.Drawing.Point(825, 86);
+            this.lblSoDT.Location = new System.Drawing.Point(715, 86);
             this.lblSoDT.Name = "lblSoDT";
             this.lblSoDT.Size = new System.Drawing.Size(181, 29);
             this.lblSoDT.TabIndex = 15;
@@ -315,7 +275,7 @@
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Location = new System.Drawing.Point(286, 243);
+            this.lblDiaChi.Location = new System.Drawing.Point(124, 238);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(107, 29);
             this.lblDiaChi.TabIndex = 14;
@@ -324,7 +284,7 @@
             // lblTenKH
             // 
             this.lblTenKH.AutoSize = true;
-            this.lblTenKH.Location = new System.Drawing.Point(257, 165);
+            this.lblTenKH.Location = new System.Drawing.Point(95, 160);
             this.lblTenKH.Name = "lblTenKH";
             this.lblTenKH.Size = new System.Drawing.Size(136, 29);
             this.lblTenKH.TabIndex = 13;
@@ -333,7 +293,7 @@
             // lblMaKH
             // 
             this.lblMaKH.AutoSize = true;
-            this.lblMaKH.Location = new System.Drawing.Point(199, 86);
+            this.lblMaKH.Location = new System.Drawing.Point(37, 86);
             this.lblMaKH.Name = "lblMaKH";
             this.lblMaKH.Size = new System.Drawing.Size(194, 29);
             this.lblMaKH.TabIndex = 12;
@@ -353,7 +313,7 @@
             this.txtSoDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSoDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoDT.Location = new System.Drawing.Point(1031, 77);
+            this.txtSoDT.Location = new System.Drawing.Point(911, 77);
             this.txtSoDT.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.PasswordChar = '\0';
@@ -376,13 +336,13 @@
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiaChi.Location = new System.Drawing.Point(423, 238);
+            this.txtDiaChi.Location = new System.Drawing.Point(251, 224);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.PlaceholderText = "";
             this.txtDiaChi.SelectedText = "";
-            this.txtDiaChi.Size = new System.Drawing.Size(301, 52);
+            this.txtDiaChi.Size = new System.Drawing.Size(547, 52);
             this.txtDiaChi.TabIndex = 3;
             // 
             // txtTenKH
@@ -399,7 +359,7 @@
             this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTenKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKH.Location = new System.Drawing.Point(423, 160);
+            this.txtTenKH.Location = new System.Drawing.Point(251, 160);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
@@ -428,7 +388,7 @@
             this.txtSearchKH.PasswordChar = '\0';
             this.txtSearchKH.PlaceholderText = "Tìm kiếm mã hoặc số điện thoại";
             this.txtSearchKH.SelectedText = "";
-            this.txtSearchKH.Size = new System.Drawing.Size(314, 52);
+            this.txtSearchKH.Size = new System.Drawing.Size(336, 52);
             this.txtSearchKH.TabIndex = 22;
             this.txtSearchKH.Tag = "";
             // 
@@ -451,6 +411,46 @@
             this.ptSearchKH.TabIndex = 23;
             this.ptSearchKH.TabStop = false;
             this.ptSearchKH.Click += new System.EventHandler(this.ptSearchKH_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaKH";
+            this.Column1.HeaderText = "Mã khách hàng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 220;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenKH";
+            this.Column2.HeaderText = "Họ và tên";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "DiaChi";
+            this.Column3.HeaderText = "Địa chỉ ";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 450;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SoDT";
+            this.Column4.HeaderText = "Số điện thoại";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 200;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "TrangThai";
+            this.Column5.HeaderText = "Trạng thái";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
             // 
             // frm_KhachHang
             // 

@@ -112,7 +112,7 @@
             this.gbTTThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTTThanhToan.Location = new System.Drawing.Point(78, 59);
             this.gbTTThanhToan.Name = "gbTTThanhToan";
-            this.gbTTThanhToan.Size = new System.Drawing.Size(1641, 485);
+            this.gbTTThanhToan.Size = new System.Drawing.Size(1772, 485);
             this.gbTTThanhToan.TabIndex = 0;
             this.gbTTThanhToan.TabStop = false;
             this.gbTTThanhToan.Text = "Thông tin thanh toán";
@@ -399,14 +399,14 @@
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiaChi.Location = new System.Drawing.Point(268, 317);
+            this.txtDiaChi.Location = new System.Drawing.Point(143, 317);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.PlaceholderText = "Chọn mã khách hàng";
             this.txtDiaChi.ReadOnly = true;
             this.txtDiaChi.SelectedText = "";
-            this.txtDiaChi.Size = new System.Drawing.Size(265, 52);
+            this.txtDiaChi.Size = new System.Drawing.Size(421, 52);
             this.txtDiaChi.TabIndex = 4;
             // 
             // cboMaNV
@@ -543,7 +543,7 @@
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Location = new System.Drawing.Point(134, 324);
+            this.lblDiaChi.Location = new System.Drawing.Point(29, 324);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(107, 29);
             this.lblDiaChi.TabIndex = 19;
@@ -671,7 +671,7 @@
             this.Column10.HeaderText = "Hình thức thanh toán";
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
-            this.Column10.Width = 200;
+            this.Column10.Width = 175;
             // 
             // Column11
             // 
