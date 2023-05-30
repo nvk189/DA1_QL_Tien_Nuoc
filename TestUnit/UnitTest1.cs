@@ -2,7 +2,7 @@
 using System;
 using BLL;
 using DTO;
-
+using Utility;
 namespace TestUnit
 {
     [TestClass]
@@ -153,14 +153,61 @@ namespace TestUnit
 
         { KhachHang_DTO dt = new KhachHang_DTO();
             KhachHang_BLL nv = new KhachHang_BLL();
-            string a= "KH001";
+            string a= "KH011";
             string b= "Nguyễn Văn Long";
             string c= "Hưng Yên";
-            string d ="1123456789";
+            string d ="2123456789";
             string e ="True";
 
             int result = nv.Insert(new KhachHang_DTO(a, b, c, d, e));
             Assert.IsTrue(result>0); // nhập đúng 
+
+
+        }
+
+        [TestMethod]
+        public void TestThemKhachHang1()
+
+        {
+            KhachHang_DTO dt = new KhachHang_DTO();
+            KhachHang_BLL nv = new KhachHang_BLL();
+            string a = "";
+            string b = "Nguyễn Văn Long";
+            string c = "Hưng Yên";
+            string d = "2123456789";
+            string e = "True";
+
+            int result = nv.Insert(new KhachHang_DTO(a, b, c, d, e));
+            Assert.IsTrue(result > 0); // nhập đúng 
+
+
+        }
+
+        [TestMethod]
+        public void TestXoaKhachHang()
+
+        {
+            KhachHang_DTO dt = new KhachHang_DTO();
+            KhachHang_BLL nv = new KhachHang_BLL();
+            string a = "KH001";
+           
+
+            int result = nv.Delete(a);
+            Assert.IsTrue(result > 0); // nhập đúng 
+
+
+        }
+
+
+
+        [TestMethod]
+        public void SoDT()
+
+        {
+           
+
+           
+            Assert.IsTrue(Tool.CheckStringLengthint("1234567899")); // nhập đúng 
 
 
         }
