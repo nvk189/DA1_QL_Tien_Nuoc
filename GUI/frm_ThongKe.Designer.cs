@@ -357,7 +357,7 @@
             // 
             this.ptSearchTK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptSearchTK.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchTK.Location = new System.Drawing.Point(1118, 352);
+            this.ptSearchTK.Location = new System.Drawing.Point(1118, 349);
             this.ptSearchTK.Name = "ptSearchTK";
             this.ptSearchTK.Size = new System.Drawing.Size(45, 41);
             this.ptSearchTK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

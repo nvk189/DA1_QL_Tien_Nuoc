@@ -30,6 +30,11 @@
         {
             this.gbDsKhachHang = new System.Windows.Forms.GroupBox();
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMaKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.gbKhachHang = new System.Windows.Forms.GroupBox();
             this.lblTrangThaiKH = new System.Windows.Forms.Label();
@@ -49,11 +54,6 @@
             this.txtSearchKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ptSearchKH = new System.Windows.Forms.PictureBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDsKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.gbKhachHang.SuspendLayout();
@@ -93,6 +93,46 @@
             this.dgvKhachHang.Size = new System.Drawing.Size(1498, 308);
             this.dgvKhachHang.TabIndex = 0;
             this.dgvKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaKH";
+            this.Column1.HeaderText = "Mã khách hàng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 220;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenKH";
+            this.Column2.HeaderText = "Họ và tên";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "DiaChi";
+            this.Column3.HeaderText = "Địa chỉ ";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 450;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SoDT";
+            this.Column4.HeaderText = "Số điện thoại";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 200;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.DataPropertyName = "TrangThai";
+            this.Column5.HeaderText = "Trạng thái";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
             // 
             // txtMaKH
             // 
@@ -404,53 +444,13 @@
             // 
             this.ptSearchKH.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptSearchKH.Image = global::GUI.Properties.Resources.search_interface_symbol;
-            this.ptSearchKH.Location = new System.Drawing.Point(1495, 49);
+            this.ptSearchKH.Location = new System.Drawing.Point(1506, 49);
             this.ptSearchKH.Name = "ptSearchKH";
             this.ptSearchKH.Size = new System.Drawing.Size(45, 41);
             this.ptSearchKH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptSearchKH.TabIndex = 23;
             this.ptSearchKH.TabStop = false;
             this.ptSearchKH.Click += new System.EventHandler(this.ptSearchKH_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "MaKH";
-            this.Column1.HeaderText = "Mã khách hàng";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 220;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "TenKH";
-            this.Column2.HeaderText = "Họ và tên";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "DiaChi";
-            this.Column3.HeaderText = "Địa chỉ ";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 450;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "SoDT";
-            this.Column4.HeaderText = "Số điện thoại";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 200;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "TrangThai";
-            this.Column5.HeaderText = "Trạng thái";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
             // 
             // frm_KhachHang
             // 

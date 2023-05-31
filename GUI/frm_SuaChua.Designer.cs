@@ -229,7 +229,7 @@
             // dtSuaChua
             // 
             this.dtSuaChua.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtSuaChua.Location = new System.Drawing.Point(853, 271);
+            this.dtSuaChua.Location = new System.Drawing.Point(806, 271);
             this.dtSuaChua.Name = "dtSuaChua";
             this.dtSuaChua.Size = new System.Drawing.Size(241, 34);
             this.dtSuaChua.TabIndex = 30;
@@ -248,13 +248,13 @@
             this.txtTinhTrang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTinhTrang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTinhTrang.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTinhTrang.Location = new System.Drawing.Point(796, 182);
+            this.txtTinhTrang.Location = new System.Drawing.Point(728, 182);
             this.txtTinhTrang.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTinhTrang.Name = "txtTinhTrang";
             this.txtTinhTrang.PasswordChar = '\0';
             this.txtTinhTrang.PlaceholderText = "";
             this.txtTinhTrang.SelectedText = "";
-            this.txtTinhTrang.Size = new System.Drawing.Size(301, 52);
+            this.txtTinhTrang.Size = new System.Drawing.Size(488, 52);
             this.txtTinhTrang.TabIndex = 29;
             // 
             // txtDiaChi
@@ -367,7 +367,7 @@
             // lblNgaySC
             // 
             this.lblNgaySC.AutoSize = true;
-            this.lblNgaySC.Location = new System.Drawing.Point(614, 271);
+            this.lblNgaySC.Location = new System.Drawing.Point(594, 271);
             this.lblNgaySC.Name = "lblNgaySC";
             this.lblNgaySC.Size = new System.Drawing.Size(197, 29);
             this.lblNgaySC.TabIndex = 22;
@@ -376,7 +376,7 @@
             // lblTinhTrang
             // 
             this.lblTinhTrang.AutoSize = true;
-            this.lblTinhTrang.Location = new System.Drawing.Point(637, 189);
+            this.lblTinhTrang.Location = new System.Drawing.Point(583, 189);
             this.lblTinhTrang.Name = "lblTinhTrang";
             this.lblTinhTrang.Size = new System.Drawing.Size(138, 29);
             this.lblTinhTrang.TabIndex = 21;

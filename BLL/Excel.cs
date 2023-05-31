@@ -96,10 +96,11 @@ namespace BLL
             foreach (DataRow row in dataTable.Rows)
             {
                 colCount = 1;
+             
                 foreach (var item in row.ItemArray)
                 {
 
-                
+                  
                     oSheet.Cells[rowCount, colCount] = item.ToString();
                     colCount++;
                 }

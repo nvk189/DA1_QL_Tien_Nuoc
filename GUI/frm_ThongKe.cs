@@ -51,7 +51,7 @@ namespace GUI
                 lbKhachHang.Text = data.Rows[0][0].ToString();
                 lblNuocSD.Text=data.Rows[0][1].ToString();
                 lblTongTien.Text=data.Rows[0][2].ToString();
-                dgvThongKe.DataSource= data;
+                //dgvThongKe.DataSource= data;
                 ShowDT();
             }
             else
@@ -65,10 +65,14 @@ namespace GUI
             DateTime da = dtSearchtime.Value.Date;
             dgvThongKe.DataSource = thongKe_BLL.Search1(da);
         }
+       
         private void ptSearchTK_Click(object sender, EventArgs e)
         {
             int MaHD;
             int.TryParse(txtSearchTK.Text, out MaHD);
+            int t;
+            int.TryParse(txtSearchTK.Text, out t);
+            
 
             DataTable data1 = thongKe_BLL.SearchMY(Convert.ToInt32(MaHD));
             if(data1.Rows.Count > 0)
@@ -76,8 +80,7 @@ namespace GUI
                 lbKhachHang.Text = data1.Rows[0][0].ToString();
                 lblNuocSD.Text = data1.Rows[0][1].ToString();
                 lblTongTien.Text = data1.Rows[0][2].ToString();
-              
-                dgvThongKe.DataSource = thongKe_BLL.Search1(MaHD);
+                dgvThongKe.DataSource = thongKe_BLL.Search1(t);
             }
             else
             {

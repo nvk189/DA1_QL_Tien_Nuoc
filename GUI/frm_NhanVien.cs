@@ -193,7 +193,7 @@ namespace GUI
                             MessageBox.Show("Sủa dữ liệu  thành công, hãy kiểm tra lại!", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             //MessageBox.Show("Sửa thất bại, xem lại mã hoặc số điện thoại đã tồn tại , mã và số điện thaoị không có khoảng trắng ,số điện thoại gồm 10 ký tự", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        Reset();
+                        LoadData();
 
 
                     }
