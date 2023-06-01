@@ -105,8 +105,8 @@ namespace BLL
             invoiceContent += $"\n Hóa Đơn thanh toán tiền nước \r\n";            
             invoiceContent += $"\n";
             invoiceContent += $"Thông tin hóa đơn \n";
-            invoiceContent += $"Mã HD:               {maHD}\r\n";
-            invoiceContent += $"Mã KH:               {maKH}\r\n";
+            invoiceContent += $"Mã hóa đơn:               {maHD}\r\n";
+            invoiceContent += $"Mã khách hàng:               {maKH}\r\n";
             invoiceContent += $"Họ và tên:           {tenkh}\r\n";
             invoiceContent += $"Địa Chỉ:             {diachi}\r\n";
             invoiceContent += $"Mã NV:               {maNV}\r\n";
