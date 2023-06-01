@@ -98,11 +98,11 @@ namespace BLL
         public void ExportInvoiceToNotepad(int maHD, string maKH, string tenkh, string diachi, string maNV, float soCTT, float soCTS, float soSD, float giaTien, int thue, DateTime ngayTT, string hinhThucTT, float tongTien)
         {
             // Tạo nội dung hóa đơn
-            string invoiceContent = $"CÔNG TY NƯỚC SẠCH NGỌC TUẤN\n" +
+            string invoiceContent = $"\t\tCÔNG TY NƯỚC SẠCH NGỌC TUẤN\n" +
             $"\tĐịa chỉ thị chấn Lương Bằng -Kim Động -Hưng Yên \n" +
             $"\tHotline: 01234567\r\n";
 
-            invoiceContent += $"\n Hóa Đơn thanh toán tiền nước Ngọc Tuấn \r\n";            
+            invoiceContent += $"\n Hóa Đơn thanh toán tiền nước \r\n";            
             invoiceContent += $"\n";
             invoiceContent += $"Thông tin hóa đơn \n";
             invoiceContent += $"Mã HD:               {maHD}\r\n";
