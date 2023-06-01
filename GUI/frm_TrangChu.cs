@@ -130,6 +130,9 @@ namespace GUI
         private void ptExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
+
+
         }
     }
 }

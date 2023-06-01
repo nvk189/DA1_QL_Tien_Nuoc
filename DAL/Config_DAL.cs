@@ -42,9 +42,7 @@ namespace DAL
             }
             catch 
             {
-                //tim cach them thong bao vao day
-                //MessageBox.Show(thow.ex);
-
+               
             }
 
         }

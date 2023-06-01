@@ -832,7 +832,6 @@ BEGIN
         or YEAR(CTHD.NgayThanhToan) = @ThoiGian;
 END
 
--- trigger tự cập nhật số công tơ nước
 
 --
 select *from HoaDon
@@ -998,7 +997,7 @@ END
 
 --CT_HoaDon.NgayThanhToan = @NgayThanhToan;
 -- thống kê theo ngày tháng
-create PROCEDURE Search_TK_DT
+alter PROCEDURE Search_TK_DT
       @NgayThanhToan date
 AS
 BEGIN
